@@ -43,3 +43,4 @@
 - [الدرس 14](lesson-14/lesson-14.pdf)
 - [الدرس 15](lesson-15/lesson-15.pdf)
 - درس 11: [formula.txt](lesson-11/formula.txt) و [test-cases.csv](lesson-11/test-cases.csv)
+- [الدرس الإضافي](lesson-bonus/lesson-bonus.pdf)
