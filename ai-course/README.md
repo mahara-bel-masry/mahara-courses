@@ -23,3 +23,23 @@
 17. [درس تطبيقي إضافي: شغل حقيقي على Instinct من الطلب للمراجعة](https://www.youtube.com/watch?v=K2s_N48clGc)
 
 الفيديوهات على يوتيوب بس. المستودع ده فيه روابط الدروس.
+
+## ملفات الدروس (PDF)
+
+- [نظرة عامة على الكورس](course-overview.pdf)
+- [الدرس 1](lesson-01/lesson-01.pdf)
+- [الدرس 2](lesson-02/lesson-02.pdf)
+- [الدرس 3](lesson-03/lesson-03.pdf)
+- [الدرس 4](lesson-04/lesson-04.pdf)
+- [الدرس 5](lesson-05/lesson-05.pdf)
+- [الدرس 6](lesson-06/lesson-06.pdf)
+- [الدرس 7](lesson-07/lesson-07.pdf)
+- [الدرس 8](lesson-08/lesson-08.pdf)
+- [الدرس 9](lesson-09/lesson-09.pdf)
+- [الدرس 10](lesson-10/lesson-10.pdf)
+- [الدرس 11](lesson-11/lesson-11.pdf)
+- [الدرس 12](lesson-12/lesson-12.pdf)
+- [الدرس 13](lesson-13/lesson-13.pdf)
+- [الدرس 14](lesson-14/lesson-14.pdf)
+- [الدرس 15](lesson-15/lesson-15.pdf)
+- درس 11: [formula.txt](lesson-11/formula.txt) و [test-cases.csv](lesson-11/test-cases.csv)

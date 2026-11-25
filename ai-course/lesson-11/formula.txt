@@ -1,0 +1,3 @@
+=ARRAYFORMULA(IF(LEN(C2:C),C2:C*D2:D,""))
+# Paste in cell E2 of a Google Sheet with headers in row 1: A customer, B product, C quantity, D unit price, E total.
+# Cells under E2 must be empty. If your Sheets locale uses semicolons, replace the commas with semicolons.
