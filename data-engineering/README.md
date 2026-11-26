@@ -14,5 +14,6 @@
 - [خريطة أدوات Data Engineering وقراءة إعلانات الوظايف | درس ١.٦](https://www.youtube.com/watch?v=dzrBL1ay9SI) | الملفات: [1.6](./1.6/)
 - [مشروع الكورس الأول: خريطة تدفق بيانات لمتجر إلكتروني | مشروع ١](https://www.youtube.com/watch?v=K_4t3uRw8Cs) | الملفات: [project-1](./project-1/)
 - [تسطيب بيئة العمل: Python وVS Code وبيئة معزولة وأول script | درس ٢.١](https://www.youtube.com/watch?v=J2II88QDuWA) | الملفات: [2.1](./2.1/)
+- [المتغيرات وأنواع البيانات والنصوص: split وstrip وf-strings | درس ٢.٢](https://www.youtube.com/watch?v=kj-_dS2S03c) | الملفات: [2.2](./2.2/)
 
 الدروس الجاية هتتضاف هنا مع نزول فيديو كل درس.
