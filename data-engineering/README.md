@@ -13,5 +13,6 @@
 - [database وdata warehouse وdata lake: الفرق وإمتى كل واحد مناسب | درس ١.٥](https://www.youtube.com/watch?v=nyBPc2EnYiM) | الملفات: [1.5](./1.5/)
 - [خريطة أدوات Data Engineering وقراءة إعلانات الوظايف | درس ١.٦](https://www.youtube.com/watch?v=dzrBL1ay9SI) | الملفات: [1.6](./1.6/)
 - [مشروع الكورس الأول: خريطة تدفق بيانات لمتجر إلكتروني | مشروع ١](https://www.youtube.com/watch?v=K_4t3uRw8Cs) | الملفات: [project-1](./project-1/)
+- [تسطيب بيئة العمل: Python وVS Code وبيئة معزولة وأول script | درس ٢.١](https://www.youtube.com/watch?v=J2II88QDuWA) | الملفات: [2.1](./2.1/)
 
 الدروس الجاية هتتضاف هنا مع نزول فيديو كل درس.
