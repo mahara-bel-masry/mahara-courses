@@ -10,5 +10,8 @@
 - [دورة حياة البيانات من التجميع للتقديم | درس ١.٣](https://www.youtube.com/watch?v=w5t2kKvC2Jo) | الملفات: [1.3](./1.3/)
 
 - [ETL وELT: الفرق العملي وإمتى كل واحد صح | درس ١.٤](https://www.youtube.com/watch?v=aSMJaWrUyqQ) | الملفات: [1.4](./1.4/)
+- [database وdata warehouse وdata lake: الفرق وإمتى كل واحد مناسب | درس ١.٥](https://www.youtube.com/watch?v=nyBPc2EnYiM) | الملفات: [1.5](./1.5/)
+- [خريطة أدوات Data Engineering وقراءة إعلانات الوظايف | درس ١.٦](https://www.youtube.com/watch?v=dzrBL1ay9SI) | الملفات: [1.6](./1.6/)
+- [مشروع الكورس الأول: خريطة تدفق بيانات لمتجر إلكتروني | مشروع ١](https://www.youtube.com/watch?v=K_4t3uRw8Cs) | الملفات: [project-1](./project-1/)
 
 الدروس الجاية هتتضاف هنا مع نزول فيديو كل درس.
