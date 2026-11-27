@@ -1,0 +1,5 @@
+## uv python list --only-installed (path column left out here)
+cpython-3.15.2-linux-x86_64-gnu
+cpython-3.14.10-linux-x86_64-gnu
+cpython-3.14.10+freethreaded-linux-x86_64-gnu
+cpython-3.10.12-linux-x86_64-gnu
