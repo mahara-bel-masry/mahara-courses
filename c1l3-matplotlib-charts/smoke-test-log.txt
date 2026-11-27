@@ -1,0 +1,51 @@
+smoke test: Python 3.13.18, matplotlib 3.11.2, numpy 2.5.5, pandas 3.1.1, backend Agg
+== q1.out
+Figure Axes
+[6.4, 4.8] 100.0
+1 [10, 20, 15, 30]
+== q10.out
+1 0.3
+ErrorbarContainer 1
+['01-03', '01-03']
+[10.0, 22.0, 33.0, 48.0, 62.0]
+True
+== q2.out
+sales day units
+['A', 'B']
+(np.float64(0.9), np.float64(3.1))
+== q3.out
+3 [1350, 650, 900]
+True
+(np.float64(-0.54), np.float64(2.5400000000000005))
+== q4.out
+1000 11
+49.46 9.86
+[2, 22, 70, 185, 285, 248, 136, 45, 5, 2]
+== q5.out
+(2,) [8.0, 3.0]
+0.94
+True
+== q6.out
+Axes 3
+['A', 'C', 'B']
+sales by branch
+True
+== q7.out
+(np.float64(0.0), np.float64(60.0)) [1, 4, 7]
+2 1
+50 True
+100 True
+[]
+== q8.out
+(30, 3) 91.4 156.6
+6 149.3
+[2, 0, 7] 6
+127.3 130.3
+113.1 140.7
+0
+== q9.out
+6 [np.int64(25), np.int64(50), np.int64(42)]
+(3, 3) (0.0, 1.0)
+log
+3 180.0
+(2, 2) True
