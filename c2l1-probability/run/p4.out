@@ -1,0 +1,6 @@
+P(k) for k=0..10 [0.028, 0.121, 0.233, 0.267, 0.2, 0.103, 0.037, 0.009, 0.001, 0.0, 0.0]
+sum of probabilities 1.0
+mean by formula 3.0 by pmf 3.0
+P(at most 2) 0.3828
+simulated mean 2.998 P(at most 2) 0.3831
+P(exactly 3) 0.2668 simulated 0.2662
