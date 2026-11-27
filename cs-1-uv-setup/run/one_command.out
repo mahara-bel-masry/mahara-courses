@@ -1,0 +1,20 @@
+## teammate fresh copy (no .venv): files
+.gitignore
+.python-version
+README.md
+pyproject.toml
+src
+tests
+uv.lock
+## ONE command: uv run --locked pytest -q
+Using CPython 3.14.10
+Creating virtual environment at: .venv
+   Building inventory-tool @ file:///tmp/mate2
+      Built inventory-tool @ file:///tmp/mate2
+Installed 6 packages in 5ms
+..                                                                       [100%]
+2 passed in 0.01s
+exit: 0
+## second run (environment already built)
+..                                                                       [100%]
+2 passed in 0.00s
