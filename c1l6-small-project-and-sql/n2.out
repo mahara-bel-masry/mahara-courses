@@ -1,0 +1,17 @@
+    name  n  total
+0   Giza  3  480.5
+1  Cairo  2  218.5
+2  Aswan  2  175.5
+       count    sum
+name               
+Giza       3  480.5
+Cairo      2  218.5
+Aswan      2  175.5
+same totals: True
+left join keeps branches with no sales:
+    name  n
+0  Aswan  2
+1  Cairo  2
+2   Giza  3
+3  Luxor  0
+(3, 2)
