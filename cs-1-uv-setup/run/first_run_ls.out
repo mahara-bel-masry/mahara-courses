@@ -1,0 +1,16 @@
+## uv run inventory-tool (first run creates .venv)
+Using CPython 3.14.10
+Creating virtual environment at: .venv
+   Building inventory-tool @ file:///tmp/demo13/inventory_tool
+      Built inventory-tool @ file:///tmp/demo13/inventory_tool
+Installed 1 package in 1ms
+Hello from inventory-tool!
+## ls -A after the first uv run
+.git
+.gitignore
+.python-version
+.venv
+README.md
+pyproject.toml
+src
+uv.lock
