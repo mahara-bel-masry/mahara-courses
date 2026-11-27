@@ -1,0 +1,6 @@
+baseline MAE 73.23
+linear MAE 9.55 RMSE 12.38 R2 0.979
+linear cv R2 0.978
+ridge MAE 9.45 RMSE 12.24 R2 0.979
+ridge cv R2 0.978
+with leak test R2 1.0
