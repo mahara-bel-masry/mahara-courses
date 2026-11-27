@@ -1,0 +1,35 @@
+== versions (Lesson 1, 27 Nov 2026) ==
+python: 3.12.16
+torch: 2.15.0+cpu
+transformers: 5.24.1
+model: HuggingFaceTB/SmolLM2-135M-Instruct
+dtype: torch.float32 explicit in ALL FOUR shipped scripts (next_token.py,
+ar_prompt.py, temperature.py, extras.py) - uniform across the lesson.
+model card precision (from HF page): bfloat16
+seeds: none set - all sampling runs (temperature.py, extras.py) are UNSEEDED;
+exact sampled text varies run to run. Greedy runs (do_sample=False) are
+deterministic for fixed model+dtype+prompt.
+sampling settings: do_sample=True with top_p=1.0 and top_k=0 (neutralised),
+so temperature is the only varied knob; stated in narration.
+
+canonical logs (all produced by the shipped scripts, same model+dtype):
+- lesson1-rerun-v2.log  = next_token.py + ar_prompt.py (top5s + all greedy
+  generations quoted in narration, incl. 'ما هي عاصمة تأثير' and the EN
+  'step in a sequence of events...' completion)
+- temperature-v2.log    = temperature.py (0 x2 greedy, 0.8 x3 sampled)
+- extras-v2.log         = extras.py (ids/pieces EN+AR, 1.2 x3 sampled,
+  false-premise completions)
+- dtype-compare.log     = dtype_compare.py (same 2 prompts at bfloat16 and
+  float32 in ONE log): top candidate unchanged; at bf16 ' state' and
+  ' action' tie exactly at 6 decimals (0.079102), 'Thebes'/'called' swap
+  ranks, and 'generation' leaves the top5. No deeper explanation than
+  rounding precision; all narration numbers come from the float32 runs.
+
+model card (fetched 27 Nov 2026, https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct):
+license Apache 2.0; pretraining precision bfloat16, 2T tokens, 64 H100 GPUs;
+Limitations: models primarily understand and generate content in English;
+generated content may not always be factually accurate.
+OpenAI API reference (fetched 27 Nov 2026,
+https://platform.openai.com/docs/api-reference/chat/create): "temperature:
+optional number or null (default: 1) ... between 0 and 2. Higher values like
+0.8 will make the output more random".
