@@ -1,7 +1,4 @@
-Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]
-Loading weights:  38%|███▊      | 102/272 [00:00<00:00, 1012.62it/s]
-Loading weights:  76%|███████▌  | 207/272 [00:00<00:00, 1029.43it/s]
-Loading weights: 100%|██████████| 272/272 [00:00<00:00, 969.19it/s] 
+Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]Loading weights:  38%|███▊      | 102/272 [00:00<00:00, 1012.62it/s]Loading weights:  76%|███████▌  | 207/272 [00:00<00:00, 1029.43it/s]Loading weights: 100%|██████████| 272/272 [00:00<00:00, 969.19it/s] 
 
 top5 (float32, 6 decimals) for prompt: 'Generative AI models work by predicting the next'
    ' step'  0.149366
@@ -19,11 +16,7 @@ top5 (float32, 6 decimals) for prompt: 'The capital of Egypt is'
 
 generation (greedy) for 'Generative AI models work by predicting the next':
 -> "Generative AI models work by predicting the next step in a sequence of events, such as a customer's purchase or a product's launch. These"
-
-Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]
-Loading weights:  41%|████      | 111/272 [00:00<00:00, 1103.37it/s]
-Loading weights:  82%|████████▏ | 222/272 [00:00<00:00, 1042.34it/s]
-Loading weights: 100%|██████████| 272/272 [00:00<00:00, 1020.36it/s]
+Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]Loading weights:  41%|████      | 111/272 [00:00<00:00, 1103.37it/s]Loading weights:  82%|████████▏ | 222/272 [00:00<00:00, 1042.34it/s]Loading weights: 100%|██████████| 272/272 [00:00<00:00, 1020.36it/s]
 
 top5 (float32, 6 decimals) for prompt: 'ما هي عاصمة'
    ' �'  0.149539
