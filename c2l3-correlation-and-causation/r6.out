@@ -1,0 +1,4 @@
+pearson 0.855
+spearman 0.988
+pearson with outlier 0.837
+spearman with outlier 0.27
