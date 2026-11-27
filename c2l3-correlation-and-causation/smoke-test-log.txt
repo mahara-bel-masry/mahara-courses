@@ -1,0 +1,69 @@
+smoke test 2026-11-27, all demos run on the lab runtime
+Python 3.13.18 NumPy 2.5.5 pandas 3.1.1 SciPy 1.18.1 statsmodels 0.15.0 scikit-learn 1.9.1
+--- r0.py
+correlation r 0.875
+r squared 0.765
+slope 4.7 intercept 46.0
+exit 0
+--- r1.py
+pearson r for a clear curve -0.017
+r without outlier -0.066
+r with one outlier 0.789
+exit 0
+--- r10.py
+n 20 r 0.32 p 0.175 interval -0.15 0.67
+n 200 r 0.12 p 0.0997 interval -0.02 0.25
+n 2000 r 0.24 p 0.0 interval 0.2 0.28
+exit 0
+--- r11.py
+group 0 r inside -0.8
+group 1 r inside -0.84
+group 2 r inside -0.78
+r with all groups mixed 0.87
+exit 0
+--- r2.py
+r ice cream vs accidents 0.518
+r after removing temperature -0.002
+exit 0
+--- r3.py
+columns 40 rows 30
+pairs checked 780
+strongest r by pure luck 0.671
+exit 0
+--- r4.py
+average recovery with drug 49.5
+average recovery without drug 62.7
+mild cases with drug 73.6
+mild cases without drug 73.0
+exit 0
+--- r5.py
+average recovery with drug 57.7
+average recovery without drug 55.7
+difference 2.05
+average severity with drug 5.05
+average severity without drug 4.87
+exit 0
+--- r6.py
+pearson 0.855
+spearman 0.988
+pearson with outlier 0.837
+spearman with outlier 0.27
+exit 0
+--- r7.py
+pairs with r above 0.5 or below minus 0.5 384 of 1000
+last pair r on levels 0.198
+last pair r on daily changes -0.08
+exit 0
+--- r8.py
+       hours  sleep  phone  score
+hours   1.00   0.09   0.03   0.75
+sleep   0.09   1.00  -0.27   0.36
+phone   0.03  -0.27   1.00  -0.09
+score   0.75   0.36  -0.09   1.00
+rows 300
+exit 0
+--- r9.py
+drug effect without severity -13.21
+drug effect with severity 2.91
+severity effect -5.02
+exit 0
