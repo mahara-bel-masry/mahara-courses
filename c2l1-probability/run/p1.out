@@ -1,0 +1,8 @@
+10 share of sum seven 0.2
+100 share of sum seven 0.17
+1000 share of sum seven 0.159
+100000 share of sum seven 0.1661
+exact 0.1667
+20 flips [0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1] heads 12
+longest streak 5
+share of 20-flip runs with a streak of 5 or more 0.455
