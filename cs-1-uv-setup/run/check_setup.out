@@ -1,0 +1,41 @@
+## project WITHOUT a README command yet
+PASS  1 uv is installed
+PASS  2 .python-version says 3.14
+PASS  3 pyproject has requires-python >=3.14
+PASS  4 pytest is in the dev group
+PASS  5 uv.lock exists
+PASS  6 .venv is ignored by git
+PASS  7 lock matches pyproject
+PASS  8 at least one test file exists
+PASS  9 tests pass with the one command
+FAIL  10 README mentions uv run
+passed: 9, failed: 1
+exit: 1
+
+## after writing README
+PASS  1 uv is installed
+PASS  2 .python-version says 3.14
+PASS  3 pyproject has requires-python >=3.14
+PASS  4 pytest is in the dev group
+PASS  5 uv.lock exists
+PASS  6 .venv is ignored by git
+PASS  7 lock matches pyproject
+PASS  8 at least one test file exists
+PASS  9 tests pass with the one command
+PASS  10 README mentions uv run
+passed: 10, failed: 0
+exit: 0
+
+## broken copy: delete uv.lock, change .python-version to 3.10
+PASS  1 uv is installed
+FAIL  2 .python-version says 3.14
+PASS  3 pyproject has requires-python >=3.14
+PASS  4 pytest is in the dev group
+FAIL  5 uv.lock exists
+PASS  6 .venv is ignored by git
+FAIL  7 lock matches pyproject
+PASS  8 at least one test file exists
+FAIL  9 tests pass with the one command
+PASS  10 README mentions uv run
+passed: 6, failed: 4
+exit: 1
