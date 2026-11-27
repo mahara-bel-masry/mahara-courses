@@ -1,0 +1,38 @@
+Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]
+Loading weights:  35%|███▍      | 94/272 [00:00<00:00, 937.94it/s]
+Loading weights:  71%|███████▏  | 194/272 [00:00<00:00, 970.72it/s]
+Loading weights: 100%|██████████| 272/272 [00:00<00:00, 811.55it/s]
+vocab size: 49152 | len(tokenizer): 49152
+dtype: torch.float32
+
+prompt: Generative AI models work by predicting the next
+count: 10
+ids: [5650, 259, 791, 5646, 2859, 746, 411, 18478, 260, 1867]
+pieces: ['Gen', 'er', 'ative', ' AI', ' models', ' work', ' by', ' predicting', ' the', ' next']
+
+prompt: The capital of Egypt is
+count: 5
+ids: [504, 3575, 282, 4754, 314]
+pieces: ['The', ' capital', ' of', ' Egypt', ' is']
+
+prompt: عاصمة مصر القاهرة
+count: 16
+ids: [34966, 10805, 163, 130, 21706, 43463, 36395, 163, 130, 20602, 27819, 43530, 10805, 22682, 20602, 43463]
+pieces: ['ع', 'ا', '�', '�', 'م', 'ة', ' م', '�', '�', 'ر', ' ال', 'ق', 'ا', 'ه', 'ر', 'ة']
+
+--- temperature 1.2 (sampling, top_p=1.0, top_k=0, unseeded), تلات مرات ---
+The best way to learn programming is to practice regularly, where you find yourself tackling extremely challenging problems or covers challenging topics. However, learners
+The best way to learn programming is definitely the tutorials, eh? Those two were the first projects teachers Rick Williams think of by,
+The best way to learn programming is through practice, not textbooks. There are a lot of platforms like RStudio and Codometer that
+
+--- جمل كاذبة المقدمة، اختيار حتمي ---
+The capital of the planet Mars is
+-> The capital of the planet Mars is the largest city in the solar system. It is located in the city of the same name, which is a major hub for
+The three moons of Earth are
+-> The three moons of Earth are named after the three planets in our solar system: Mercury, Venus, and Earth.
+
+Mercury is the smallest planet
+The winner of the 2030 World Cup was
+-> The winner of the 2030 World Cup was the 19-year-old Brazilian, who won the tournament in 2014.
+
+The 
