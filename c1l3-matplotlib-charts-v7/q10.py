@@ -1,0 +1,27 @@
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+import numpy as np, pandas as pd
+x = np.arange(5)
+y = np.array([10.0, 12.0, 11.0, 15.0, 14.0])
+err = np.array([1.0, 2.0, 1.5, 2.5, 1.0])
+fig, ax = plt.subplots()
+ax.plot(x, y)
+ax.fill_between(x, y - err, y + err, alpha=0.3)
+print(len(ax.collections), ax.collections[0].get_alpha())
+fig2, ax2 = plt.subplots()
+bars = ax2.errorbar(x, y, yerr=err, fmt="o")
+print(type(bars).__name__, len(ax2.lines))
+d = pd.date_range("2026-03-01", periods=5)
+fig3, ax3 = plt.subplots()
+ax3.plot(d, y)
+ax3.xaxis.set_major_formatter(mdates.DateFormatter("%d-%m"))
+fig3.autofmt_xdate()
+fig3.canvas.draw()
+print([t.get_text() for t in ax3.get_xticklabels()][:2])
+fig4, ax4 = plt.subplots()
+ax4.step(x, np.cumsum(y), where="post")
+print(np.cumsum(y).tolist())
+ax4.grid(True, alpha=0.3)
+print(ax4.xaxis.get_gridlines()[0].get_visible())

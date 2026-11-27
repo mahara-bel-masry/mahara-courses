@@ -1,0 +1,13 @@
+sat    120
+sun     80
+mon     45
+dtype: int64
+80 120 int64
+sat    240
+sun    160
+mon     90
+dtype: int64
+sat    120
+sun     80
+dtype: int64
+81.66666666666667 245

@@ -1,0 +1,14 @@
+[5.0, 20.0]
+    item  qty  price
+1   case    5   20.0
+2  cable   10    5.0
+    item  qty
+2  cable   10
+1   case    5
+[600.0, 100.0, 50.0, 300.0]
+[ 2  5 10  1] ndarray
+[False, True, False, False]
+2
+3
+[3, 2]
+True

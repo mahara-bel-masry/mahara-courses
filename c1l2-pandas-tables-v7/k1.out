@@ -1,0 +1,9 @@
+        n    avg
+item            
+cable  10   50.0
+case    5  100.0
+phone   3  450.0
+['item', 'count', 'price', 'total']
+(4, 3)
+[600.0, 40.0, 10.0, 600.0]
+['mobile', nan, nan, 'mobile']
