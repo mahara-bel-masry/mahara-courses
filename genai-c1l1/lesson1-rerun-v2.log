@@ -1,0 +1,55 @@
+Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]
+Loading weights:  38%|███▊      | 102/272 [00:00<00:00, 1012.62it/s]
+Loading weights:  76%|███████▌  | 207/272 [00:00<00:00, 1029.43it/s]
+Loading weights: 100%|██████████| 272/272 [00:00<00:00, 969.19it/s] 
+
+top5 (float32, 6 decimals) for prompt: 'Generative AI models work by predicting the next'
+   ' step'  0.149366
+   ' possible'  0.101999
+   ' steps'  0.090320
+   ' action'  0.081563
+   ' generation'  0.078815
+
+top5 (float32, 6 decimals) for prompt: 'The capital of Egypt is'
+   ' the'  0.204651
+   ' Thebes'  0.140321
+   ' called'  0.137189
+   ' known'  0.045913
+   ' Alexandria'  0.036658
+
+generation (greedy) for 'Generative AI models work by predicting the next':
+-> "Generative AI models work by predicting the next step in a sequence of events, such as a customer's purchase or a product's launch. These"
+
+Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]
+Loading weights:  41%|████      | 111/272 [00:00<00:00, 1103.37it/s]
+Loading weights:  82%|████████▏ | 222/272 [00:00<00:00, 1042.34it/s]
+Loading weights: 100%|██████████| 272/272 [00:00<00:00, 1020.36it/s]
+
+top5 (float32, 6 decimals) for prompt: 'ما هي عاصمة'
+   ' �'  0.149539
+   ' ال'  0.136126
+   ' �'  0.130500
+   ' م'  0.125192
+   ' '  0.077630
+
+top5 (float32, 6 decimals) for prompt: 'عاصمة مصر'
+   'ف'  0.334846
+   'ا'  0.221315
+   'ي'  0.144231
+   '�'  0.074471
+   'ر'  0.047023
+
+generation (greedy) for 'ما هي عاصمة':
+-> 'ما هي عاصمة تأثير'
+
+generation (greedy) for 'What is the capital of France?':
+-> 'What is the capital of France?'
+
+generation (greedy) for 'ما هي عاصمة فرنسا؟':
+-> 'ما هي عاصمة فرنسا؟\n\nأنه أن كانت ت'
+
+generation (greedy) for 'عايز أعرف أسعار الشحن يا برنس':
+-> 'عايز أعرف أسعار الشحن يا برنسائية أن يكون ال�'
+
+generation (greedy) for 'مين فاز في انتخابات الرئاسة الأمريكية 2028؟':
+-> 'مين فاز في انتخابات الرئاسة الأمريكية 2028؟\n\nأنهم يا أنهم'
