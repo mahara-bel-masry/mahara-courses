@@ -1,0 +1,10 @@
+columns pandas sees: ['Sales report November (invented)', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3']
+  Sales report November (invented) Unnamed: 1 Unnamed: 2 Unnamed: 3
+0                             city        qty      price       note
+1                            Cairo          5        100        NaN
+2                              NaN        NaN        NaN        NaN
+3                             Giza          7         50  call back
+after skipping title row and blank row:
+    city  qty  price       note
+0  Cairo  5.0  100.0        NaN
+2   Giza  7.0   50.0  call back

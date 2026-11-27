@@ -1,0 +1,8 @@
+# learner files for lab step 9 (invented data)
+import openpyxl
+wb=openpyxl.Workbook(); p=wb.active; p.title="products"; p.append(["sku","item","price"])
+for r in [("P100","pen",10),("P101","notebook",30),("P102","stapler",55),("P103","folder",8),("P104","marker",15)]: p.append(list(r))
+wb.save("lab/products.xlsx")
+wb=openpyxl.Workbook(); o=wb.active; o.title="orders"; o.append(["order","sku","qty"])
+for r in [("O1","P101",2),("O2","P105",5),("O3","P102",1),("O4","P106",3),("O5","P107",10)]: o.append(list(r))
+wb.save("lab/orders.xlsx")

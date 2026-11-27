@@ -1,0 +1,2 @@
+table has 4 rows | fixed range SUM(C2:C5) = 24 | SUM(tblSales[qty]) = 24 | SUM(Qty) with old name = 24 | SUM(Qtyy) typo = #NAME?
+table has 6 rows | fixed range SUM(C2:C5) = 24 | SUM(tblSales[qty]) = 34 | SUM(Qty) with old name = 24 | SUM(Qtyy) typo = #NAME?

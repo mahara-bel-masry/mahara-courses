@@ -1,0 +1,10 @@
+ROWS [#All],[Sales Amount]   (page: C1:C8 = 8 cells)                        -> 9
+ROWS [#Data],[Sales Amount]  (7 data rows)                                  -> 7
+[#Headers],[% Commission]    (page: D1)                                     -> % Commission
+COLUMNS [#All],[Sales Amount]:[% Commission] (page: C1:D8 = 2 columns)      -> 2
+ROWS [#Data],[% Commission]:[Commission Amount] (page: D2:E7 in its example) -> 7
+COLUMNS [#Headers],[Region]:[Commission Amount] (page: B1:E1 = 4)           -> 4
+[#Totals],[Sales Amount]                                                    -> 3680
+SUM data Sales Amount                                                       -> 3680
+SUM data Commission Amount                                                  -> 455.1
+[#Headers],[#Data],[% Commission] rows (page: D1:D7 style)                  -> 8

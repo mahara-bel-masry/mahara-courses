@@ -1,0 +1,2 @@
+sol {'total qty': 33, 'revenue': 4490, 'Alexandria': 570, 'Cairo': 1580, 'Fayoum': 1110, 'Giza': 1230, 'revenue with VAT': 5118.6, 'check: second method': 4490}
+sol_plus_row {'total qty': 35, 'revenue': 4590, 'Alexandria': 570, 'Cairo': 1680, 'Fayoum': 1110, 'Giza': 1230, 'revenue with VAT': 5232.6, 'check: second method': 4590}

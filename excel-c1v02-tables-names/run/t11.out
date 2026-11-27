@@ -1,0 +1,5 @@
+text quantity | SUM: 16 | COUNT: 3 | COUNTA: 4
+rows: [('Cairo', 5), ('Giza', 7), ('Cairo ', 3), ('Giza', 4)]
+trailing space | SUMIFS Cairo: 5 | SUM all: 19 | Cairo with TRIM: 8
+two rows hidden | SUM: 19 | SUBTOTAL 109: 9
+name on deleted cells | SUM(Qty): #REF! | SUM(tblSales[qty]): 12

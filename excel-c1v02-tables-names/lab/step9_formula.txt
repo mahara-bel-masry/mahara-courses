@@ -1,0 +1,3 @@
+Lab step 9, price column in orders (copy as is, lookup is taught in a later lesson). Row 2 example:
+=IFERROR(INDEX(tblProducts[price],MATCH(B2,tblProducts[sku],0)),"missing")
+Same formula as assets/t9.py (column price_table). Screen steps are written from the Microsoft pages, results come from the script.

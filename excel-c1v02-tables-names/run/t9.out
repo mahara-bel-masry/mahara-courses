@@ -1,0 +1,4 @@
+p5: products=5 | fixed-range lookups found=2 of 5 | table lookups found=2 of 5 | revenue (table)=115
+  price_fixed: [30, 'missing', 55, 'missing', 'missing']  price_table: [30, 'missing', 55, 'missing', 'missing']
+p8: products=8 | fixed-range lookups found=2 of 5 | table lookups found=5 of 5 | revenue (table)=355
+  price_fixed: [30, 'missing', 55, 'missing', 'missing']  price_table: [30, 12, 55, 40, 6]
