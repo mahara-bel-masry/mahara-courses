@@ -1,0 +1,3 @@
+['city__city_cairo', 'city__city_fayoum', 'city__city_giza', 'remainder__size']
+coef [ 20.6 -20.5  -0.1   1.5]
+error: Found unknown categories ['unknown_city'] in column 0 during
