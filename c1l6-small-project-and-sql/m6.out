@@ -1,0 +1,5 @@
+random_state 0 test MAE 20.4
+random_state 0 test MAE 20.4
+random_state 1 test MAE 21.93
+random_state 2 test MAE 19.66
+random_state 3 test MAE 17.95
