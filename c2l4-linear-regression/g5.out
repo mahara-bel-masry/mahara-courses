@@ -1,0 +1,6 @@
+Intercept            74.41
+C(city)[T.fayoum]   -40.34
+C(city)[T.giza]     -20.47
+size                  1.97
+dtype: float64
+R squared 0.923
