@@ -1,0 +1,18 @@
+## bare 'python3 -m pytest' (system python, no uv run)
+ERROR tests/test_total.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.08s
+exit: 2
+## bare 'pytest'
+/dev/fd/3: line 3: pytest: command not found
+exit: 127
+## python3 -c 'import inventory_tool' (system python)
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'inventory_tool'
+## same with uv run
+imported ok
+## bare 'python3 -m pytest -q' (system python 3.10, no uv run): full error
+ImportError while importing test module '/tmp/demo11/inventory_tool/tests/test_total.py'.
+E   ModuleNotFoundError: No module named 'inventory_tool'
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.08s
