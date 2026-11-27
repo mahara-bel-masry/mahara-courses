@@ -1,0 +1,4 @@
+steps ['standardscaler', 'ridge']
+scaled coef [ 62.09 -11.35]
+scaler means [121.2  20.1]
+test R2 0.948
