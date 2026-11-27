@@ -1,0 +1,1 @@
+JSON.stringify({paint: performance.getEntriesByType('paint').map(p => [p.name, Math.round(p.startTime)]), domContentLoaded: Math.round(performance.getEntriesByType('navigation')[0].domContentLoadedEventEnd)})
