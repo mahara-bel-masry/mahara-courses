@@ -1,0 +1,13 @@
+    item  qty  price
+0  phone    2  300.0
+1   case    5   20.0
+2  cable   10    5.0
+3  phone    1  300.0
+(4, 3) ['item', 'qty', 'price']
+item         str
+qty        int64
+price    float64
+dtype: object
+    item  qty  price
+0  phone    2  300.0
+1   case    5   20.0

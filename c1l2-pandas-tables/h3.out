@@ -1,0 +1,24 @@
+0     2
+1     5
+2    10
+3     1
+Name: qty, dtype: int64
+    item  qty
+0  phone    2
+1   case    5
+2  cable   10
+3  phone    1
+    item  qty  price  total
+0  phone    2  300.0  600.0
+1   case    5   20.0  100.0
+2  cable   10    5.0   50.0
+3  phone    1  300.0  300.0
+item      case
+qty          5
+price     20.0
+total    100.0
+Name: 1, dtype: object
+2
+0    phone
+3    phone
+Name: item, dtype: str

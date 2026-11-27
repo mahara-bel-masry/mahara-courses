@@ -1,0 +1,12 @@
+age     1
+city    1
+dtype: int64
+    age     city
+0  25.0    Cairo
+1  32.0     Giza
+2  31.0  unknown
+3  40.0    Cairo
+    age   city
+0  25.0  Cairo
+3  40.0  Cairo
+2

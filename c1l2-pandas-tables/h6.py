@@ -1,0 +1,10 @@
+import pandas as pd
+open("sales.csv", "w").write("day,branch,amount\n1,A,100\n2,A,150\n1,B,90\n2,B,\n")
+df = pd.read_csv("sales.csv")
+print(df)
+print(df.dtypes)
+print(df["amount"].isna().sum())
+print(df.pivot_table(index="day", columns="branch", values="amount", aggfunc="sum"))
+df.to_csv("out.csv", index=False)
+print(open("out.csv").read().strip())
+import os; os.remove("sales.csv"); os.remove("out.csv")

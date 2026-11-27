@@ -1,0 +1,10 @@
+   id  name  score
+0   1   Ali     90
+1   2  Mona     80
+   id  name  score
+0   1   Ali   90.0
+1   2  Mona   80.0
+2   3  Sara    NaN
+(6, 2)
+['ALI', 'MONA', 'SARA']
+[3, 4, 4]
