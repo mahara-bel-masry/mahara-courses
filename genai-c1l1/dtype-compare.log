@@ -1,5 +1,4 @@
-Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]
-Loading weights: 100%|██████████| 272/272 [00:00<00:00, 30450.29it/s]
+Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]Loading weights: 100%|██████████| 272/272 [00:00<00:00, 30450.29it/s]
 
 top5 (bfloat16) for prompt: 'Generative AI models work by predicting the next'
    ' step'  0.147461
@@ -14,11 +13,7 @@ top5 (bfloat16) for prompt: 'The capital of Egypt is'
    ' Thebes'  0.132812
    ' known'  0.045898
    ' Alexandria'  0.033691
-
-Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]
-Loading weights:  31%|███       | 84/272 [00:00<00:00, 833.13it/s]
-Loading weights:  71%|███████▏  | 194/272 [00:00<00:00, 985.88it/s]
-Loading weights: 100%|██████████| 272/272 [00:00<00:00, 921.97it/s]
+Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]Loading weights:  31%|███       | 84/272 [00:00<00:00, 833.13it/s]Loading weights:  71%|███████▏  | 194/272 [00:00<00:00, 985.88it/s]Loading weights: 100%|██████████| 272/272 [00:00<00:00, 921.97it/s]
 
 top5 (float32) for prompt: 'Generative AI models work by predicting the next'
    ' step'  0.149366
