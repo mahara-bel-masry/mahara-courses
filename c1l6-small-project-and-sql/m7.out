@@ -1,0 +1,8 @@
+new batch rows 60
+MAE on a new batch 20.9
+one-branch batch columns before align ['ads', 'visitors',
+  'branch_Cairo']
+after align ['ads', 'visitors', 'branch_Aswan', 'branch_Cairo',
+  'branch_Giza']
+columns kept in same order ['ads', 'visitors', 'branch_Aswan',
+  'branch_Cairo', 'branch_Giza']
