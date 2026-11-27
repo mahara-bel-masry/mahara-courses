@@ -1,0 +1,5 @@
+P(first is 6) 0.1669
+P(sum >= 10) 0.1676
+P(sum >= 10 | first is 6) 0.4982
+exact 1/2 = 0.5  exact 6/36 = 0.1667
+P(A and B) 0.0831 P(A) * P(B) 0.028
