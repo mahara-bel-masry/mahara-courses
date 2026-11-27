@@ -1,0 +1,67 @@
+smoke test 2026-11-27, all demos run on the lab runtime
+Python 3.13.18 NumPy 2.5.5 SciPy 1.18.1 (itertools, fractions and math from the Python standard library)
+--- p0.py
+outcomes for two dice 36
+sum even 18 1/2
+sum seven 6 1/6
+double 6 1/6
+seven or double 12
+exit 0
+--- p1.py
+10 share of sum seven 0.2
+100 share of sum seven 0.17
+1000 share of sum seven 0.159
+100000 share of sum seven 0.1661
+exact 0.1667
+20 flips [0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1] heads 12
+longest streak 5
+share of 20-flip runs with a streak of 5 or more 0.455
+exit 0
+--- p2.py
+P(first is 6) 0.1669
+P(sum >= 10) 0.1676
+P(sum >= 10 | first is 6) 0.4982
+exact 1/2 = 0.5  exact 6/36 = 0.1667
+P(A and B) 0.0831 P(A) * P(B) 0.028
+exit 0
+--- p3.py
+share sick 0.0099
+P(positive) 0.0576
+P(sick | positive) 0.1616
+true positives 931 false positives 4830
+Bayes exact 0.161
+exit 0
+--- p4.py
+P(k) for k=0..10 [0.028, 0.121, 0.233, 0.267, 0.2, 0.103, 0.037, 0.009, 0.001, 0.0, 0.0]
+sum of probabilities 1.0
+mean by formula 3.0 by pmf 3.0
+P(at most 2) 0.3828
+simulated mean 2.998 P(at most 2) 0.3831
+P(exactly 3) 0.2668 simulated 0.2662
+exit 0
+--- p5.py
+mean 100.03 std 15.02
+within 1 std 0.682
+within 2 std 0.9552
+within 3 std 0.9974
+share above 130 0.0227
+z for 130 2.0
+exp data mean 10 means of 30 mean 10.0 std 1.83 expected 1.83
+exit 0
+--- p6.py
+n 5 std of means 4.463 10/sqrt(n) 4.472
+n 30 std of means 1.822 10/sqrt(n) 1.826
+n 120 std of means 0.912 10/sqrt(n) 0.913
+n 480 std of means 0.458 10/sqrt(n) 0.456
+bin counts of sample means [211, 3921, 8865, 5513, 1310, 170, 10]
+skew sign of raw data: right
+mean vs median of the sample means 9.98 9.86
+exit 0
+--- p7.py
+t multiplier for 24 df 2.064 z multiplier 1.96
+t multiplier for 999 df 1.962
+share of intervals that contain the true mean 0.941
+average width 9.76
+one sample mean 46.05
+scipy interval [41.04, 51.06]
+exit 0
