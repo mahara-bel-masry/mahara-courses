@@ -1,0 +1,8 @@
+Setup check (about ten minutes)
+
+1  Open Chrome, press F12, DevTools opens.
+2  Open the Network tab, load any page.
+3  Make folders: mahara-fe/basics
+4  Create index.html in basics, write some text.
+5  Open index.html in Chrome: the text shows.
+If a step fails, copy the exact error message.

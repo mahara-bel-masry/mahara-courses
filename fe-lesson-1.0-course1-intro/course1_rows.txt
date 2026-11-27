@@ -1,0 +1,13 @@
+1.1   browser renders a page        60  R
+1.2   Terminal: folders, files      60  R
+1.3   npm, Node, Vite               60  R
+1.4   Git, local                    60  R
+1.5   GitHub (local remote)         60  L
+1.6   semantic HTML                 60  R
+1.7   forms and validation          60  R
+1.8   selectors, specificity        60  R
+1.9   box model                     60  R
+1.10  typography, variables         60  R
+1.11  positioning, z-index          60  R
+1.12  layout bugs in DevTools       60  R
+1.13  project: landing page         70  L

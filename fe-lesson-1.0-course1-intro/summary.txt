@@ -1,0 +1,7 @@
+Cheat sheet, Course 1
+
+order    tools, GitHub, HTML and CSS, project
+labs     do them during the video
+files    one folder, mahara-fe/basics
+numbers  yours may differ, record them
+labels   R ran, L partly ran, n/a no code

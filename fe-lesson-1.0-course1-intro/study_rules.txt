@@ -1,0 +1,8 @@
+How to study each lesson
+
+1 Watch a part, pause, do it on your machine.
+2 Do the lab during the video.
+3 Your numbers may differ: write yours down.
+4 Files are on GitHub, same names as on screen.
+5 Type the code yourself (opinion, not measured).
+6 No promise of income or a job.

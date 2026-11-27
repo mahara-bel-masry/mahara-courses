@@ -1,0 +1,8 @@
+Next lessons in the diploma
+
+1.1  browser renders a page
+1.2  Terminal: folders and files
+1.3  npm, Node, Vite
+1.4  Git, local
+Order comes from outline v2.3; it can
+change if the map is updated.
