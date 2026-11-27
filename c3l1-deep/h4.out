@@ -1,0 +1,3 @@
+linear coef [ 3.68 -1.58] test R2 0.865
+ridge 1 coef [1.02 0.95] test R2 0.871
+ridge 10 coef [0.73 0.74] test R2 0.804
