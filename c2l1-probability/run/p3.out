@@ -1,0 +1,5 @@
+share sick 0.0099
+P(positive) 0.0576
+P(sick | positive) 0.1616
+true positives 931 false positives 4830
+Bayes exact 0.161
