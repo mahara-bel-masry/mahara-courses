@@ -1,0 +1,47 @@
+## clean copy of the final project (no .venv, no .git), files:
+.gitignore
+.python-version
+README.md
+pyproject.toml
+src
+tests
+uv.lock
+## README.md as written
+# inventory-tool
+
+A tiny tool that adds up the value of a stock list. The data in the example is invented for teaching.
+
+## Requirements
+- uv (we used 0.13.8)
+- Python 3.14 (uv picks it from .python-version)
+
+## Run
+    uv run inventory-tool
+
+## Test
+    uv run --locked pytest -q
+
+## Versions we used
+uv 0.13.8, CPython 3.14.10, pytest 9.2.0
+## ONE command: uv run --locked pytest -q
+Using CPython 3.14.10
+Creating virtual environment at: .venv
+   Building inventory-tool @ file:///tmp/mate3
+      Built inventory-tool @ file:///tmp/mate3
+Installed 6 packages in 5ms
+..                                                                       [100%]
+2 passed in 0.01s
+exit: 0
+## bash check_setup.sh (run in place, in this folder)
+PASS  1 uv is installed
+PASS  2 .python-version says 3.14
+PASS  3 pyproject has requires-python >=3.14
+PASS  4 pytest is in the dev group
+PASS  5 uv.lock exists
+PASS  6 .venv is ignored by git
+PASS  7 lock matches pyproject
+PASS  8 at least one test file exists
+PASS  9 tests pass with the one command
+PASS  10 README mentions uv run
+passed: 10, failed: 0
+exit: 0
