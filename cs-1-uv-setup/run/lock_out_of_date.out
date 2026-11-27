@@ -1,0 +1,15 @@
+## edited pyproject by hand (added rich to dev group) but did not update the lock
+Resolved 10 packages in 131ms
+error: The lockfile at `uv.lock` needs to be updated, but `--locked` was provided.
+
+hint: To update the lockfile, run `uv lock`.
+uv exit: 1
+## uv lock (updates the lock)
+Added markdown-it-py v4.3.0
+Added mdurl v0.1.2
+Added rich v15.0.0
+## uv sync --locked now
+ + markdown-it-py==4.3.0
+ + mdurl==0.1.2
+ + rich==15.0.0
+uv exit: 0
