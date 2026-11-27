@@ -1,0 +1,6 @@
+train 87 test 30
+coef ads 2.37 coef visitors 0.93
+MAE train 18.81
+MAE test 20.4
+MAE baseline (always the mean) 94.92
+R squared test 0.945
