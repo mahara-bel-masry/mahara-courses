@@ -1,0 +1,5 @@
+(7, 7)
+{'id': 'int64', 'name': 'str', 'city': 'str', 'age': 'float64', 'salary': 'str', 'joined': 'str', 'gender': 'str'}
+{'id': 0, 'name': 0, 'city': 1, 'age': 1, 'salary': 1, 'joined': 0, 'gender': 0}
+['Cairo', 'cairo', 'Giza', nan]
+1

@@ -1,0 +1,10 @@
+rows with any NaN or text-number: 3 of 10
+dropna rows left: 8
+after dropna, abc row id: [3] age 230 row id: [4]
+train 7 test 3
+train medians 29.0 5800.0
+columns ['id', 'age', 'salary', 'level', 'bought', 'age_missing', 'salary_missing', 'city_Aswan', 'city_Cairo', 'city_Giza', 'salary_z']
+train salary mean 5842.9 std 665.5
+train z mean -0.0 test z mean 0.537
+bought train {0: 4, 1: 3} test {1: 2, 0: 1}
+(7, 11) (3, 11)
