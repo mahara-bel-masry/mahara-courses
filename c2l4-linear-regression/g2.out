@@ -1,0 +1,4 @@
+spread for x below 5.5 1.67
+spread for x above 5.5 4.22
+slope std error normal 0.07
+slope std error robust 0.087
