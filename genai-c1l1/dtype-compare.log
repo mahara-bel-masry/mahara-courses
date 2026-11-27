@@ -1,0 +1,35 @@
+Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 272/272 [00:00<00:00, 30450.29it/s]
+
+top5 (bfloat16) for prompt: 'Generative AI models work by predicting the next'
+   ' step'  0.147461
+   ' possible'  0.101074
+   ' steps'  0.089355
+   ' state'  0.079102
+   ' action'  0.079102
+
+top5 (bfloat16) for prompt: 'The capital of Egypt is'
+   ' the'  0.206055
+   ' called'  0.150391
+   ' Thebes'  0.132812
+   ' known'  0.045898
+   ' Alexandria'  0.033691
+
+Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]
+Loading weights:  31%|███       | 84/272 [00:00<00:00, 833.13it/s]
+Loading weights:  71%|███████▏  | 194/272 [00:00<00:00, 985.88it/s]
+Loading weights: 100%|██████████| 272/272 [00:00<00:00, 921.97it/s]
+
+top5 (float32) for prompt: 'Generative AI models work by predicting the next'
+   ' step'  0.149366
+   ' possible'  0.101999
+   ' steps'  0.090320
+   ' action'  0.081563
+   ' generation'  0.078815
+
+top5 (float32) for prompt: 'The capital of Egypt is'
+   ' the'  0.204651
+   ' Thebes'  0.140321
+   ' called'  0.137189
+   ' known'  0.045913
+   ' Alexandria'  0.036658
