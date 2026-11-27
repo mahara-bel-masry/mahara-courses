@@ -1,0 +1,15 @@
+## uv run inventory-tool
+stock value = 160.00
+exit: 0
+## uv run pytest
+..                                                                       [100%]
+2 passed in 0.01s
+exit: 0
+## uv run python --version
+Python 3.14.10
+## system python3 --version (same machine)
+Python 3.10.12
+## uv run python -c 'import sys; print(sys.executable)'
+/tmp/demo11/inventory_tool/.venv/bin/python
+## which python3
+/usr/bin/python3
