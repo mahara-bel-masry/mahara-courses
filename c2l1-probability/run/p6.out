@@ -1,0 +1,7 @@
+n 5 std of means 4.463 10/sqrt(n) 4.472
+n 30 std of means 1.822 10/sqrt(n) 1.826
+n 120 std of means 0.912 10/sqrt(n) 0.913
+n 480 std of means 0.458 10/sqrt(n) 0.456
+bin counts of sample means [211, 3921, 8865, 5513, 1310, 170, 10]
+skew sign of raw data: right
+mean vs median of the sample means 9.98 9.86
