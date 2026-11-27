@@ -1,0 +1,12 @@
+{'low': 34, 'mid': 39, 'high': 44}
+ads_band    low    mid   high
+branch                       
+Aswan     210.9  248.7  342.1
+Cairo     220.0  248.7  274.8
+Giza      241.5  278.2  318.4
+    branch   ads  visitors  sales
+22   Aswan  49.0     396.0  514.1
+112   Giza  35.0     397.0  481.6
+103  Aswan  40.0     397.0  468.7
+days with sales over 400: 17
+(117, 9) -0.9
