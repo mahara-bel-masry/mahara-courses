@@ -1,0 +1,4 @@
+## uv run --python 3.10 python --version  (project says requires-python >=3.14)
+Using CPython 3.10.12 interpreter at: /usr/bin/python3.10
+error: The requested interpreter resolved to Python 3.10.12, which is incompatible with the project's Python requirement: `>=3.14` (from `project.requires-python`)
+uv exit: 2
