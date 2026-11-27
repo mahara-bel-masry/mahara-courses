@@ -1,0 +1,39 @@
+## uv add rich (a normal dependency, not dev)
+Uninstalled 1 package in 0.15ms
+Installed 4 packages in 2ms
+ ~ inventory-tool==0.1.0 (from file:///tmp/demo11/inventory_tool)
+ + markdown-it-py==4.3.0
+ + mdurl==0.1.2
+ + rich==15.0.0
+## pyproject dependencies line
+dependencies = [
+    "rich>=15.0.0",
+]
+## uv tree
+Resolved 10 packages in 0.51ms
+inventory-tool v0.1.0
+├── rich v15.0.0
+│   ├── markdown-it-py v4.3.0
+│   │   └── mdurl v0.1.2
+│   └── pygments v2.21.0
+└── pytest v9.2.0 (group: dev)
+    ├── iniconfig v2.3.1
+    ├── packaging v26.4
+    ├── pluggy v1.7.0
+    └── pygments v2.21.0
+## uv lock --check
+Resolved 10 packages in 0.52ms
+exit: 0
+## uv remove rich
+ ~ inventory-tool==0.1.0 (from file:///tmp/demo11/inventory_tool)
+ - markdown-it-py==4.3.0
+ - mdurl==0.1.2
+ - rich==15.0.0
+## uv tree after
+Resolved 7 packages in 0.55ms
+inventory-tool v0.1.0
+└── pytest v9.2.0 (group: dev)
+    ├── iniconfig v2.3.1
+    ├── packaging v26.4
+    ├── pluggy v1.7.0
+    └── pygments v2.21.0
