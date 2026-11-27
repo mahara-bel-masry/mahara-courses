@@ -5,3 +5,4 @@ Example: python assets/g1.py   (compare the printed output with run/g1.out)
 Table example: python assets/i1_table_run.py  -> run/i1_table_run.out
 Lab: python lab/make_lab2.py -> lab/lab2.xlsx ; log in run/lab2.out
 Versions used: run/versions.out. All results were produced with Python and LibreOffice, not Microsoft Excel. All data is made up.
+The first sentence of the video (opening line) is in script/00-opening-line.txt.

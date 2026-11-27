@@ -6,5 +6,6 @@ wb.save("lab/products.xlsx")
 wb=openpyxl.Workbook(); o=wb.active; o.title="orders"; o.append(["order","sku","qty"])
 for r in [("O1","P101",2),("O2","P105",5),("O3","P102",1),("O4","P106",3),("O5","P107",10)]: o.append(list(r))
 wb.save("lab/orders.xlsx")
-print("saved lab/products.xlsx rows (without header):",5)
-print("saved lab/orders.xlsx rows (without header):",5)
+for pth in ("lab/products.xlsx","lab/orders.xlsx"):
+    ws=openpyxl.load_workbook(pth).active
+    print("saved",pth,"sheet",ws.title,"data rows (without header):",ws.max_row-1)
