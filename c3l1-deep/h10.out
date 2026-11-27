@@ -1,0 +1,3 @@
+train mean 123.2
+test mean after scaling 0.05
+train mean after scaling -0.0
