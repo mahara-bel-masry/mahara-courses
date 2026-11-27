@@ -1,0 +1,34 @@
+## uv --version
+uv 0.13.8 (x86_64-unknown-linux-gnu)
+## uv init --python 3.14 inventory_tool
+Initialized project `inventory-tool` at `/tmp/demo13/inventory_tool`
+## ls -A inventory_tool
+.git
+.gitignore
+.python-version
+README.md
+pyproject.toml
+src
+## cat .python-version
+3.14
+## pyproject.toml (as generated)
+[project]
+name = "inventory-tool"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Mona Demo", email = "mona@example.com" }
+]
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+inventory-tool = "inventory_tool:main"
+
+[build-system]
+requires = ["uv_build>=0.13.8,<0.14.0"]
+build-backend = "uv_build"
+## __init__.py (as generated)
+def main() -> None:
+    print("Hello from inventory-tool!")
