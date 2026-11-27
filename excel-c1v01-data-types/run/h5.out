@@ -1,0 +1,4 @@
+the id as written    : 1234567890123456789
+the id stored as float: 1234567890123456768
+same digits?          : False
+as text it stays      : 1234567890123456789

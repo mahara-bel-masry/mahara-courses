@@ -1,0 +1,18 @@
+RAW FILE
+  PASS - order_id not duplicated
+  PASS - no empty cells
+  FAIL - qty is whole and positive number
+  PASS - dates are real dates
+  FAIL - price is numeric
+AFTER FIX
+  PASS - order_id not duplicated
+  PASS - no empty cells
+  PASS - qty is whole and positive number
+  PASS - dates are real dates
+  PASS - price is numeric
+DELIBERATELY BROKEN COPY
+  FAIL - order_id not duplicated
+  FAIL - no empty cells
+  FAIL - qty is whole and positive number
+  FAIL - dates are real dates
+  FAIL - price is numeric

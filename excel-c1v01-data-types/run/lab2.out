@@ -1,0 +1,8 @@
+rows: 12
+text qty rows: ['B2003', 'B2007']
+text date rows: ['B2006']
+blank cells: 1 in [('B2005', 'city')]
+duplicate order ids: ['B2002']
+qty total all rows after text fix (duplicate still in): 61
+qty total, duplicate removed: 55
+revenue, duplicate removed: 6380

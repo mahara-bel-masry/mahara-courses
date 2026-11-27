@@ -1,0 +1,6 @@
+saved raw.xlsx rows: 20
+('A1001', datetime.date(2026, 11, 2), 'Alexandria', 6, 250, '01012345678')
+('A1002', datetime.date(2026, 11, 3), 'Cairo', 1, 120, '01012345678')
+('A1003', datetime.date(2026, 11, 4), 'Giza', 6, 120, '01012345678')
+('A1004', datetime.date(2026, 11, 5), 'Alexandria', '1', '120', '01012345678')
+('A1005', datetime.date(2026, 11, 6), 'Giza', 7, 120, '01012345678')

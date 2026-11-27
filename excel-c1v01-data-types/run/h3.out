@@ -1,0 +1,7 @@
+rows flagged TEXT: ['A1004', 'A1009', 'A1015']
+texts_in_qty = 3
+texts_in_price = 3
+dates_that_are_numbers = 20
+phones_that_are_text = 20
+sum_after_VALUE = 92
+revenue_after_VALUE = 18950

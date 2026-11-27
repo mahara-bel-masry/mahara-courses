@@ -1,0 +1,2 @@
+SUM(tblSales[qty]) should be: 92
+rows if a new row is added to the Table: 21

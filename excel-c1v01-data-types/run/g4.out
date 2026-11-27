@@ -1,0 +1,5 @@
+ phone_text  as_number
+01012345678 1012345678
+01198765432 1198765432
+as number the leading zero is gone: 1012345678
+rule: if you never do math on it, keep it text

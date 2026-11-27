@@ -1,0 +1,2 @@
+pandas plain qty dtype: int64 (looks clean, it is not)
+openpyxl sees text qty in: ['A1004', 'A1009', 'A1015']

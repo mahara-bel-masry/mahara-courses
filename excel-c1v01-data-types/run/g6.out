@@ -1,0 +1,5 @@
+PASS - no duplicate order_id
+PASS - no empty cells
+PASS - qty is whole and positive
+PASS - dates are real dates
+PASS - price is numeric

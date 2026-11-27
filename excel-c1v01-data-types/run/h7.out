@@ -1,0 +1,1 @@
+text ' 7': ISTEXT True LEN 2 VALUE 7 VALUE(TRIM) 7

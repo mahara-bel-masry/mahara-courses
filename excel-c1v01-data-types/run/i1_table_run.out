@@ -1,0 +1,3 @@
+rows in tblSales: 4
+SUM(tblSales[qty]) = 24
+SUMIFS Cairo = 8

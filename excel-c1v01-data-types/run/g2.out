@@ -1,0 +1,5 @@
+types of qty cells: {'int': 17, 'str': 3}
+rows with text qty: ['A1004', 'A1009', 'A1015']
+types of qty cells: {'int': 20}
+total qty after fix: 92
+revenue after fix: 18950

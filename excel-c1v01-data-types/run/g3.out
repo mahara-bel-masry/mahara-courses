@@ -1,0 +1,6 @@
+2026-11-01 -> serial 46327
+2026-11-27 -> serial 46353
+2026-12-31 -> serial 46387
+difference: 26 days
+text date 27/11/2026 is not a number until parsed:
+2026-11-27
