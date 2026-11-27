@@ -1,0 +1,8 @@
+mean 8.8 median 7.0
+without 30: mean 6.44 median 7.0
+var by hand 57.73
+var numpy ddof1 57.73
+var numpy ddof0 51.96
+std ddof1 7.6
+range 26
+q1 q2 q3 5.25 7.0 7.75 iqr 2.5

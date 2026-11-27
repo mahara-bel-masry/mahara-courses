@@ -1,0 +1,6 @@
+(120, 4)
+{'branch': 0, 'ads': 0, 'visitors': 0, 'sales': 3}
+{'Aswan': 46, 'Giza': 39, 'Cairo': 33, 'cairo ': 1, 'GIZA': 1}
+      ads  visitors  sales
+min  -5.0      83.0   86.2
+max  49.0    9999.0  514.1

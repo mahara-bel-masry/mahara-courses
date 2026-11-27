@@ -1,0 +1,6 @@
+executescript, tables after: ['branches']
+placeholder query: (0,)
+plain execute: ProgrammingError You can only execute one statement at a time.
+plain execute, tables after: ['branches', 'sales']
+plain execute with OR trick: [('Cairo',), ('Giza',), ('Aswan',)]
+placeholder with the same trick: []

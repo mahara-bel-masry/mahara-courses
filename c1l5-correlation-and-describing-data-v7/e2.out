@@ -1,0 +1,7 @@
+x [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+y [25, 16, 9, 4, 1, 0, 1, 4, 9, 16, 25]
+r for y = x squared 0.0
+r for y = x squared, x positive 0.974
+r clean 1.0
+r with one outlier 0.6418
+r without it 1.0

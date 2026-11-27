@@ -1,0 +1,121 @@
+smoke test 2026-11-27, all demos run on the lab runtime
+Python 3.13.18 NumPy 2.5.5 pandas 3.1.1 scikit-learn 1.9.1 (sqlite3 from the Python standard library)
+--- m0.py
+(120, 4)
+{'branch': 0, 'ads': 0, 'visitors': 0, 'sales': 3}
+{'Aswan': 46, 'Giza': 39, 'Cairo': 33, 'cairo ': 1, 'GIZA': 1}
+      ads  visitors  sales
+min  -5.0      83.0   86.2
+max  49.0    9999.0  514.1
+exit 0
+--- m1.py
+{'Aswan': 46, 'Giza': 40, 'Cairo': 34}
+missing after fixes {'branch': 0, 'ads': 1, 'visitors': 1, 'sales': 3}
+rows after dropping rows with no sales 117
+(117, 7) {'ads': 0, 'visitors': 0, 'sales': 0}
+exit 0
+--- m2.py
+           ads  visitors  sales
+ads       1.00      0.06   0.37
+visitors  0.06      1.00   0.92
+sales     0.37      0.92   1.00
+        count   mean  median
+branch                      
+Aswan      46  279.0   273.4
+Cairo      32  247.1   230.6
+Giza       39  284.2   285.3
+sales outliers by IQR 0
+exit 0
+--- m3.py
+train 87 test 30
+coef ads 2.37 coef visitors 0.93
+MAE train 18.81
+MAE test 20.4
+MAE baseline (always the mean) 94.92
+R squared test 0.945
+exit 0
+--- m4.py
+   branch  actual   pred  miss
+56  Aswan    86.2  137.4 -51.2
+7   Cairo   406.3  356.3  50.0
+93  Cairo   409.0  359.5  49.5
+mean miss -1.84 worst 51.2
+avg abs miss by branch {'Aswan': 24.5, 'Cairo': 21.6, 'Giza': 15.1}
+exit 0
+--- m5.py
+{'low': 34, 'mid': 39, 'high': 44}
+ads_band    low    mid   high
+branch                       
+Aswan     210.9  248.7  342.1
+Cairo     220.0  248.7  274.8
+Giza      241.5  278.2  318.4
+    branch   ads  visitors  sales
+22   Aswan  49.0     396.0  514.1
+112   Giza  35.0     397.0  481.6
+103  Aswan  40.0     397.0  468.7
+days with sales over 400: 17
+(117, 9) -0.9
+exit 0
+--- m6.py
+random_state 0 test MAE 20.4
+random_state 0 test MAE 20.4
+random_state 1 test MAE 21.93
+random_state 2 test MAE 19.66
+random_state 3 test MAE 17.95
+exit 0
+--- m7.py
+new batch rows 60
+MAE on a new batch 20.9
+one-branch batch columns before align ['ads', 'visitors', 'branch_Cairo']
+after align ['ads', 'visitors', 'branch_Aswan', 'branch_Cairo', 'branch_Giza']
+columns kept in same order ['ads', 'visitors', 'branch_Aswan', 'branch_Cairo', 'branch_Giza']
+exit 0
+--- m8.py
+clean: coef visitors 0.93 MAE test 20.4
+one typo, visitors 9000: coef visitors 0.01 MAE test 93.05
+exit 0
+--- n0.py
+(7,)
+[(1, 1, '2026-01-01', 120.5), (2, 1, '2026-01-02', 98.0), (3, 2, '2026-01-01', 150.0)]
+[('Aswan',), ('Cairo',), ('Giza',)]
+exit 0
+--- n1.py
+   branch_id  n  total   mean
+0          2  3  480.5  160.2
+1          1  2  218.5  109.3
+2          3  2  175.5   87.8
+   id  branch_id         day  amount
+0   4          2  2026-01-02   170.5
+1   7          2  2026-01-03   160.0
+exit 0
+--- n2.py
+    name  n  total
+0   Giza  3  480.5
+1  Cairo  2  218.5
+2  Aswan  2  175.5
+       count    sum
+name               
+Giza       3  480.5
+Cairo      2  218.5
+Aswan      2  175.5
+same totals: True
+left join keeps branches with no sales:
+    name  n
+0  Aswan  2
+1  Cairo  2
+2   Giza  3
+3  Luxor  0
+plain join, Luxor is gone:
+    name  n
+0  Aswan  2
+1  Cairo  2
+2   Giza  3
+exit 0
+--- n3.py
+executescript, tables after: ['branches']
+placeholder query: (0,)
+plain execute: ProgrammingError You can only execute one statement at a time.
+plain execute, tables after: ['branches', 'sales']
+plain execute with OR trick: [('Cairo',), ('Giza',), ('Aswan',)]
+placeholder with the same trick: []
+exit 0

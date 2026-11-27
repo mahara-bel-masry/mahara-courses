@@ -1,0 +1,4 @@
+{'Aswan': 46, 'Giza': 40, 'Cairo': 34}
+missing after fixes {'branch': 0, 'ads': 1, 'visitors': 1, 'sales': 3}
+rows after dropping rows with no sales 117
+(117, 7) {'ads': 0, 'visitors': 0, 'sales': 0}

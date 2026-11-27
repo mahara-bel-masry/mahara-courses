@@ -1,0 +1,10 @@
+           ads  visitors  sales
+ads       1.00      0.06   0.37
+visitors  0.06      1.00   0.92
+sales     0.37      0.92   1.00
+        count   mean  median
+branch                      
+Aswan      46  279.0   273.4
+Cairo      32  247.1   230.6
+Giza       39  284.2   285.3
+sales outliers by IQR 0

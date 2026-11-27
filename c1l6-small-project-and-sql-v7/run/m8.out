@@ -1,0 +1,2 @@
+clean: coef visitors 0.93 MAE test 20.4
+one typo, visitors 9000: coef visitors 0.01 MAE test 93.05
