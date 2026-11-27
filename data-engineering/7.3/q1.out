@@ -1,0 +1,2 @@
+SEARCH sales USING INDEX idx_day (day=?)
+(15,)

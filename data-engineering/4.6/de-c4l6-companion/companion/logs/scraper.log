@@ -1,0 +1,29 @@
+2026-11-25 21:09:38,749 INFO run started
+2026-11-25 21:09:39,476 INFO fetch status=200 bytes=11064
+2026-11-25 21:09:39,496 INFO run_id=1 stored quotes=10 new=10 db=/downloads/de-c4l6/companion/data/quotes.db
+2026-11-25 21:09:39,496 INFO run finished ok
+2026-11-25 21:09:44,720 INFO run started
+2026-11-25 21:09:45,439 INFO fetch status=200 bytes=11064
+2026-11-25 21:09:45,458 INFO run_id=2 stored quotes=10 new=0 db=/downloads/de-c4l6/companion/data/quotes.db
+2026-11-25 21:09:45,458 INFO run finished ok
+2026-11-25 21:10:00,123 INFO run started
+2026-11-25 21:10:00,850 INFO fetch status=200 bytes=11064
+2026-11-25 21:10:00,869 INFO run_id=3 stored quotes=10 new=0 db=/downloads/de-c4l6/companion/data/quotes.db
+2026-11-25 21:10:00,869 INFO run finished ok
+2026-11-25 21:11:00,123 INFO run started
+2026-11-25 21:11:00,851 INFO fetch status=200 bytes=11064
+2026-11-25 21:11:00,870 INFO run_id=4 stored quotes=10 new=0 db=/downloads/de-c4l6/companion/data/quotes.db
+2026-11-25 21:11:00,870 INFO run finished ok
+2026-11-25 21:12:00,121 INFO run started
+2026-11-25 21:12:00,744 INFO fetch status=200 bytes=11064
+2026-11-25 21:12:00,763 INFO run_id=5 stored quotes=10 new=0 db=/downloads/de-c4l6/companion/data/quotes.db
+2026-11-25 21:12:00,763 INFO run finished ok
+2026-11-25 21:12:34,420 INFO run started
+2026-11-25 21:12:35,101 INFO fetch status=200 bytes=11064
+2026-11-25 21:12:35,119 ERROR run failed
+Traceback (most recent call last):
+  File "/downloads/de-c4l6/companion/scraper_db_broken.py", line 94, in <module>
+    sys.exit(main())
+  File "/downloads/de-c4l6/companion/scraper_db_broken.py", line 68, in main
+    conn = sqlite3.connect(DB_PATH)
+sqlite3.OperationalError: unable to open database file

@@ -1,0 +1,4 @@
+run extract
+run transform
+run load
+[('cairo', 300), ('giza', 160)]

@@ -1,0 +1,4 @@
+[(1, 1, 2.5)]
+error: FOREIGN KEY constraint failed
+error: NOT NULL constraint failed: clients.name
+[('real',)]

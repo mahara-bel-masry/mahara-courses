@@ -1,0 +1,154 @@
+# جلسة تنفيذ التمارين - DE5.6 (بيئة التسجيل: نفس ملفات الدرس مع ملف إعداد خاص بالبيئة)
+# --- تمرين 1: الإعادة من غير تغيير + اللوجات
+$ docker compose ... up -d   # تجهيز: تشغيل المنظومة بعد ما كانت مقفولة من جلسة الدرس
+ Network demo_default  Creating
+ Network demo_default  Created
+ Volume "demo_dbdata"  Creating
+ Volume "demo_dbdata"  Created
+ Container demo-db-1  Creating
+ db IPv4 forwarding is disabled. Networking will not work. 
+ Container demo-db-1  Created
+ Container demo-app-1  Creating
+ app IPv4 forwarding is disabled. Networking will not work. 
+ Container demo-app-1  Created
+ Container demo-db-1  Starting
+ Container demo-db-1  Started
+ Container demo-db-1  Waiting
+ Container demo-db-1  Healthy
+ Container demo-app-1  Starting
+ Container demo-app-1  Started
+$ docker compose ... logs app
+$ docker compose ... up -d   # تاني مرة من غير أي تغيير
+ Container demo-db-1  Running
+ Container demo-app-1  Created
+ Container demo-db-1  Waiting
+ Container demo-db-1  Healthy
+ Container demo-app-1  Starting
+ Container demo-app-1  Started
+$ docker compose ... logs app
+app-1  | الاتصال بالـ db: PONG
+app-1  | أوردرات مؤكدة بعد إزالة التكرار: 3
+app-1  | أعلى عميل: ali (650)
+app-1  | رقم التشغيلة دي: 1
+app-1  | المخزن في الـ db: ali=650
+app-1  | الاتصال بالـ db: PONG
+app-1  | أوردرات مؤكدة بعد إزالة التكرار: 3
+app-1  | أعلى عميل: ali (650)
+app-1  | رقم التشغيلة دي: 2
+app-1  | المخزن في الـ db: ali=650
+
+# --- تمرين 2: تعديل الكود وإعادة البناء
+$ # عدلنا نص مطبوع في app.py
+$ docker compose ... up -d --build
+#0 building with "default" instance using docker driver
+
+#1 [app internal] load build definition from Dockerfile
+#1 transferring dockerfile: 123B done
+#1 DONE 0.0s
+
+#2 [app internal] load metadata for docker.io/library/python:3.12-slim
+#2 DONE 0.0s
+
+#3 [app internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [app 1/3] FROM docker.io/library/python:3.12-slim
+#4 DONE 0.0s
+
+#5 [app internal] load build context
+#5 transferring context: 2.02kB done
+#5 DONE 0.0s
+
+#6 [app 2/3] WORKDIR /app
+#6 CACHED
+
+#7 [app 3/3] COPY app.py sales.csv ./
+#7 CACHED
+
+#8 [app] exporting to image
+#8 exporting layers done
+#8 writing image sha256:50ebaea3840ca1b63be9c97326b3df32881e2a1b61bacec1ad63964ea6f71e9d done
+#8 naming to docker.io/library/demo-app done
+#8 DONE 0.0s
+
+#9 [app] resolving provenance for metadata file
+#9 DONE 0.0s
+ app  Built
+ Container demo-db-1  Running
+ Container demo-app-1  Created
+ Container demo-db-1  Waiting
+ Container demo-db-1  Healthy
+ Container demo-app-1  Starting
+ Container demo-app-1  Started
+$ docker compose ... logs app
+app-1  | الاتصال بالـ db: PONG
+app-1  | أوردرات مؤكدة بعد إزالة التكرار: 3
+app-1  | أعلى عميل: ali (650)
+app-1  | رقم التشغيلة دي: 1
+app-1  | المخزن في الـ db: ali=650
+app-1  | الاتصال بالـ db: PONG
+app-1  | أوردرات مؤكدة بعد إزالة التكرار: 3
+app-1  | أعلى عميل: ali (650)
+app-1  | رقم التشغيلة دي: 2
+app-1  | المخزن في الـ db: ali=650
+app-1  | الاتصال بالـ db: PONG
+app-1  | أوردرات مؤكدة بعد إزالة التكرار: 3
+app-1  | أعلى عميل: ali (650)
+app-1  | رقم التشغيلة دي: 3
+app-1  | المخزن في الـ db: ali=650
+$ # رجعنا app.py الأصلي
+
+# --- تمرين 3: الفوليوم والذاكرة
+$ docker compose ... exec db redis-cli INCR visits   (تلات مرات)
+1
+2
+3
+$ docker compose ... down
+ Container demo-app-1  Stopping
+ Container demo-app-1  Stopped
+ Container demo-app-1  Removing
+ Container demo-app-1  Removed
+ Container demo-db-1  Stopping
+ Container demo-db-1  Stopped
+ Container demo-db-1  Removing
+ Container demo-db-1  Removed
+ Network demo_default  Removing
+ Network demo_default  Removed
+$ docker compose ... up -d
+ Network demo_default  Creating
+ Network demo_default  Created
+ Container demo-db-1  Creating
+ db IPv4 forwarding is disabled. Networking will not work. 
+ Container demo-db-1  Created
+ Container demo-app-1  Creating
+ app IPv4 forwarding is disabled. Networking will not work. 
+ Container demo-app-1  Created
+ Container demo-db-1  Starting
+ Container demo-db-1  Started
+ Container demo-db-1  Waiting
+ Container demo-db-1  Healthy
+ Container demo-app-1  Starting
+ Container demo-app-1  Started
+$ docker compose ... exec db redis-cli GET visits
+3
+$ docker compose ... down -v
+ Container demo-app-1  Stopping
+ Container demo-app-1  Stopped
+ Container demo-app-1  Removing
+ Container demo-app-1  Removed
+ Container demo-db-1  Stopping
+ Container demo-db-1  Stopped
+ Container demo-db-1  Removing
+ Container demo-db-1  Removed
+ Volume demo_dbdata  Removing
+ Network demo_default  Removing
+ Volume demo_dbdata  Removed
+ Network demo_default  Removed
+$ docker volume ls
+DRIVER    VOLUME NAME
+local     4f6bf77b4e87669eabf4a3306edbbdec3a39b18ac8ba309d70e444b6e2aac378
+local     7b97e87dae3aa862999984aedc4dc2cc4934795e9cacb366630802ca8130652d
+local     9add3be4a74ad2ca73ce3aacd018cbf26d4e5d7b6711e3676bf231e74aabb3a8
+local     742a548fc59181b3bfaca93ce7a6d607e8449f5fd2bad6ee1bce59bae444bca1
+local     dd3c3e0e20158dddbdb4881192825ce433b0d9e8fdc6229f78d0e8a8ecae9bd6

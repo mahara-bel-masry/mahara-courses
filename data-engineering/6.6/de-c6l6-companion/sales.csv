@@ -1,0 +1,8 @@
+order_id,customer,amount,status
+7001,sara,450,confirmed
+7002,omar,300,confirmed
+7001,sara,450,confirmed
+7003,mona,220,pending
+7004,ali,650,confirmed
+7005,sara,180,pending
+7004,ali,650,confirmed

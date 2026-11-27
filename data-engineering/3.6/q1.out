@@ -1,0 +1,4 @@
+SCAN logs
+(40,)
+SEARCH logs USING COVERING INDEX idx_user (user_id=?)
+(40,)

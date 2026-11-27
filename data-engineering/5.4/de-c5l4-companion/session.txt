@@ -1,0 +1,332 @@
+# DE5.4 executed session evidence - 2026-11-25 21:40:36 UTC
+
+$ git --version
+git version 2.34.1
+
+$ cd /downloads/de-c5l4/demo/logtool && pwd
+/downloads/de-c5l4/demo/logtool
+
+$ git log --oneline --graph --all
+*   f1c9a08 merge: unify report header
+|\  
+| * 13a6cf8 feat: daily report header
+* | 660073b fix: production header wording
+|/  
+* b50e6c4 feat: closing line for the report
+* 52feb43 docs: what the report prints
+* ac4bd26 init: log report script
+
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+## remote: training server + origin
+$ git init --bare /tmp/de-c5l4/remote/logtool.git
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /tmp/de-c5l4/remote/logtool.git/
+
+$ git remote add origin /tmp/de-c5l4/remote/logtool.git
+
+$ git remote -v
+origin	/tmp/de-c5l4/remote/logtool.git (fetch)
+origin	/tmp/de-c5l4/remote/logtool.git (push)
+
+## first push
+$ git push -u origin main
+To /tmp/de-c5l4/remote/logtool.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+$ git -C /tmp/de-c5l4/remote/logtool.git symbolic-ref HEAD refs/heads/main
+
+$ git branch -vv
+  feature/error-count b50e6c4 feat: closing line for the report
+  feature/header      13a6cf8 feat: daily report header
+* main                f1c9a08 [origin/main] merge: unify report header
+
+$ git remote show origin
+* remote origin
+  Fetch URL: /tmp/de-c5l4/remote/logtool.git
+  Push  URL: /tmp/de-c5l4/remote/logtool.git
+  HEAD branch: main
+  Remote branch:
+    main tracked
+  Local branch configured for 'git pull':
+    main merges with remote main
+  Local ref configured for 'git push':
+    main pushes to main (up to date)
+
+## clone: second copy
+$ git clone /tmp/de-c5l4/remote/logtool.git /tmp/de-c5l4/dev2/logtool
+Cloning into '/tmp/de-c5l4/dev2/logtool'...
+done.
+
+$ cd /tmp/de-c5l4/dev2/logtool && pwd
+/tmp/de-c5l4/dev2/logtool
+
+$ git log --oneline --graph --all
+*   f1c9a08 merge: unify report header
+|\  
+| * 13a6cf8 feat: daily report header
+* | 660073b fix: production header wording
+|/  
+* b50e6c4 feat: closing line for the report
+* 52feb43 docs: what the report prints
+* ac4bd26 init: log report script
+
+$ git config user.name "Data Student"
+
+$ git config user.email "student@example.com"
+
+$ ls scripts logs
+ls: cannot access 'logs': No such file or directory
+scripts:
+log_report.sh
+
+## daily loop: push from dev2, fetch+pull in original
+$ printf '%s\n' '' 'echo "-- التقرير جاهز للمشاركة --"' >> scripts/log_report.sh
+
+$ tail -3 scripts/log_report.sh
+echo "-- نهاية التقرير --"
+
+echo "-- التقرير جاهز للمشاركة --"
+
+$ bash scripts/log_report.sh | tail -2
+خطأ: الملف logs/server.log مش موجود
+
+$ git add scripts/log_report.sh
+
+$ git commit -m "feat: share-ready closing line"
+[main 706f6ef] feat: share-ready closing line
+ 1 file changed, 2 insertions(+)
+
+$ git push
+To /tmp/de-c5l4/remote/logtool.git
+   f1c9a08..706f6ef  main -> main
+
+$ cd /downloads/de-c5l4/demo/logtool && pwd
+/downloads/de-c5l4/demo/logtool
+
+$ git fetch
+From /tmp/de-c5l4/remote/logtool
+   f1c9a08..706f6ef  main       -> origin/main
+
+$ git status
+On branch main
+Your branch is behind 'origin/main' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean
+
+$ git log --oneline main..origin/main
+706f6ef feat: share-ready closing line
+
+$ git pull
+Updating f1c9a08..706f6ef
+Fast-forward
+ scripts/log_report.sh | 2 ++
+ 1 file changed, 2 insertions(+)
+
+$ git log --oneline -3
+706f6ef feat: share-ready closing line
+f1c9a08 merge: unify report header
+660073b fix: production header wording
+
+## pull request flow, simulated locally
+$ cd /tmp/de-c5l4/dev2/logtool && pwd
+/tmp/de-c5l4/dev2/logtool
+
+$ git switch -c feature/update-stamp
+Switched to a new branch 'feature/update-stamp'
+
+$ printf '%s\n' 'echo "آخر تحديث: $(date +%F)"' >> scripts/log_report.sh
+
+$ tail -2 scripts/log_report.sh
+echo "-- التقرير جاهز للمشاركة --"
+echo "آخر تحديث: $(date +%F)"
+
+$ bash scripts/log_report.sh | tail -2
+خطأ: الملف logs/server.log مش موجود
+
+$ git add scripts/log_report.sh
+
+$ git commit -m "feat: update stamp line"
+[feature/update-stamp fd62e27] feat: update stamp line
+ 1 file changed, 1 insertion(+)
+
+$ git push -u origin feature/update-stamp
+To /tmp/de-c5l4/remote/logtool.git
+ * [new branch]      feature/update-stamp -> feature/update-stamp
+Branch 'feature/update-stamp' set up to track remote branch 'feature/update-stamp' from 'origin'.
+
+$ cd /downloads/de-c5l4/demo/logtool && pwd
+/downloads/de-c5l4/demo/logtool
+
+$ git fetch
+From /tmp/de-c5l4/remote/logtool
+ * [new branch]      feature/update-stamp -> origin/feature/update-stamp
+
+$ git diff main..origin/feature/update-stamp
+diff --git a/scripts/log_report.sh b/scripts/log_report.sh
+index 905d4bc..6500179 100755
+--- a/scripts/log_report.sh
++++ b/scripts/log_report.sh
+@@ -38,3 +38,4 @@ echo "$count"
+ echo "-- نهاية التقرير --"
+ 
+ echo "-- التقرير جاهز للمشاركة --"
++echo "آخر تحديث: $(date +%F)"
+
+$ git switch main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+
+$ git merge --no-ff origin/feature/update-stamp -m "merge: update stamp line (reviewed)"
+Merge made by the 'ort' strategy.
+ scripts/log_report.sh | 1 +
+ 1 file changed, 1 insertion(+)
+
+$ git push
+To /tmp/de-c5l4/remote/logtool.git
+   706f6ef..fd090e9  main -> main
+
+$ cd /tmp/de-c5l4/dev2/logtool && pwd
+/tmp/de-c5l4/dev2/logtool
+
+$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+$ git pull
+From /tmp/de-c5l4/remote/logtool
+   706f6ef..fd090e9  main       -> origin/main
+Updating 706f6ef..fd090e9
+Fast-forward
+ scripts/log_report.sh | 1 +
+ 1 file changed, 1 insertion(+)
+
+$ git branch -d feature/update-stamp
+Deleted branch feature/update-stamp (was fd62e27).
+
+$ git log --oneline --graph -4
+*   fd090e9 merge: update stamp line (reviewed)
+|\  
+| * fd62e27 feat: update stamp line
+|/  
+* 706f6ef feat: share-ready closing line
+*   f1c9a08 merge: unify report header
+|\  
+
+## README that explains and sells
+$ cd /downloads/de-c5l4/demo/logtool && pwd
+/downloads/de-c5l4/demo/logtool
+
+$ printf '%s\n' '# logtool' '' 'سكربت bash بيقرا لوج سيرفر ويطلع تقرير مرتب: توزيع أكواد الرد، أعلى العناوين طلبًا، وعدد الأخطاء.' '' '## ليه المشروع ده؟' '' 'مراجعة اللوج سطر سطر بالعين بطيئة ومليئة غلطات. السكربت ده بيلخص آلاف السطور في تقرير واحد تقراه في ثواني.' '' '## المتطلبات' '' '- bash وأدوات يونكس القياسية زي awk وsort وuniq' '' '## التشغيل' '' '~~~bash' './scripts/log_report.sh' '~~~' '' '## مثال حقيقي من الناتج' '' '~~~' > README.md
+
+$ bash scripts/log_report.sh | head -8 >> README.md
+
+$ printf '%s\n' '~~~' '' '## هيكل المشروع' '' '- scripts/log_report.sh: السكربت الأساسي' '- logs/server.log: لوج تدريبي للتجربة' '' '## خطة التطوير' '' '- تمرير ملف لوج مختلف كمعامل' '- تصدير التقرير نص أو CSV' >> README.md
+
+$ cat README.md
+# logtool
+
+سكربت bash بيقرا لوج سيرفر ويطلع تقرير مرتب: توزيع أكواد الرد، أعلى العناوين طلبًا، وعدد الأخطاء.
+
+## ليه المشروع ده؟
+
+مراجعة اللوج سطر سطر بالعين بطيئة ومليئة غلطات. السكربت ده بيلخص آلاف السطور في تقرير واحد تقراه في ثواني.
+
+## المتطلبات
+
+- bash وأدوات يونكس القياسية زي awk وsort وuniq
+
+## التشغيل
+
+~~~bash
+./scripts/log_report.sh
+~~~
+
+## مثال حقيقي من الناتج
+
+~~~
+=== تقرير اللوج: logs/server.log ===
+عدد الأسطر: 500
+
+-- توزيع ردود السيرفر --
+    347 200
+     61 404
+     36 304
+     24 500
+~~~
+
+## هيكل المشروع
+
+- scripts/log_report.sh: السكربت الأساسي
+- logs/server.log: لوج تدريبي للتجربة
+
+## خطة التطوير
+
+- تمرير ملف لوج مختلف كمعامل
+- تصدير التقرير نص أو CSV
+
+$ git add README.md
+
+$ git commit -m "docs: full README with usage and example"
+[main 9b00276] docs: full README with usage and example
+ 1 file changed, 40 insertions(+), 5 deletions(-)
+ rewrite README.md (95%)
+
+$ git push
+To /tmp/de-c5l4/remote/logtool.git
+   fd090e9..9b00276  main -> main
+
+## tags and versions
+$ git tag -a v1.0 -m "first complete report script"
+
+$ git tag -l
+v1.0
+
+$ git push origin v1.0
+To /tmp/de-c5l4/remote/logtool.git
+ * [new tag]         v1.0 -> v1.0
+
+$ git show v1.0 --stat | head -12
+tag v1.0
+Tagger: Data Student <student@example.com>
+Date:   Wed Nov 25 23:40:36 2026 +0200
+
+first complete report script
+
+commit 9b00276a46d1ca0f3494f2c721efdf673a5d2043
+Author: Data Student <student@example.com>
+Date:   Wed Nov 25 23:40:36 2026 +0200
+
+    docs: full README with usage and example
+
+
+## final tree
+$ git log --oneline --graph --all --decorate | head -14
+* 9b00276 (HEAD -> main, tag: v1.0, origin/main) docs: full README with usage and example
+*   fd090e9 merge: update stamp line (reviewed)
+|\  
+| * fd62e27 (origin/feature/update-stamp) feat: update stamp line
+|/  
+* 706f6ef feat: share-ready closing line
+*   f1c9a08 merge: unify report header
+|\  
+| * 13a6cf8 (feature/header) feat: daily report header
+* | 660073b fix: production header wording
+|/  
+* b50e6c4 (feature/error-count) feat: closing line for the report
+* 52feb43 docs: what the report prints
+* ac4bd26 init: log report script
+

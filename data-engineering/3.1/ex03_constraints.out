@@ -1,0 +1,3 @@
+IntegrityError: FOREIGN KEY constraint failed
+IntegrityError: NOT NULL constraint failed: customers.name
+IntegrityError: UNIQUE constraint failed: customers.customer_id

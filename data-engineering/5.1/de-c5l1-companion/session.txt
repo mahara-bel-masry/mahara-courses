@@ -1,0 +1,195 @@
+$ pwd
+/downloads/de-c5l1
+
+$ ls /downloads/de-c5l1/demo
+backup
+data
+logs
+notes.txt
+scripts
+
+$ ls -la /downloads/de-c5l1/demo
+total 28
+drwxr-xr-x 6 sandbox sandbox 4096 Nov 25 22:19 .
+drwxr-xr-x 4 sandbox sandbox 4096 Nov 25 22:19 ..
+drwxr-xr-x 3 sandbox sandbox 4096 Nov 25 22:19 backup
+drwxr-xr-x 2 sandbox sandbox 4096 Nov 25 22:19 data
+drwxr-xr-x 2 sandbox sandbox 4096 Nov 25 22:19 logs
+-rw-r--r-- 1 sandbox sandbox  169 Nov 25 22:19 notes.txt
+drwxr-xr-x 2 sandbox sandbox 4096 Nov 25 22:19 scripts
+
+$ cd /downloads/de-c5l1/demo && pwd
+/downloads/de-c5l1/demo
+
+$ ls /downloads/de-c5l1/demo/data
+books_export.csv
+sales.csv
+
+$ head -3 /downloads/de-c5l1/demo/logs/server.log
+10.0.0.12 - - [25/Nov/2026:10:00:00 +0200] "GET /index.html HTTP/1.1" 200 4706
+192.168.1.16 - - [25/Nov/2026:10:01:07 +0200] "GET /api/books HTTP/1.1" 200 1879
+10.0.0.15 - - [25/Nov/2026:10:02:14 +0200] "GET /api/users HTTP/1.1" 200 1624
+
+$ wc -l /downloads/de-c5l1/demo/logs/server.log /downloads/de-c5l1/demo/data/sales.csv /downloads/de-c5l1/demo/data/books_export.csv
+  500 /downloads/de-c5l1/demo/logs/server.log
+  121 /downloads/de-c5l1/demo/data/sales.csv
+   61 /downloads/de-c5l1/demo/data/books_export.csv
+  682 total
+
+$ mkdir -p /downloads/de-c5l1/demo/backup/daily
+
+$ cp /downloads/de-c5l1/demo/notes.txt /downloads/de-c5l1/demo/backup/
+
+$ cp -r /downloads/de-c5l1/demo/data /downloads/de-c5l1/demo/backup/data-copy
+
+$ ls -R /downloads/de-c5l1/demo/backup
+/downloads/de-c5l1/demo/backup:
+daily
+data-copy
+notes-day1.txt
+notes.txt
+
+/downloads/de-c5l1/demo/backup/daily:
+
+/downloads/de-c5l1/demo/backup/data-copy:
+books_export.csv
+sales.csv
+
+$ mv /downloads/de-c5l1/demo/backup/notes.txt /downloads/de-c5l1/demo/backup/notes-day1.txt
+
+$ rm -r /downloads/de-c5l1/demo/backup/data-copy
+
+$ ls /downloads/de-c5l1/demo/backup
+daily
+notes-day1.txt
+
+$ tail -2 /downloads/de-c5l1/demo/logs/server.log
+192.168.1.13 - - [25/Nov/2026:18:18:06 +0200] "GET /admin HTTP/1.1" 200 4296
+192.168.1.4 - - [25/Nov/2026:18:19:13 +0200] "GET /favicon.ico HTTP/1.1" 200 6281
+
+$ cat /downloads/de-c5l1/demo/notes.txt
+مهام النهارده:
+- راجع لوج السيرفر
+- عدد ردود 500 كام؟
+- صدّر تقرير المبيعات
+- نضف الملفات المؤقتة
+
+$ grep " 500 " /downloads/de-c5l1/demo/logs/server.log
+10.0.0.17 - - [25/Nov/2026:10:06:42 +0200] "GET /favicon.ico HTTP/1.1" 500 379
+192.168.1.1 - - [25/Nov/2026:10:08:56 +0200] "GET /prices HTTP/1.1" 500 316
+192.168.1.14 - - [25/Nov/2026:10:27:09 +0200] "GET /admin HTTP/1.1" 500 261
+192.168.1.1 - - [25/Nov/2026:10:42:54 +0200] "GET /api/users HTTP/1.1" 500 234
+10.0.0.16 - - [25/Nov/2026:10:55:25 +0200] "GET /api/books HTTP/1.1" 500 259
+10.0.0.7 - - [25/Nov/2026:11:20:20 +0200] "GET /favicon.ico HTTP/1.1" 500 349
+192.168.1.8 - - [25/Nov/2026:11:50:50 +0200] "GET /index.html HTTP/1.1" 500 562
+192.168.1.13 - - [25/Nov/2026:12:34:58 +0200] "GET /api/users HTTP/1.1" 500 296
+192.168.1.15 - - [25/Nov/2026:12:50:50 +0200] "GET /static/app.js HTTP/1.1" 500 178
+192.168.1.25 - - [25/Nov/2026:12:54:18 +0200] "GET /admin HTTP/1.1" 500 110
+192.168.1.6 - - [25/Nov/2026:13:38:26 +0200] "GET /api/books HTTP/1.1" 500 308
+10.0.0.16 - - [25/Nov/2026:14:22:34 +0200] "GET /api/books/12 HTTP/1.1" 500 306
+192.168.1.19 - - [25/Nov/2026:14:42:54 +0200] "GET /static/style.css HTTP/1.1" 500 348
+192.168.1.1 - - [25/Nov/2026:14:54:18 +0200] "GET /api/books/12 HTTP/1.1" 500 252
+10.0.0.19 - - [25/Nov/2026:15:01:07 +0200] "GET /static/style.css HTTP/1.1" 500 567
+10.0.0.1 - - [25/Nov/2026:15:06:42 +0200] "GET / HTTP/1.1" 500 173
+192.168.1.7 - - [25/Nov/2026:15:14:38 +0200] "GET /favicon.ico HTTP/1.1" 500 546
+10.0.0.12 - - [25/Nov/2026:15:27:09 +0200] "GET /static/app.js HTTP/1.1" 500 228
+10.0.0.14 - - [25/Nov/2026:16:43:01 +0200] "GET /static/app.js HTTP/1.1" 500 126
+192.168.1.12 - - [25/Nov/2026:16:53:11 +0200] "GET /api/books/12 HTTP/1.1" 500 490
+192.168.1.3 - - [25/Nov/2026:17:47:29 +0200] "GET /api/books HTTP/1.1" 500 324
+192.168.1.19 - - [25/Nov/2026:17:53:11 +0200] "GET /api/books/12 HTTP/1.1" 500 536
+192.168.1.9 - - [25/Nov/2026:17:59:53 +0200] "GET /favicon.ico HTTP/1.1" 500 524
+192.168.1.24 - - [25/Nov/2026:18:11:17 +0200] "GET /favicon.ico HTTP/1.1" 500 221
+
+$ grep -c " 500 " /downloads/de-c5l1/demo/logs/server.log
+24
+
+$ grep -i admin /downloads/de-c5l1/demo/logs/server.log | wc -l
+44
+
+$ grep -i admin /downloads/de-c5l1/demo/logs/server.log | head -3
+192.168.1.24 - - [25/Nov/2026:10:15:45 +0200] "GET /admin HTTP/1.1" 200 1339
+192.168.1.14 - - [25/Nov/2026:10:27:09 +0200] "GET /admin HTTP/1.1" 500 261
+192.168.1.28 - - [25/Nov/2026:10:32:44 +0200] "GET /admin HTTP/1.1" 200 6130
+
+$ grep -n "GET /api" /downloads/de-c5l1/demo/logs/server.log | head -3
+2:192.168.1.16 - - [25/Nov/2026:10:01:07 +0200] "GET /api/books HTTP/1.1" 200 1879
+3:10.0.0.15 - - [25/Nov/2026:10:02:14 +0200] "GET /api/users HTTP/1.1" 200 1624
+5:192.168.1.6 - - [25/Nov/2026:10:04:28 +0200] "GET /api/books HTTP/1.1" 200 8479
+
+$ grep -v " 200 " /downloads/de-c5l1/demo/logs/server.log | head -4
+10.0.0.10 - - [25/Nov/2026:10:05:35 +0200] "GET / HTTP/1.1" 304 201
+10.0.0.17 - - [25/Nov/2026:10:06:42 +0200] "GET /favicon.ico HTTP/1.1" 500 379
+192.168.1.1 - - [25/Nov/2026:10:08:56 +0200] "GET /prices HTTP/1.1" 500 316
+10.0.0.7 - - [25/Nov/2026:10:14:38 +0200] "GET /api/books/12 HTTP/1.1" 404 416
+
+$ grep -r "سيرفر" /downloads/de-c5l1/demo
+/downloads/de-c5l1/demo/notes.txt:- راجع لوج السيرفر
+/downloads/de-c5l1/demo/backup/notes-day1.txt:- راجع لوج السيرفر
+
+$ grep -E " 5[0-9][0-9] " /downloads/de-c5l1/demo/logs/server.log | wc -l
+24
+
+$ grep -E " 5[0-9][0-9] " /downloads/de-c5l1/demo/logs/server.log | head -2
+10.0.0.17 - - [25/Nov/2026:10:06:42 +0200] "GET /favicon.ico HTTP/1.1" 500 379
+192.168.1.1 - - [25/Nov/2026:10:08:56 +0200] "GET /prices HTTP/1.1" 500 316
+
+$ grep "^203" /downloads/de-c5l1/demo/logs/server.log | wc -l
+26
+
+$ grep " 500 " /downloads/de-c5l1/demo/logs/server.log | wc -l
+24
+
+$ cut -d' ' -f1 /downloads/de-c5l1/demo/logs/server.log | sort | uniq -c | sort -nr | head -5
+     18 192.168.1.6
+     16 10.0.0.1
+     15 192.168.1.25
+     14 10.0.0.7
+     13 203.0.113.9
+
+$ cut -d'"' -f3 /downloads/de-c5l1/demo/logs/server.log | cut -d' ' -f2 | sort | uniq -c | sort -nr
+    347 200
+     61 404
+     36 304
+     24 500
+     16 403
+     16 301
+
+$ grep " 500 " /downloads/de-c5l1/demo/logs/server.log | cut -d'"' -f2 | cut -d' ' -f2 | sort | uniq -c | sort -nr | head -5
+      5 /favicon.ico
+      4 /api/books/12
+      3 /static/app.js
+      3 /api/books
+      2 /static/style.css
+
+$ cut -d, -f2 /downloads/de-c5l1/demo/data/sales.csv | sort | uniq -c | sort -nr
+     33 fayoum
+     31 cairo
+     29 giza
+     27 alex
+      1 region
+
+$ grep -c " 500 " /downloads/de-c5l1/demo/logs/server.log > /downloads/de-c5l1/demo/backup/errors-count.txt
+
+$ cat /downloads/de-c5l1/demo/backup/errors-count.txt
+24
+
+$ grep " 500 " /downloads/de-c5l1/demo/logs/server.log | tee /downloads/de-c5l1/demo/backup/errors-500.txt | wc -l
+24
+
+$ ls /nonexistent-path 2> /downloads/de-c5l1/demo/backup/err.txt; echo "exit=$?"; cat /downloads/de-c5l1/demo/backup/err.txt
+exit=2
+ls: cannot access '/nonexistent-path': No such file or directory
+
+$ echo "reviewed" >> /downloads/de-c5l1/demo/backup/errors-count.txt
+
+$ cat /downloads/de-c5l1/demo/backup/errors-count.txt
+24
+reviewed
+
+$ ls /downloads/de-c5l1/demo/backup
+daily
+err.txt
+errors-500.txt
+errors-count.txt
+notes-day1.txt
+

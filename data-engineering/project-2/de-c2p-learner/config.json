@@ -1,0 +1,12 @@
+{
+  "input_dir": "data/raw",
+  "input_glob": "orders_*.csv",
+  "customers_file": "customers.csv",
+  "out_dir": "out",
+  "log_file": "out/etl.log",
+  "rules": {
+    "min_qty": 1,
+    "max_qty": 1000,
+    "min_price": 0.01
+  }
+}

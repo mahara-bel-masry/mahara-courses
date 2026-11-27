@@ -1,0 +1,3 @@
+['abcd', 'efgh', 'ij']
+{'abcd': 'n1', 'efgh': 'n2', 'ij': 'n3'}
+True

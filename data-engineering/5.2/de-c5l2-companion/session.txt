@@ -1,0 +1,298 @@
+# DE5.2 executed session evidence - 2026-11-25 21:01:53 UTC
+# host: Linux 7.3.4 x86_64, shell: bash 5.1.16(1)-release
+
+$ pwd
+/downloads/de-c5l2
+
+$ cd /downloads/de-c5l2/demo && pwd
+/downloads/de-c5l2/demo
+
+$ ls -la /downloads/de-c5l2/demo
+total 24
+drwxr-xr-x 5 sandbox sandbox 4096 Nov 25 22:45 .
+drwxr-xr-x 6 sandbox sandbox 4096 Nov 25 23:00 ..
+drwxr-xr-x 2 sandbox sandbox 4096 Nov 25 22:44 data
+drwxr-xr-x 2 sandbox sandbox 4096 Nov 25 22:44 logs
+-rw-r--r-- 1 sandbox sandbox  169 Nov 25 22:45 notes.txt
+drwxr-xr-x 2 sandbox sandbox 4096 Nov 25 22:55 scripts
+
+$ ls -la /downloads/de-c5l2/demo/scripts
+total 24
+drwxr-xr-x 2 sandbox sandbox 4096 Nov 25 22:55 .
+drwxr-xr-x 5 sandbox sandbox 4096 Nov 25 22:45 ..
+-rwxr-xr-x 1 sandbox sandbox  657 Nov 25 22:55 count404.sh
+-rwxr-xr-x 1 sandbox sandbox  482 Nov 25 22:55 dir_lines.sh
+-rw-r--r-- 1 sandbox sandbox   51 Nov 25 22:45 hello.sh
+-rw-r--r-- 1 sandbox sandbox 1224 Nov 25 22:55 log_report.sh
+
+$ ls -l /downloads/de-c5l2/demo/logs/server.log
+-rw-r--r-- 1 sandbox sandbox 39597 Nov 25 22:44 /downloads/de-c5l2/demo/logs/server.log
+
+$ id
+uid=1000(sandbox) gid=1000(sandbox) groups=1000(sandbox)
+
+$ stat -c %a,%U:%G,%n /downloads/de-c5l2/demo/scripts/hello.sh /downloads/de-c5l2/demo/scripts/log_report.sh /downloads/de-c5l2/demo/logs/server.log /downloads/de-c5l2/demo/notes.txt
+644,sandbox:sandbox,/downloads/de-c5l2/demo/scripts/hello.sh
+644,sandbox:sandbox,/downloads/de-c5l2/demo/scripts/log_report.sh
+644,sandbox:sandbox,/downloads/de-c5l2/demo/logs/server.log
+644,sandbox:sandbox,/downloads/de-c5l2/demo/notes.txt
+
+$ ./scripts/log_report.sh
+run/session.sh: line 3: ./scripts/log_report.sh: Permission denied
+
+$ bash scripts/log_report.sh
+=== تقرير اللوج: logs/server.log ===
+عدد الأسطر: 500
+
+-- توزيع ردود السيرفر --
+    347 200
+     61 404
+     36 304
+     24 500
+     16 403
+     16 301
+
+-- أعلى خمسة عناوين طلبات --
+     18 192.168.1.6
+     16 10.0.0.1
+     15 192.168.1.25
+     14 10.0.0.7
+     13 203.0.113.9
+
+-- عدد أخطاء الخادم 500 --
+24
+
+$ chmod +x /downloads/de-c5l2/demo/scripts/log_report.sh
+
+$ stat -c %a,%n /downloads/de-c5l2/demo/scripts/log_report.sh
+755,/downloads/de-c5l2/demo/scripts/log_report.sh
+
+$ chmod 755 /downloads/de-c5l2/demo/scripts/hello.sh
+
+$ chmod 600 /downloads/de-c5l2/demo/notes.txt
+
+$ stat -c %a,%n /downloads/de-c5l2/demo/scripts/hello.sh /downloads/de-c5l2/demo/notes.txt
+755,/downloads/de-c5l2/demo/scripts/hello.sh
+600,/downloads/de-c5l2/demo/notes.txt
+
+$ ls -la /downloads/de-c5l2/demo/scripts
+total 24
+drwxr-xr-x 2 sandbox sandbox 4096 Nov 25 22:55 .
+drwxr-xr-x 5 sandbox sandbox 4096 Nov 25 22:45 ..
+-rwxr-xr-x 1 sandbox sandbox  657 Nov 25 22:55 count404.sh
+-rwxr-xr-x 1 sandbox sandbox  482 Nov 25 22:55 dir_lines.sh
+-rwxr-xr-x 1 sandbox sandbox   51 Nov 25 22:45 hello.sh
+-rwxr-xr-x 1 sandbox sandbox 1224 Nov 25 22:55 log_report.sh
+
+$ ls -l /downloads/de-c5l2/demo/notes.txt
+-rw------- 1 sandbox sandbox 169 Nov 25 22:45 /downloads/de-c5l2/demo/notes.txt
+
+$ chmod 644 /downloads/de-c5l2/demo/notes.txt
+
+$ stat -c %a,%n /downloads/de-c5l2/demo/notes.txt
+644,/downloads/de-c5l2/demo/notes.txt
+
+$ sleep 300 & SP=$!; echo "background pid: $SP"
+background pid: 2624
+
+$ pgrep -a sleep
+2624 sleep 300
+
+$ ps -o pid,ppid,stat,%cpu,cmd -p 2624
+   PID   PPID STAT %CPU CMD
+  2624   2592 S     0.0 sleep 300
+
+$ ps --ppid $$ -o pid,ppid,stat,%cpu,cmd
+   PID   PPID STAT %CPU CMD
+  2624   2592 S     0.0 sleep 300
+  2627   2592 R     0.0 ps --ppid 2592 -o pid,ppid,stat,%cpu,cmd
+
+$ kill 2624
+
+$ pgrep -a sleep
+$ RC=$?
+
+$ echo "pgrep exit code: $RC"
+pgrep exit code: 1
+
+$ sleep 600 & SP2=$!; echo "background pid: $SP2"
+background pid: 2629
+
+$ pgrep -a sleep
+2629 sleep 600
+
+$ kill -KILL 2629
+
+$ pgrep -a sleep
+run/session.sh: line 4:  2629 Killed                  sleep 600
+$ RC=$?
+
+$ echo "pgrep exit code: $RC"
+pgrep exit code: 1
+
+$ cat /downloads/de-c5l2/demo/scripts/log_report.sh
+#!/usr/bin/env bash
+# تقرير سريع عن لوج سيرفر: توزيع الردود وأعلى العناوين وعدد الأخطاء
+# الاستخدام: ./scripts/log_report.sh [مسار_اللوج]
+set -euo pipefail
+
+LOG="${1:-logs/server.log}"
+
+if [[ ! -f "$LOG" ]]; then
+  echo "خطأ: الملف $LOG مش موجود" >&2
+  exit 1
+fi
+
+if [[ ! -r "$LOG" ]]; then
+  echo "خطأ: الملف $LOG مش قابل للقراية" >&2
+  exit 1
+fi
+
+echo "=== تقرير اللوج: $LOG ==="
+echo "عدد الأسطر: $(wc -l < "$LOG")"
+echo
+echo "-- توزيع ردود السيرفر --"
+cut -d'"' -f3 "$LOG" | cut -d' ' -f2 | sort | uniq -c | sort -nr
+echo
+echo "-- أعلى خمسة عناوين طلبات --"
+cut -d' ' -f1 "$LOG" | sort | uniq -c | sort -nr | head -5
+echo
+echo "-- عدد أخطاء الخادم 500 --"
+# grep بيرجع كود 1 لما ميلاقيش مطابقات، وده عندنا نجاح بعدد صفر مش فشل
+# الكود 2 أو أكتر معناه غلطة قراية حقيقية، وساعتها نفشل بصوت عالي
+rc=0
+count=$(grep -c ' 500 ' "$LOG") || rc=$?
+if [[ $rc -gt 1 ]]; then
+  echo "خطأ: مش قادر أقرا $LOG" >&2
+  exit "$rc"
+fi
+echo "$count"
+
+$ ./scripts/log_report.sh
+=== تقرير اللوج: logs/server.log ===
+عدد الأسطر: 500
+
+-- توزيع ردود السيرفر --
+    347 200
+     61 404
+     36 304
+     24 500
+     16 403
+     16 301
+
+-- أعلى خمسة عناوين طلبات --
+     18 192.168.1.6
+     16 10.0.0.1
+     15 192.168.1.25
+     14 10.0.0.7
+     13 203.0.113.9
+
+-- عدد أخطاء الخادم 500 --
+24
+
+$ ./scripts/log_report.sh logs/server.log
+=== تقرير اللوج: logs/server.log ===
+عدد الأسطر: 500
+
+-- توزيع ردود السيرفر --
+    347 200
+     61 404
+     36 304
+     24 500
+     16 403
+     16 301
+
+-- أعلى خمسة عناوين طلبات --
+     18 192.168.1.6
+     16 10.0.0.1
+     15 192.168.1.25
+     14 10.0.0.7
+     13 203.0.113.9
+
+-- عدد أخطاء الخادم 500 --
+24
+$ RC=$?
+
+$ echo "exit code: $RC"
+exit code: 0
+
+$ ./scripts/log_report.sh logs/missing.log
+خطأ: الملف logs/missing.log مش موجود
+$ RC=$?
+
+$ echo "exit code: $RC"
+exit code: 1
+
+## robustness: zero matches, empty log, unreadable log
+$ grep -v ' 500 ' /downloads/de-c5l2/demo/logs/server.log > /tmp/zero500.log
+
+$ wc -l /tmp/zero500.log
+476 /tmp/zero500.log
+
+$ ./scripts/log_report.sh /tmp/zero500.log
+=== تقرير اللوج: /tmp/zero500.log ===
+عدد الأسطر: 476
+
+-- توزيع ردود السيرفر --
+    347 200
+     61 404
+     36 304
+     16 403
+     16 301
+
+-- أعلى خمسة عناوين طلبات --
+     17 192.168.1.6
+     15 10.0.0.1
+     14 192.168.1.25
+     13 203.0.113.9
+     13 203.0.113.7
+
+-- عدد أخطاء الخادم 500 --
+0
+$ RC=$?
+
+$ echo "exit code: $RC"
+exit code: 0
+
+$ touch /tmp/empty.log
+
+$ ./scripts/log_report.sh /tmp/empty.log
+=== تقرير اللوج: /tmp/empty.log ===
+عدد الأسطر: 0
+
+-- توزيع ردود السيرفر --
+
+-- أعلى خمسة عناوين طلبات --
+
+-- عدد أخطاء الخادم 500 --
+0
+$ RC=$?
+
+$ echo "exit code: $RC"
+exit code: 0
+
+$ chmod 000 /tmp/empty.log
+
+$ ./scripts/log_report.sh /tmp/empty.log
+خطأ: الملف /tmp/empty.log مش قابل للقراية
+$ RC=$?
+
+$ echo "exit code: $RC"
+exit code: 1
+
+$ chmod 644 /tmp/empty.log
+
+$ ls -la /downloads/de-c5l2/demo
+total 24
+drwxr-xr-x 5 sandbox sandbox 4096 Nov 25 22:45 .
+drwxr-xr-x 6 sandbox sandbox 4096 Nov 25 23:00 ..
+drwxr-xr-x 2 sandbox sandbox 4096 Nov 25 22:44 data
+drwxr-xr-x 2 sandbox sandbox 4096 Nov 25 22:44 logs
+-rw-r--r-- 1 sandbox sandbox  169 Nov 25 22:45 notes.txt
+drwxr-xr-x 2 sandbox sandbox 4096 Nov 25 22:55 scripts
+
+$ wc -l /downloads/de-c5l2/demo/logs/server.log /downloads/de-c5l2/demo/data/sales.csv
+  500 /downloads/de-c5l2/demo/logs/server.log
+  121 /downloads/de-c5l2/demo/data/sales.csv
+  621 total
+

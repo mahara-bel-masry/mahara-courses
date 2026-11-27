@@ -1,0 +1,241 @@
+# DE5.3 executed session evidence - 2026-11-25 21:15:32 UTC
+
+$ git --version
+git version 2.34.1
+
+$ cd /downloads/de-c5l3/demo/logtool && pwd
+/downloads/de-c5l3/demo/logtool
+
+# (عرض مركز لملفات الدرس بدل القائمة الكاملة)
+$ ls scripts logs
+logs:
+server.log
+
+scripts:
+log_report.sh
+
+$ printf '%s\n' '# logtool' '' 'سكربت تقرير اللوج من كورس لينكس وجيت ودوكر.' 'التشغيل: ./scripts/log_report.sh' > README.md
+
+$ cat README.md
+# logtool
+
+سكربت تقرير اللوج من كورس لينكس وجيت ودوكر.
+التشغيل: ./scripts/log_report.sh
+
+$ git init -b main
+Initialized empty Git repository in /downloads/de-c5l3/demo/logtool/.git/
+
+$ git config user.name "Data Student"
+
+$ git config user.email "student@example.com"
+
+$ printf 'logs/\n' > .gitignore
+
+$ cat .gitignore
+logs/
+
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+	README.md
+	scripts/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+$ git add .gitignore README.md scripts/log_report.sh
+
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitignore
+	new file:   README.md
+	new file:   scripts/log_report.sh
+
+
+$ git commit -m "init: log report script"
+[main (root-commit) ac4bd26] init: log report script
+ 3 files changed, 41 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 README.md
+ create mode 100755 scripts/log_report.sh
+
+$ git log --oneline
+ac4bd26 init: log report script
+
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+$ printf '%s\n' 'الناتج: توزيع الردود وأعلى العناوين وعدد الأخطاء.' >> README.md
+
+$ git diff
+diff --git a/README.md b/README.md
+index 6884791..9268561 100644
+--- a/README.md
++++ b/README.md
+@@ -2,3 +2,4 @@
+ 
+ سكربت تقرير اللوج من كورس لينكس وجيت ودوكر.
+ التشغيل: ./scripts/log_report.sh
++الناتج: توزيع الردود وأعلى العناوين وعدد الأخطاء.
+
+$ git add README.md
+
+$ git commit -m "docs: what the report prints"
+[main 52feb43] docs: what the report prints
+ 1 file changed, 1 insertion(+)
+
+$ git log --oneline
+52feb43 docs: what the report prints
+ac4bd26 init: log report script
+
+$ git switch -c feature/error-count
+Switched to a new branch 'feature/error-count'
+
+$ printf '%s\n' '' 'echo "-- نهاية التقرير --"' >> scripts/log_report.sh
+
+$ tail -4 scripts/log_report.sh
+fi
+echo "$count"
+
+echo "-- نهاية التقرير --"
+
+$ bash scripts/log_report.sh | tail -2
+24
+-- نهاية التقرير --
+
+$ git add scripts/log_report.sh
+
+$ git commit -m "feat: closing line for the report"
+[feature/error-count b50e6c4] feat: closing line for the report
+ 1 file changed, 2 insertions(+)
+
+$ git switch main
+Switched to branch 'main'
+
+$ tail -3 scripts/log_report.sh
+  exit "$rc"
+fi
+echo "$count"
+
+$ git merge feature/error-count
+Updating 52feb43..b50e6c4
+Fast-forward
+ scripts/log_report.sh | 2 ++
+ 1 file changed, 2 insertions(+)
+
+$ tail -3 scripts/log_report.sh
+echo "$count"
+
+echo "-- نهاية التقرير --"
+
+$ git log --oneline
+b50e6c4 feat: closing line for the report
+52feb43 docs: what the report prints
+ac4bd26 init: log report script
+
+$ git switch -c feature/header
+Switched to a new branch 'feature/header'
+
+$ sed -i '2s/.*/# تقرير يومي عن لوج السيرفر: توزيع الردود وأعلى العناوين وعدد الأخطاء/' scripts/log_report.sh
+
+$ git diff
+diff --git a/scripts/log_report.sh b/scripts/log_report.sh
+index f16df01..607a936 100755
+--- a/scripts/log_report.sh
++++ b/scripts/log_report.sh
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env bash
+-# تقرير سريع عن لوج سيرفر: توزيع الردود وأعلى العناوين وعدد الأخطاء
++# تقرير يومي عن لوج السيرفر: توزيع الردود وأعلى العناوين وعدد الأخطاء
+ # الاستخدام: ./scripts/log_report.sh [مسار_اللوج]
+ set -euo pipefail
+ 
+
+$ git add scripts/log_report.sh
+
+$ git commit -m "feat: daily report header"
+[feature/header 13a6cf8] feat: daily report header
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+$ git switch main
+Switched to branch 'main'
+
+$ sed -i '2s/.*/# تقرير لوج سيرفر الإنتاج: توزيع الردود وأعلى العناوين وعدد الأخطاء/' scripts/log_report.sh
+
+$ git add scripts/log_report.sh
+
+$ git commit -m "fix: production header wording"
+[main 660073b] fix: production header wording
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+$ git merge feature/header
+Auto-merging scripts/log_report.sh
+CONFLICT (content): Merge conflict in scripts/log_report.sh
+Automatic merge failed; fix conflicts and then commit the result.
+$ RC=$?
+
+$ git status
+On branch main
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   scripts/log_report.sh
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ sed -n "1,7p" scripts/log_report.sh
+#!/usr/bin/env bash
+<<<<<<< HEAD
+# تقرير لوج سيرفر الإنتاج: توزيع الردود وأعلى العناوين وعدد الأخطاء
+=======
+# تقرير يومي عن لوج السيرفر: توزيع الردود وأعلى العناوين وعدد الأخطاء
+>>>>>>> feature/header
+# الاستخدام: ./scripts/log_report.sh [مسار_اللوج]
+
+$ sed -i '2,6c\# تقرير موحد عن لوج السيرفر: توزيع الردود وأعلى العناوين وعدد الأخطاء' scripts/log_report.sh
+
+$ sed -n "1,7p" scripts/log_report.sh
+#!/usr/bin/env bash
+# تقرير موحد عن لوج السيرفر: توزيع الردود وأعلى العناوين وعدد الأخطاء
+# الاستخدام: ./scripts/log_report.sh [مسار_اللوج]
+set -euo pipefail
+
+LOG="${1:-logs/server.log}"
+
+
+$ bash scripts/log_report.sh | head -2
+=== تقرير اللوج: logs/server.log ===
+عدد الأسطر: 500
+
+$ git add scripts/log_report.sh
+
+$ git commit -m "merge: unify report header"
+[main f1c9a08] merge: unify report header
+
+$ git log --oneline --graph --all
+*   f1c9a08 merge: unify report header
+|\  
+| * 13a6cf8 feat: daily report header
+* | 660073b fix: production header wording
+|/  
+* b50e6c4 feat: closing line for the report
+* 52feb43 docs: what the report prints
+* ac4bd26 init: log report script
+
+$ git status
+On branch main
+nothing to commit, working tree clean
+

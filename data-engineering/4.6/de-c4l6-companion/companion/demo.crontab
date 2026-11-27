@@ -1,0 +1,1 @@
+* * * * * /usr/bin/python3 /downloads/de-c4l6/companion/scraper_db.py >> /downloads/de-c4l6/companion/logs/cron_stdout.log 2>&1

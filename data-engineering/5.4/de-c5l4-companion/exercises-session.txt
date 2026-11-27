@@ -1,0 +1,215 @@
+# DE5.4 exercises executed evidence - 2026-11-25 21:41:05 UTC
+
+## exercise 1: link an existing repo to a bare remote and push
+$ mkdir -p /tmp/de-c5l4-ex/ex1/notes /tmp/de-c5l4-ex/ex1/remote && cd /tmp/de-c5l4-ex/ex1/notes && pwd
+/tmp/de-c5l4-ex/ex1/notes
+
+$ git init -b main
+Initialized empty Git repository in /tmp/de-c5l4-ex/ex1/notes/.git/
+
+$ git config user.name "Data Student"
+
+$ git config user.email "student@example.com"
+
+$ printf '%s\n' '# notes' '' 'ملاحظات كورس لينكس وجيت ودوكر.' > README.md
+
+$ git add README.md
+
+$ git commit -m "init: notes readme"
+[main (root-commit) 6af5297] init: notes readme
+ 1 file changed, 3 insertions(+)
+ create mode 100644 README.md
+
+$ printf '%s\n' '' '- درس جيت هاب: ريموت وpush وpull' >> README.md
+
+$ git add README.md
+
+$ git commit -m "docs: github lesson note"
+[main 8d5ceb1] docs: github lesson note
+ 1 file changed, 2 insertions(+)
+
+$ git init --bare /tmp/de-c5l4-ex/ex1/remote/notes.git
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /tmp/de-c5l4-ex/ex1/remote/notes.git/
+
+$ git remote add origin /tmp/de-c5l4-ex/ex1/remote/notes.git
+
+$ git remote -v
+origin	/tmp/de-c5l4-ex/ex1/remote/notes.git (fetch)
+origin	/tmp/de-c5l4-ex/ex1/remote/notes.git (push)
+
+$ git push -u origin main
+To /tmp/de-c5l4-ex/ex1/remote/notes.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+$ git -C /tmp/de-c5l4-ex/ex1/remote/notes.git symbolic-ref HEAD refs/heads/main
+
+$ git branch -vv
+* main 8d5ceb1 [origin/main] docs: github lesson note
+
+## exercise 2: clone, edit, push, then pull in the original
+$ cd /tmp/de-c5l4-ex/ex1 && git clone remote/notes.git second && cd second && pwd
+Cloning into 'second'...
+done.
+/tmp/de-c5l4-ex/ex1/second
+
+$ git switch main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+
+$ git config user.name "Data Student"
+
+$ git config user.email "student@example.com"
+
+$ printf '%s\n' '' '- تمرين اتنين: نسخة تانية بتشتغل' >> README.md
+
+$ git add README.md
+
+$ git commit -m "docs: second copy note"
+[main a75f814] docs: second copy note
+ 1 file changed, 2 insertions(+)
+
+$ git push
+To /tmp/de-c5l4-ex/ex1/remote/notes.git
+   8d5ceb1..a75f814  main -> main
+
+$ cd /tmp/de-c5l4-ex/ex1/notes && pwd
+/tmp/de-c5l4-ex/ex1/notes
+
+$ git pull
+From /tmp/de-c5l4-ex/ex1/remote/notes
+   8d5ceb1..a75f814  main       -> origin/main
+Updating 8d5ceb1..a75f814
+Fast-forward
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+
+$ git log --oneline
+a75f814 docs: second copy note
+8d5ceb1 docs: github lesson note
+6af5297 init: notes readme
+
+## exercise 3: feature branch, review diff, merge, cleanup
+$ cd /tmp/de-c5l4-ex/ex1/second && pwd
+/tmp/de-c5l4-ex/ex1/second
+
+$ git switch -c feature/diary
+Switched to a new branch 'feature/diary'
+
+$ printf '%s\n' '' '## يوميات' '' '- أول يوم تعلم ريموت' > diary.md
+
+$ git add diary.md
+
+$ git commit -m "feat: diary file"
+[feature/diary 990ca5d] feat: diary file
+ 1 file changed, 4 insertions(+)
+ create mode 100644 diary.md
+
+$ git push -u origin feature/diary
+To /tmp/de-c5l4-ex/ex1/remote/notes.git
+ * [new branch]      feature/diary -> feature/diary
+Branch 'feature/diary' set up to track remote branch 'feature/diary' from 'origin'.
+
+$ cd /tmp/de-c5l4-ex/ex1/notes && pwd
+/tmp/de-c5l4-ex/ex1/notes
+
+$ git fetch
+From /tmp/de-c5l4-ex/ex1/remote/notes
+ * [new branch]      feature/diary -> origin/feature/diary
+
+$ git diff main..origin/feature/diary
+diff --git a/diary.md b/diary.md
+new file mode 100644
+index 0000000..dbd16c8
+--- /dev/null
++++ b/diary.md
+@@ -0,0 +1,4 @@
++
++## يوميات
++
++- أول يوم تعلم ريموت
+
+$ git merge --no-ff origin/feature/diary -m "merge: diary file (reviewed)"
+Merge made by the 'ort' strategy.
+ diary.md | 4 ++++
+ 1 file changed, 4 insertions(+)
+ create mode 100644 diary.md
+
+$ git push
+To /tmp/de-c5l4-ex/ex1/remote/notes.git
+   a75f814..9d2aaef  main -> main
+
+$ cd /tmp/de-c5l4-ex/ex1/second && pwd
+/tmp/de-c5l4-ex/ex1/second
+
+$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+$ git pull
+From /tmp/de-c5l4-ex/ex1/remote/notes
+   a75f814..9d2aaef  main       -> origin/main
+Updating a75f814..9d2aaef
+Fast-forward
+ diary.md | 4 ++++
+ 1 file changed, 4 insertions(+)
+ create mode 100644 diary.md
+
+$ git branch -d feature/diary
+Deleted branch feature/diary (was 990ca5d).
+
+## exercise 4: README with the required sections, pushed
+$ printf '%s\n' '# notes' '' 'دفتر ملاحظات نصي بيتدار بجيت.' '' '## التشغيل' '' '~~~bash' 'cat README.md' '~~~' '' '## مثال' '' '~~~' '- درس جيت هاب: ريموت وpush وpull' '~~~' > README.md
+
+$ cat README.md
+# notes
+
+دفتر ملاحظات نصي بيتدار بجيت.
+
+## التشغيل
+
+~~~bash
+cat README.md
+~~~
+
+## مثال
+
+~~~
+- درس جيت هاب: ريموت وpush وpull
+~~~
+
+$ git add README.md
+
+$ git commit -m "docs: structured README"
+[main f0e9ffc] docs: structured README
+ 1 file changed, 11 insertions(+), 3 deletions(-)
+
+$ git push
+To /tmp/de-c5l4-ex/ex1/remote/notes.git
+   9d2aaef..f0e9ffc  main -> main
+
+## exercise 5: tag a version and push it
+$ git tag -a v1.0 -m "first structured readme"
+
+$ git tag -l
+v1.0
+
+$ git push origin v1.0
+To /tmp/de-c5l4-ex/ex1/remote/notes.git
+ * [new tag]         v1.0 -> v1.0
+
+$ git log --oneline --decorate -3
+f0e9ffc (HEAD -> main, tag: v1.0, origin/main, origin/HEAD) docs: structured README
+9d2aaef merge: diary file (reviewed)
+a75f814 docs: second copy note
+

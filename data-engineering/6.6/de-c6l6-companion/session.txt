@@ -1,0 +1,169 @@
+# جلسة تنفيذ درس دوكر كومبوز - DE5.6 (بيئة التسجيل: compose.yaml القياسي مدمج مع compose.training.yaml الخاص بالبيئة المعزولة)
+
+=== PART 1: التشغيل الأول
+
+$ docker compose -f compose.yaml -f compose.training.yaml up -d --build
+#0 building with "default" instance using docker driver
+
+#1 [app internal] load build definition from Dockerfile
+#1 transferring dockerfile: 123B done
+#1 DONE 0.0s
+
+#2 [app internal] load metadata for docker.io/library/python:3.12-slim
+#2 DONE 0.0s
+
+#3 [app internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [app 1/3] FROM docker.io/library/python:3.12-slim
+#4 DONE 0.0s
+
+#5 [app internal] load build context
+#5 transferring context: 57B done
+#5 DONE 0.0s
+
+#6 [app 2/3] WORKDIR /app
+#6 CACHED
+
+#7 [app 3/3] COPY app.py sales.csv ./
+#7 CACHED
+
+#8 [app] exporting to image
+#8 exporting layers done
+#8 writing image sha256:50ebaea3840ca1b63be9c97326b3df32881e2a1b61bacec1ad63964ea6f71e9d done
+#8 naming to docker.io/library/demo-app done
+#8 DONE 0.0s
+
+#9 [app] resolving provenance for metadata file
+#9 DONE 0.0s
+ app  Built
+ Network demo_default  Creating
+ Network demo_default  Created
+ Volume "demo_dbdata"  Creating
+ Volume "demo_dbdata"  Created
+ Container demo-db-1  Creating
+ db IPv4 forwarding is disabled. Networking will not work. 
+ Container demo-db-1  Created
+ Container demo-app-1  Creating
+ app IPv4 forwarding is disabled. Networking will not work. 
+ Container demo-app-1  Created
+ Container demo-db-1  Starting
+ Container demo-db-1  Started
+ Container demo-db-1  Waiting
+ Container demo-db-1  Healthy
+ Container demo-app-1  Starting
+ Container demo-app-1  Started
+
+$ docker compose -f compose.yaml -f compose.training.yaml ps
+NAME        IMAGE            COMMAND                  SERVICE   CREATED         STATUS                   PORTS
+demo-db-1   redis:7-alpine   "redis-server --appe…"   db        3 seconds ago   Up 2 seconds (healthy)   6379/tcp
+
+# التطبيق خلص ووقف، والps الافتراضي بيعرض الشغال بس، فمش ظاهر
+$ docker compose -f compose.yaml -f compose.training.yaml ps -a
+NAME         IMAGE            COMMAND                  SERVICE   CREATED         STATUS                              PORTS
+demo-app-1   demo-app         "python3 app.py"         app       3 seconds ago   Exited (0) Less than a second ago   
+demo-db-1    redis:7-alpine   "redis-server --appe…"   db        3 seconds ago   Up 3 seconds (healthy)              6379/tcp
+
+$ docker compose -f compose.yaml -f compose.training.yaml logs app
+app-1  | الاتصال بالـ db: PONG
+app-1  | أوردرات مؤكدة بعد إزالة التكرار: 3
+app-1  | أعلى عميل: ali (650)
+app-1  | رقم التشغيلة دي: 1
+app-1  | المخزن في الـ db: ali=650
+
+$ docker compose -f compose.yaml -f compose.training.yaml exec db redis-cli GET report:top
+ali=650
+
+$ docker compose -f compose.yaml -f compose.training.yaml down
+ Container demo-app-1  Stopping
+ Container demo-app-1  Stopped
+ Container demo-app-1  Removing
+ Container demo-app-1  Removed
+ Container demo-db-1  Stopping
+ Container demo-db-1  Stopped
+ Container demo-db-1  Removing
+ Container demo-db-1  Removed
+ Network demo_default  Removing
+ Network demo_default  Removed
+
+=== PART 2: down عادي ثم up - البيانات بتنجو
+
+$ docker compose -f compose.yaml -f compose.training.yaml up -d
+ Network demo_default  Creating
+ Network demo_default  Created
+ Container demo-db-1  Creating
+ db IPv4 forwarding is disabled. Networking will not work. 
+ Container demo-db-1  Created
+ Container demo-app-1  Creating
+ app IPv4 forwarding is disabled. Networking will not work. 
+ Container demo-app-1  Created
+ Container demo-db-1  Starting
+ Container demo-db-1  Started
+ Container demo-db-1  Waiting
+ Container demo-db-1  Healthy
+ Container demo-app-1  Starting
+ Container demo-app-1  Started
+
+$ docker compose -f compose.yaml -f compose.training.yaml logs app
+app-1  | db مش جاهزة لسه (محاولة 1)
+app-1  | الاتصال بالـ db: PONG
+app-1  | أوردرات مؤكدة بعد إزالة التكرار: 3
+app-1  | أعلى عميل: ali (650)
+app-1  | رقم التشغيلة دي: 2
+app-1  | المخزن في الـ db: ali=650
+
+$ docker compose -f compose.yaml -f compose.training.yaml down -v
+ Container demo-app-1  Stopping
+ Container demo-app-1  Stopped
+ Container demo-app-1  Removing
+ Container demo-app-1  Removed
+ Container demo-db-1  Stopping
+ Container demo-db-1  Stopped
+ Container demo-db-1  Removing
+ Container demo-db-1  Removed
+ Volume demo_dbdata  Removing
+ Volume demo_dbdata  Removed
+ Network demo_default  Removing
+ Network demo_default  Removed
+
+=== PART 3: down -v ثم up - الفوليوم اتمسح، العداد رجع من الأول
+
+$ docker compose -f compose.yaml -f compose.training.yaml up -d
+ Network demo_default  Creating
+ Network demo_default  Created
+ Volume "demo_dbdata"  Creating
+ Volume "demo_dbdata"  Created
+ Container demo-db-1  Creating
+ db IPv4 forwarding is disabled. Networking will not work. 
+ Container demo-db-1  Created
+ Container demo-app-1  Creating
+ app IPv4 forwarding is disabled. Networking will not work. 
+ Container demo-app-1  Created
+ Container demo-db-1  Starting
+ Container demo-db-1  Started
+ Container demo-db-1  Waiting
+ Container demo-db-1  Healthy
+ Container demo-app-1  Starting
+ Container demo-app-1  Started
+
+$ docker compose -f compose.yaml -f compose.training.yaml logs app
+app-1  | الاتصال بالـ db: PONG
+app-1  | أوردرات مؤكدة بعد إزالة التكرار: 3
+app-1  | أعلى عميل: ali (650)
+app-1  | رقم التشغيلة دي: 1
+app-1  | المخزن في الـ db: ali=650
+
+$ docker compose -f compose.yaml -f compose.training.yaml down -v
+ Container demo-app-1  Stopping
+ Container demo-app-1  Stopped
+ Container demo-app-1  Removing
+ Container demo-app-1  Removed
+ Container demo-db-1  Stopping
+ Container demo-db-1  Stopped
+ Container demo-db-1  Removing
+ Container demo-db-1  Removed
+ Volume demo_dbdata  Removing
+ Network demo_default  Removing
+ Volume demo_dbdata  Removed
+ Network demo_default  Removed

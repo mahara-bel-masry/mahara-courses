@@ -1,0 +1,18 @@
+import subprocess, tempfile, os
+d = tempfile.mkdtemp()
+os.chdir(d)
+def g(cmd):
+    r = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+    return (r.stdout + r.stderr).strip()
+g("git init -q --bare -b main remote.git")
+g("git clone -q remote.git work")
+os.chdir("work")
+g("git config user.email a@b.c && git config user.name demo")
+open("README.md", "w").write("# Demo\nRun: python app.py\n")
+g("git add . && git commit -q -m readme && git push -q origin main")
+g("git checkout -q -b fix-typo")
+open("README.md", "a").write("Tests: pytest\n")
+g("git commit -q -am tests && git push -q origin fix-typo")
+print(g("git branch -r"))
+print(g("git log --oneline origin/fix-typo | wc -l"))
+print(g("git show origin/fix-typo:README.md").split("\n")[-1])

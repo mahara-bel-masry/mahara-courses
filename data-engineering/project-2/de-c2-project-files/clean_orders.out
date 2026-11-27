@@ -1,0 +1,5 @@
+id,customer,qty,price,total
+ORD-4,Omar,1,80.0,80.0
+ORD-2,Ali,1,250.0,250.0
+ORD-5,Hana,4,50.0,200.0
+ORD-1,Mona,2,100.0,200.0

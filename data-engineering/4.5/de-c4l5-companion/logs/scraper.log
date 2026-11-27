@@ -1,0 +1,81 @@
+2026-11-25 20:25:35,350 INFO run started
+2026-11-25 20:25:36,048 INFO fetch status=200 bytes=11064
+2026-11-25 20:25:36,066 INFO saved quotes=10 to /downloads/de-c4l5/companion/data/quotes_log.csv
+2026-11-25 20:25:36,066 INFO run finished ok
+2026-11-25 20:34:00,120 INFO run started
+2026-11-25 20:34:00,818 INFO fetch status=200 bytes=11064
+2026-11-25 20:34:00,836 INFO saved quotes=10 to /downloads/de-c4l5/companion/data/quotes_log.csv
+2026-11-25 20:34:00,836 INFO run finished ok
+2026-11-25 20:35:00,119 INFO run started
+2026-11-25 20:35:00,814 INFO fetch status=200 bytes=11064
+2026-11-25 20:35:00,832 INFO saved quotes=10 to /downloads/de-c4l5/companion/data/quotes_log.csv
+2026-11-25 20:35:00,832 INFO run finished ok
+2026-11-25 20:36:00,123 INFO run started
+2026-11-25 20:36:00,908 INFO fetch status=200 bytes=11064
+2026-11-25 20:36:00,926 INFO saved quotes=10 to /downloads/de-c4l5/companion/data/quotes_log.csv
+2026-11-25 20:36:00,926 INFO run finished ok
+2026-11-25 20:37:00,124 INFO run started
+2026-11-25 20:37:00,439 ERROR run failed
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connection.py", line 239, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py", line 494, in _make_request
+    raise new_e
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py", line 470, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py", line 1125, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connection.py", line 827, in connect
+    self.sock = sock = self._new_conn()
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connection.py", line 246, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='quotes.toscrape.invalid', port=443): Failed to resolve 'quotes.toscrape.invalid' ([Errno -2] Name or service not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/requests/adapters.py", line 696, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.10/dist-packages/urllib3/util/retry.py", line 555, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='quotes.toscrape.invalid', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='quotes.toscrape.invalid', port=443): Failed to resolve 'quotes.toscrape.invalid' ([Errno -2] Name or service not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/downloads/de-c4l5/companion/scraper_broken.py", line 63, in <module>
+    sys.exit(main())
+  File "/downloads/de-c4l5/companion/scraper_broken.py", line 35, in main
+    resp = requests.get(URL, headers=HEADERS, timeout=10)
+  File "/usr/local/lib/python3.10/dist-packages/requests/api.py", line 87, in get
+    return request("get", url, params=params, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/requests/api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/requests/adapters.py", line 729, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='quotes.toscrape.invalid', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='quotes.toscrape.invalid', port=443): Failed to resolve 'quotes.toscrape.invalid' ([Errno -2] Name or service not known)"))
+2026-11-25 20:40:00,123 INFO run started
+2026-11-25 20:40:00,932 INFO fetch status=200 bytes=11064
+2026-11-25 20:40:00,950 INFO saved quotes=10 to /downloads/de-c4l5/companion/data/quotes_log.csv
+2026-11-25 20:40:00,950 INFO run finished ok
+2026-11-25 20:41:00,149 INFO run started
+2026-11-25 20:41:00,866 INFO fetch status=200 bytes=11064
+2026-11-25 20:41:00,884 INFO saved quotes=10 to /downloads/de-c4l5/companion/data/quotes_log.csv
+2026-11-25 20:41:00,884 INFO run finished ok

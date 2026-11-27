@@ -1,0 +1,2 @@
+{'env': 'local', 'path': '/tmp/data'}
+{'env': 'cloud', 'path': 'container/data'}

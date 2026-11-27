@@ -1,0 +1,10 @@
+order_id,customer_id,order_date,product,qty,price
+ORD-9012,C-002,2026-02-02,notebook,2,45.00
+ORD-9013,C-003,2026-02-04,stapler,1,120.00
+ORD-9014,C-001,2026-02-07,markers,-3,22.00
+ORD-9015,C-006,2026-02-10,notebook,1,45.00
+ORD-9016,C-004,2026-02-12,paper,15,4.25
+ORD-9017,C-005,2026-02-15,desk lamp,1,340.00
+ORD-9018,C-002,2026-02-18,pens,8,7.50
+ORD-9019,C-003,2026-02-21,folders,3,18.00
+ORD-9020,C-001,2026-02-25,paper,10,4.25

@@ -1,0 +1,8 @@
+Cairo
+{'id': 'ORD-1', 'city': 'Cairo', 'qty': 3, 'status': 'paid'}
+None
+unknown
+id -> ORD-1
+city -> Cairo
+qty -> 3
+status -> paid

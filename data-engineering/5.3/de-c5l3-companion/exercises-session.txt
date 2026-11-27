@@ -1,0 +1,197 @@
+# DE5.3 exercises executed evidence - 2026-11-25 21:19:59 UTC
+
+## exercise 1: repo from scratch with three commits
+$ mkdir -p /tmp/de-c5l3-ex/ex1 && cd /tmp/de-c5l3-ex/ex1 && pwd
+/tmp/de-c5l3-ex/ex1
+
+$ git init -b main
+Initialized empty Git repository in /tmp/de-c5l3-ex/ex1/.git/
+
+$ git config user.name "Data Student"
+
+$ git config user.email "student@example.com"
+
+$ printf '%s\n' '# notes' > notes.md
+
+$ git add notes.md
+
+$ git commit -m "init: notes file"
+[main (root-commit) 250992b] init: notes file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 notes.md
+
+$ printf '%s\n' '' '## يوميات التعلم' >> notes.md
+
+$ git add notes.md
+
+$ git commit -m "docs: learning diary section"
+[main b33fbc3] docs: learning diary section
+ 1 file changed, 2 insertions(+)
+
+$ printf '%s\n' '' '- درس جيت: init وcommit وbranch' >> notes.md
+
+$ git add notes.md
+
+$ git commit -m "docs: first diary entry"
+[main b7a22b9] docs: first diary entry
+ 1 file changed, 2 insertions(+)
+
+$ git log --oneline
+b7a22b9 docs: first diary entry
+b33fbc3 docs: learning diary section
+250992b init: notes file
+
+
+## exercise 2: feature branch and fast-forward merge
+$ cd /tmp/de-c5l3-ex/ex1 && git switch -c feature/todo
+Switched to a new branch 'feature/todo'
+
+$ printf '%s\n' '' '## مهام' '- مراجعة الدرس' >> notes.md
+
+$ git add notes.md
+
+$ git commit -m "feat: todo section"
+[feature/todo 863718f] feat: todo section
+ 1 file changed, 3 insertions(+)
+
+$ git switch main
+Switched to branch 'main'
+
+$ git merge feature/todo
+Updating b7a22b9..863718f
+Fast-forward
+ notes.md | 3 +++
+ 1 file changed, 3 insertions(+)
+
+$ git log --oneline
+863718f feat: todo section
+b7a22b9 docs: first diary entry
+b33fbc3 docs: learning diary section
+250992b init: notes file
+
+
+## exercise 3: deliberate conflict and manual resolution
+$ cd /tmp/de-c5l3-ex/ex1 && git switch -c feature/title-ar
+Switched to a new branch 'feature/title-ar'
+
+$ sed -i '1s/.*/# يومياتي بالعربي/' notes.md
+
+$ git add notes.md
+
+$ git commit -m "feat: arabic title"
+[feature/title-ar 1dc9966] feat: arabic title
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+$ git switch main
+Switched to branch 'main'
+
+$ sed -i '1s/.*/# يوميات التعلم/' notes.md
+
+$ git add notes.md
+
+$ git commit -m "fix: learning diary title"
+[main 0c92abe] fix: learning diary title
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+$ git merge feature/title-ar
+Auto-merging notes.md
+CONFLICT (content): Merge conflict in notes.md
+Automatic merge failed; fix conflicts and then commit the result.
+$ RC=$?
+
+$ cat notes.md
+<<<<<<< HEAD
+# يوميات التعلم
+=======
+# يومياتي بالعربي
+>>>>>>> feature/title-ar
+
+## يوميات التعلم
+
+- درس جيت: init وcommit وbranch
+
+## مهام
+- مراجعة الدرس
+
+$ sed -i '1,5c\# يومياتي لتعلم جيت' notes.md
+
+$ cat notes.md
+# يومياتي لتعلم جيت
+
+## يوميات التعلم
+
+- درس جيت: init وcommit وbranch
+
+## مهام
+- مراجعة الدرس
+
+$ git add notes.md
+
+$ git commit -m "merge: unified title"
+[main 4668faa] merge: unified title
+
+$ git log --oneline --graph --all
+*   4668faa merge: unified title
+|\  
+| * 1dc9966 feat: arabic title
+* | 0c92abe fix: learning diary title
+|/  
+* 863718f feat: todo section
+* b7a22b9 docs: first diary entry
+* b33fbc3 docs: learning diary section
+* 250992b init: notes file
+
+
+## exercise 4: gitignore for a data directory
+$ cd /tmp/de-c5l3-ex/ex1 && mkdir -p data && printf '1,2,3\n' > data/raw.csv
+
+$ git status --short
+?? data/
+
+$ printf 'data/\n' > .gitignore
+
+$ git status --short
+?? .gitignore
+
+$ git add .gitignore
+
+$ git commit -m "chore: ignore data directory"
+[main 402ba3f] chore: ignore data directory
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+
+
+## exercise 5: show a commit and diff two commits
+$ cd /tmp/de-c5l3-ex/ex1 && git log --oneline
+402ba3f chore: ignore data directory
+4668faa merge: unified title
+0c92abe fix: learning diary title
+1dc9966 feat: arabic title
+863718f feat: todo section
+b7a22b9 docs: first diary entry
+b33fbc3 docs: learning diary section
+250992b init: notes file
+
+$ git show --stat HEAD~1
+commit 4668faafc0ea50ced516fe761f00385d96dab751
+Merge: 0c92abe 1dc9966
+Author: Data Student <student@example.com>
+Date:   Wed Nov 25 23:19:59 2026 +0200
+
+    merge: unified title
+
+ notes.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+$ git diff HEAD~2 HEAD -- notes.md
+diff --git a/notes.md b/notes.md
+index 96aa94f..9b07be9 100644
+--- a/notes.md
++++ b/notes.md
+@@ -1,4 +1,4 @@
+-# يوميات التعلم
++# يومياتي لتعلم جيت
+ 
+ ## يوميات التعلم
+ 
+

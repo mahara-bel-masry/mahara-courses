@@ -1,0 +1,54 @@
+DE4.5 RUN LOGS - الجدولة بـcron وتسجيل النتائج - كل الأرقام من تنفيذ فعلي 2026-11-25 (بتوقيت القاهرة EET)
+
+== البيئة ==
+حاوية لينكس Ubuntu 22.04 بدون system cron (مستخدم غير root)، فاتستخدم supercronic v0.2.29: مُنفذ جدولة حقيقي بنفس سينتكس crontab القياسي (5 خانات)، SHA1 المتحقق منه من صفحة الإصدار الرسمية: cd48d45c4b10f3f0bfdd3a57d054cd05ac96812b
+busybox crond 1.35.0 جُرب أولًا ولم يطلق أي مهمة (صمت تام حتى بأعلى مستوى لوج) - استبعد.
+
+== التشغيلة اليدوية (20:25:35) ==
+2026-11-25 20:25:35,350 INFO run started
+2026-11-25 20:25:36,048 INFO fetch status=200 bytes=11064
+2026-11-25 20:25:36,066 INFO saved quotes=10 to /downloads/de-c4l5/companion/data/quotes_log.csv
+2026-11-25 20:25:36,066 INFO run finished ok
+
+== سطر الجدولة المستخدم ==
+* * * * * /usr/bin/python3 /downloads/de-c4l5/companion/scraper_scheduled.py >> /downloads/de-c4l5/companion/logs/cron_stdout.log 2>&1
+
+== إطلاقات ناجحة من المجدول (بتوقيت EET): 20:34:00 و20:35:00 و20:36:00 ==
+2026-11-25 20:34:00,120 INFO run started
+2026-11-25 20:34:00,818 INFO fetch status=200 bytes=11064
+2026-11-25 20:34:00,836 INFO saved quotes=10 to /downloads/de-c4l5/companion/data/quotes_log.csv
+2026-11-25 20:34:00,836 INFO run finished ok
+2026-11-25 20:35:00,119 INFO run started
+2026-11-25 20:35:00,814 INFO fetch status=200 bytes=11064
+2026-11-25 20:35:00,832 INFO saved quotes=10 to /downloads/de-c4l5/companion/data/quotes_log.csv
+2026-11-25 20:35:00,832 INFO run finished ok
+2026-11-25 20:36:00,123 INFO run started
+2026-11-25 20:36:00,908 INFO fetch status=200 bytes=11064
+2026-11-25 20:36:00,926 INFO saved quotes=10 to /downloads/de-c4l5/companion/data/quotes_log.csv
+2026-11-25 20:36:00,926 INFO run finished ok
+
+== المحاولة الفاشلة بالدومين المكسور (20:37:00): exit status 1 ==
+time="2026-11-25T20:37:56+02:00" level=info msg=exiting
+سطر الخطأ في scraper.log:
+ERROR run failed
+آخر سطر من التريسباك:
+raise NameResolutionError(self.host, self, e) from e
+
+== فخ المسار النسبي (20:38:00 و20:39:00): exit status 2 ==
+job.command="python3 companion/scraper_scheduled.py ..." (مسار نسبي)
+python3: can't open file '/downloads/de-c4l5/run/companion/scraper_scheduled.py': [Errno 2] No such file or directory
+لاحظ: المجدول فسّر المسار النسبي على دليل عمله هو (/downloads/de-c4l5/run) مش دليلنا
+
+== بعد إرجاع المسار المطلق: نجاح 20:40:00 و20:41:00 ==
+supercronic: job succeeded (iteration=0 وiteration=1)
+
+== CSV النهائي ==
+run_at_utc,quotes_count,first_quote,author
+2026-11-25T18:25:36+00:00,10,“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”,Albert Einstein
+2026-11-25T18:34:00+00:00,10,“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”,Albert Einstein
+2026-11-25T18:35:00+00:00,10,“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”,Albert Einstein
+2026-11-25T18:36:00+00:00,10,“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”,Albert Einstein
+2026-11-25T18:40:00+00:00,10,“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”,Albert Einstein
+2026-11-25T18:41:00+00:00,10,“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”,Albert Einstein
+
+ملاحظة المنطقة الزمنية: لوج بايثون بيسجل بالتوقيت المحلي (EET = UTC+2)، والـCSV بيسجل UTC صراحة - فرق ساعتين ظاهر بين العمودين، وده درس بحد ذاته.

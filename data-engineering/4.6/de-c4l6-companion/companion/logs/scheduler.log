@@ -1,0 +1,10 @@
+time="2026-11-25T21:09:49+02:00" level=info msg="read crontab: run/demo.crontab"
+time="2026-11-25T21:10:00+02:00" level=info msg=starting iteration=0 job.command="/usr/bin/python3 /downloads/de-c4l6/companion/scraper_db.py >> /downloads/de-c4l6/companion/logs/cron_stdout.log 2>&1" job.position=0 job.schedule="* * * * *"
+time="2026-11-25T21:10:00+02:00" level=info msg="job succeeded" iteration=0 job.command="/usr/bin/python3 /downloads/de-c4l6/companion/scraper_db.py >> /downloads/de-c4l6/companion/logs/cron_stdout.log 2>&1" job.position=0 job.schedule="* * * * *"
+time="2026-11-25T21:11:00+02:00" level=info msg=starting iteration=1 job.command="/usr/bin/python3 /downloads/de-c4l6/companion/scraper_db.py >> /downloads/de-c4l6/companion/logs/cron_stdout.log 2>&1" job.position=0 job.schedule="* * * * *"
+time="2026-11-25T21:11:00+02:00" level=info msg="job succeeded" iteration=1 job.command="/usr/bin/python3 /downloads/de-c4l6/companion/scraper_db.py >> /downloads/de-c4l6/companion/logs/cron_stdout.log 2>&1" job.position=0 job.schedule="* * * * *"
+time="2026-11-25T21:12:00+02:00" level=info msg=starting iteration=2 job.command="/usr/bin/python3 /downloads/de-c4l6/companion/scraper_db.py >> /downloads/de-c4l6/companion/logs/cron_stdout.log 2>&1" job.position=0 job.schedule="* * * * *"
+time="2026-11-25T21:12:00+02:00" level=info msg="job succeeded" iteration=2 job.command="/usr/bin/python3 /downloads/de-c4l6/companion/scraper_db.py >> /downloads/de-c4l6/companion/logs/cron_stdout.log 2>&1" job.position=0 job.schedule="* * * * *"
+time="2026-11-25T21:12:28+02:00" level=info msg="received terminated, shutting down"
+time="2026-11-25T21:12:28+02:00" level=info msg="waiting for jobs to finish"
+time="2026-11-25T21:12:28+02:00" level=info msg=exiting

@@ -1,0 +1,12 @@
+__pycache__/
+.pytest_cache/
+out/
+out2/
+out3/
+*.pyc
+config_bad.json
+frames/
+run/
+outline.md
+build_c2p.py
+c2p-seg-texts.txt

@@ -1,0 +1,4 @@
+# عرض الفيديو: كل دقيقة عشان نشوف إطلاقة حقيقية على الهوا
+* * * * * cd /downloads/de-c4proj/companion && /usr/bin/python3 daily_job.py >> logs/cron_stdout.log 2>&1
+# في الحقيقة: يوميًا الساعة 8 الصبح
+# 0 8 * * * cd /path/to/companion && /usr/bin/python3 daily_job.py >> logs/cron_stdout.log 2>&1

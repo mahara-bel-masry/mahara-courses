@@ -1,0 +1,136 @@
+# DE5.2 exercises executed evidence - 2026-11-25 21:01:53 UTC
+# host: Linux 7.3.4 x86_64, shell: bash 5.1.16(1)-release
+
+$ cd /downloads/de-c5l2/demo && pwd
+/downloads/de-c5l2/demo
+
+## exercise 1: count404.sh
+$ cat scripts/count404.sh
+#!/usr/bin/env bash
+# تمرين 1: عد صفحات 404 في لوج
+# الاستخدام: ./scripts/count404.sh [مسار_اللوج]
+set -euo pipefail
+
+LOG="${1:-logs/server.log}"
+
+if [[ ! -f "$LOG" ]]; then
+  echo "خطأ: الملف $LOG مش موجود" >&2
+  exit 1
+fi
+
+if [[ ! -r "$LOG" ]]; then
+  echo "خطأ: الملف $LOG مش قابل للقراية" >&2
+  exit 1
+fi
+
+echo "عدد صفحات 404 في $LOG:"
+# كود 1 من grep معناه مفيش مطابقات، يعني صفر مش فشل
+rc=0
+count=$(grep -c ' 404 ' "$LOG") || rc=$?
+if [[ $rc -gt 1 ]]; then
+  echo "خطأ: مش قادر أقرا $LOG" >&2
+  exit "$rc"
+fi
+echo "$count"
+
+$ bash scripts/count404.sh
+عدد صفحات 404 في logs/server.log:
+61
+
+$ chmod +x scripts/count404.sh
+
+$ ./scripts/count404.sh
+عدد صفحات 404 في logs/server.log:
+61
+
+$ ./scripts/count404.sh logs/server.log
+عدد صفحات 404 في logs/server.log:
+61
+
+$ grep -v ' 404 ' /downloads/de-c5l2/demo/logs/server.log > /tmp/zero404.log
+
+$ ./scripts/count404.sh /tmp/zero404.log
+عدد صفحات 404 في /tmp/zero404.log:
+0
+$ RC=$?
+
+$ echo "exit code: $RC"
+exit code: 0
+
+## exercise 2: background process and polite stop
+$ sleep 120 & SP=$!; echo "background pid: $SP"
+background pid: 2712
+
+$ pgrep -a sleep
+2712 sleep 120
+
+$ kill 2712
+
+$ pgrep -a sleep
+$ RC=$?
+
+$ echo "pgrep exit code: $RC"
+pgrep exit code: 1
+
+## exercise 3: secret file permissions
+$ chmod 600 notes.txt
+
+$ stat -c %a,%n notes.txt
+600,notes.txt
+
+$ ls -l notes.txt
+-rw------- 1 sandbox sandbox 169 Nov 25 22:45 notes.txt
+
+$ chmod 644 notes.txt
+
+$ stat -c %a,%n notes.txt
+644,notes.txt
+
+## exercise 4: dir_lines.sh
+$ cat scripts/dir_lines.sh
+#!/usr/bin/env bash
+# تمرين 4: عدد سطور كل ملف في مجلد
+# الاستخدام: ./scripts/dir_lines.sh [مسار_المجلد]
+set -euo pipefail
+
+DIR="${1:-logs}"
+
+if [[ ! -d "$DIR" ]]; then
+  echo "خطأ: المجلد $DIR مش موجود" >&2
+  exit 1
+fi
+
+if [[ ! -r "$DIR" ]]; then
+  echo "خطأ: المجلد $DIR مش قابل للقراية" >&2
+  exit 1
+fi
+
+for f in "$DIR"/*; do
+  if [[ -f "$f" ]]; then
+    echo "$f: $(wc -l < "$f") سطر"
+  fi
+done
+
+$ chmod +x scripts/dir_lines.sh
+
+$ ./scripts/dir_lines.sh
+logs/server.log: 500 سطر
+
+$ ./scripts/dir_lines.sh data
+data/sales.csv: 121 سطر
+
+$ ./scripts/dir_lines.sh notadir
+خطأ: المجلد notadir مش موجود
+$ RC=$?
+
+$ echo "exit code: $RC"
+exit code: 1
+
+## exercise 5: your own shell process
+$ echo "my shell pid: $$"
+my shell pid: 2698
+
+$ ps -o pid,cmd -p 2698
+   PID CMD
+  2698 bash run/exercises.sh
+

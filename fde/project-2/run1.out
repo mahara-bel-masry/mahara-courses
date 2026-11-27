@@ -1,0 +1,4 @@
+ERROR bad email: omar-at-mail
+INFO customers kept: 2
+INFO orders read: 3
+INFO report written: report.json
