@@ -1,0 +1,110 @@
+smoke test 2026-11-27, all demos run on the lab runtime
+Python 3.13.18 NumPy 2.5.5 pandas 3.1.1 matplotlib 3.11.2
+--- e0.py
+   hours  score
+0      1     52
+1      2     55
+2      2     50
+3      3     61
+       hours  score
+count  12.00  12.00
+mean    4.75  67.83
+std     2.53  12.25
+min     1.00  50.00
+25%     2.75  59.50
+50%     4.50  68.00
+75%     6.25  75.50
+max     9.00  88.00
+mean hours 4.75 mean score 67.83
+exit 0
+--- e1.py
+covariance 30.591
+r by hand 0.9879
+r numpy 0.9879
+r squared 0.9759
+line 4.79 45.081
+predict 5 hours 69.03
+predict 30 hours 188.78
+exit 0
+--- e2.py
+x [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+y [25, 16, 9, 4, 1, 0, 1, 4, 9, 16, 25]
+r for y = x squared 0.0
+r for y = x squared, x positive 0.974
+r clean 1.0
+r with one outlier 0.6418
+r without it 1.0
+exit 0
+--- e3.py
+r ice cream vs drowning (invented) 0.957
+both depend on month
+r of two random lists 0.246
+r of two random lists -0.27
+r of two random lists 0.34
+exit 0
+--- e4.py
+(40, 4)
+       size  rooms   age  price
+size   1.00   0.89 -0.12   0.99
+rooms  0.89   1.00 -0.15   0.90
+age   -0.12  -0.15  1.00  -0.23
+price  0.99   0.90 -0.23   1.00
+size     0.99
+rooms    0.90
+age     -0.23
+Name: price, dtype: float64
+spearman size-price 0.986
+{1: 903.0, 2: 1588.0, 3: 2180.0, 4: 2511.0, 5: 3156.0}
+exit 0
+--- e5.py
+points drawn 12
+lines drawn 1
+x label hours y label score
+largest miss 4.66 at hours 2
+mean miss 1.39
+saved
+exit 0
+--- e6.py
+pearson 0.865
+spearman 1.0
+ranks of y [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+{'a': 28.3, 'b': 46.6}
+hours vs passed (0 or 1) 0.736
+mean hours failed 2.5 passed 5.67
+exit 0
+--- g0.py
+mean 8.8 median 7.0
+without 30: mean 6.44 median 7.0
+var by hand 57.73
+var numpy ddof1 57.73
+var numpy ddof0 51.96
+std ddof1 7.6
+range 26
+q1 q2 q3 5.25 7.0 7.75 iqr 2.5
+exit 0
+--- g1.py
+z scores [-0.63, -0.5, -0.5, -0.37, -0.24, -0.24, -0.24, -0.11, 0.03, 2.79]
+biggest |z| 2.79 for value 30
+fences 1.5 11.5
+flagged by IQR [30]
+flagged by |z| > 2 [30]
+flagged by |z| > 3 []
+exit 0
+--- g2.py
+symmetric mean 50.0 median 50.2
+  bin counts [22, 206, 483, 257, 32]
+right skewed mean 9.9 median 6.6
+  bin counts [748, 183, 52, 12, 5]
+mean is bigger than median in skewed: True
+exit 0
+--- g3.py
+(60, 2)
+       count   mean  median   std
+shop                             
+Aswan     25   96.8    97.6  11.6
+Cairo     15  103.5   103.6  10.3
+Giza      20  121.7   121.2  11.4
+overall mean 106.8 overall std 15.6
+biggest gap between shops 24.9
+share of total by shop {'Aswan': 0.378, 'Cairo': 0.242, 'Giza': 0.38}
+exit 0

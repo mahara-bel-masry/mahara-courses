@@ -1,0 +1,21 @@
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import numpy as np
+hours = np.array([1, 2, 2, 3, 4, 4, 5, 6, 6, 7, 8, 9])
+score = np.array([52, 55, 50, 61, 66, 63, 70, 74, 72, 80, 83, 88])
+fig, ax = plt.subplots()
+ax.scatter(hours, score)
+slope, intercept = np.polyfit(hours, score, 1)
+xs = np.array([0, 10])
+ax.plot(xs, slope * xs + intercept)
+ax.set_xlabel("hours"); ax.set_ylabel("score")
+pts = ax.collections[0].get_offsets()
+print("points drawn", len(pts))
+print("lines drawn", len(ax.lines))
+print("x label", ax.get_xlabel(), "y label", ax.get_ylabel())
+res = score - (slope * hours + intercept)
+print("largest miss", round(abs(res).max(), 2), "at hours", int(hours[abs(res).argmax()]))
+print("mean miss", round(abs(res).mean(), 2))
+fig.savefig("/tmp/e5.png", dpi=80)
+print("saved")

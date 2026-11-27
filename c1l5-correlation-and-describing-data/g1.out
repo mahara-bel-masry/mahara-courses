@@ -1,0 +1,6 @@
+z scores [-0.63, -0.5, -0.5, -0.37, -0.24, -0.24, -0.24, -0.11, 0.03, 2.79]
+biggest |z| 2.79 for value 30
+fences 1.5 11.5
+flagged by IQR [30]
+flagged by |z| > 2 [30]
+flagged by |z| > 3 []

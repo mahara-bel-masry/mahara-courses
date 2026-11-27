@@ -1,0 +1,11 @@
+import numpy as np
+a = np.array([4, 5, 5, 6, 7, 7, 7, 8, 9, 30])
+print("mean", a.mean(), "median", np.median(a))
+print("without 30: mean", round(a[:-1].mean(), 2), "median", np.median(a[:-1]))
+print("var by hand", round(((a - a.mean())**2).sum() / (len(a) - 1), 2))
+print("var numpy ddof1", round(a.var(ddof=1), 2))
+print("var numpy ddof0", round(a.var(), 2))
+print("std ddof1", round(a.std(ddof=1), 2))
+print("range", a.max() - a.min())
+q1, q2, q3 = np.percentile(a, [25, 50, 75])
+print("q1 q2 q3", q1, q2, q3, "iqr", q3 - q1)

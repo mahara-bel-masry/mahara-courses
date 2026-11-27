@@ -1,0 +1,5 @@
+symmetric mean 50.0 median 50.2
+  bin counts [22, 206, 483, 257, 32]
+right skewed mean 9.9 median 6.6
+  bin counts [748, 183, 52, 12, 5]
+mean is bigger than median in skewed: True

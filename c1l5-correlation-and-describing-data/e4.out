@@ -1,0 +1,12 @@
+(40, 4)
+       size  rooms   age  price
+size   1.00   0.89 -0.12   0.99
+rooms  0.89   1.00 -0.15   0.90
+age   -0.12  -0.15  1.00  -0.23
+price  0.99   0.90 -0.23   1.00
+size     0.99
+rooms    0.90
+age     -0.23
+Name: price, dtype: float64
+spearman size-price 0.986
+{1: 903.0, 2: 1588.0, 3: 2180.0, 4: 2511.0, 5: 3156.0}

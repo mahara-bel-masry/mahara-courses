@@ -1,0 +1,9 @@
+(60, 2)
+       count   mean  median   std
+shop                             
+Aswan     25   96.8    97.6  11.6
+Cairo     15  103.5   103.6  10.3
+Giza      20  121.7   121.2  11.4
+overall mean 106.8 overall std 15.6
+biggest gap between shops 24.9
+share of total by shop {'Aswan': 0.378, 'Cairo': 0.242, 'Giza': 0.38}
