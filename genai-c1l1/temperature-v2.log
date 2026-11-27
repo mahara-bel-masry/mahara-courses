@@ -1,0 +1,11 @@
+Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]
+Loading weights:  38%|███▊      | 102/272 [00:00<00:00, 1012.88it/s]
+Loading weights:  78%|███████▊  | 212/272 [00:00<00:00, 1059.81it/s]
+Loading weights: 100%|██████████| 272/272 [00:00<00:00, 1030.78it/s]
+--- temperature zero (greedy), مرتين ورا بعض ---
+The best way to learn programming is to start with something simple and gradually move on to more complex tasks. This will help you build a
+The best way to learn programming is to start with something simple and gradually move on to more complex tasks. This will help you build a
+--- temperature 0.8 (sampling, top_p=1.0, top_k=0, unseeded), تلات مرات ---
+The best way to learn programming is to start with something simple and easy to understand, like basic math or data structures. As you get
+The best way to learn programming is to learn it in simple and understandable ways. One of the best ways to learn programming is to do
+The best way to learn programming is by starting with code books like "Java Virtual Machine Cookbook" which has many examples and tutorials.
