@@ -1,0 +1,14 @@
+*   Trying 127.0.0.1:8099...
+* Connected to 127.0.0.1 (127.0.0.1) port 8099 (#0)
+> GET / HTTP/1.1
+> Host: 127.0.0.1:8099
+> User-Agent: curl/7.81.0
+> Accept: */*
+> 
+< HTTP/1.1 200 OK
+< content-type: text/html; charset=utf-8
+< Date: Fri, 27 Nov 2026 14:15:40 GMT
+< Connection: keep-alive
+< Keep-Alive: timeout=5
+< Transfer-Encoding: chunked
+< 

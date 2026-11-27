@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "requestStart": 9,
+    "responseEnd": 17,
+    "domContentLoaded": 1574,
+    "load": 1576
+  },
+  "paints": {
+    "first-paint": 1628,
+    "first-contentful-paint": 1628
+  },
+  "res": [
+    {
+      "name": "/style.css",
+      "type": "link",
+      "start": 42,
+      "end": 68
+    },
+    {
+      "name": "/app.js",
+      "type": "script",
+      "start": 45,
+      "end": 1568
+    },
+    {
+      "name": "/pic.svg",
+      "type": "img",
+      "start": 45,
+      "end": 71
+    },
+    {
+      "name": "/favicon.ico",
+      "type": "other",
+      "start": 1614,
+      "end": 1618
+    }
+  ],
+  "status": {
+    "/": 200,
+    "/style.css": 200,
+    "/pic.svg": 200,
+    "/app.js": 200
+  }
+}

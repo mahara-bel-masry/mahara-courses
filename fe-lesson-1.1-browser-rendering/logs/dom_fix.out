@@ -1,0 +1,2 @@
+input : <p>one<p>two<ul><li>a<li>b</ul><b>bold<i>both</b>italic</i>
+output: <p>one</p><p>two</p><ul><li>a</li><li>b</li></ul><b>bold<i>both</i></b><i>italic</i>

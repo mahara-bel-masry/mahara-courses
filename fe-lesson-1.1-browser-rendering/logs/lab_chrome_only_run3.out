@@ -1,0 +1,5 @@
+Chrome 157.0.8103.78
+head {"paint":[["first-paint",1540],["first-contentful-paint",1540]],"domContentLoaded":1535} requests seen by CDP Network domain: head/index.html, head/style.css, head/app.js
+defer {"paint":[["first-paint",44],["first-contentful-paint",44]],"domContentLoaded":1540} requests seen by CDP Network domain: defer/index.html, defer/style.css, defer/app.js
+end {"paint":[["first-paint",56],["first-contentful-paint",56]],"domContentLoaded":1544} requests seen by CDP Network domain: end/index.html, end/style.css, end/app.js
+broken body DOM: \n<p>first paragraph\n</p><p>second paragraph\n</p><ul><li>one</li><li>two</li></ul>\n<b>bold <i>both</i></b><i> italic only</i>\n\n\n

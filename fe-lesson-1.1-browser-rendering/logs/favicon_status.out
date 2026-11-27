@@ -1,0 +1,4 @@
+$ curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:8099/favicon.ico
+404
+$ curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:8099/style.css
+200
