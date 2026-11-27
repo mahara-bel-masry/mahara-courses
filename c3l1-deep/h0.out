@@ -1,0 +1,5 @@
+train rows 225 test rows 75
+coef [ 1.5  -0.95] intercept 22.13
+MAE 12.21
+RMSE 15.74
+R2 0.949
