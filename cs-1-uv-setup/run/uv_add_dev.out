@@ -1,0 +1,22 @@
+## uv add --dev pytest
+Resolved 7 packages in 2ms
+   Building inventory-tool @ file:///tmp/demo13/inventory_tool
+      Built inventory-tool @ file:///tmp/demo13/inventory_tool
+Prepared 1 package in 1ms
+Uninstalled 1 package in 0.16ms
+Installed 6 packages in 5ms
+ + iniconfig==2.3.1
+ ~ inventory-tool==0.1.0 (from file:///tmp/demo13/inventory_tool)
+ + packaging==26.4
+ + pluggy==1.7.0
+ + pygments==2.21.0
+ + pytest==9.2.0
+## dependency-groups in pyproject
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
+## uv.lock first lines
+version = 1
+revision = 5
+requires-python = ">=3.14"
