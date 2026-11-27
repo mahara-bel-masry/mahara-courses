@@ -1,0 +1,3 @@
+tables after unsafe string: ['branches']
+(0,)
+tables after safe query: ['branches']
