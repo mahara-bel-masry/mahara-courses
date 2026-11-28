@@ -1,0 +1,40 @@
+[1] CLEAN function | Microsoft Support — support.microsoft.com
+https://support.microsoft.com/en-us/excel/functions/clean-function
+
+CLEAN function | Microsoft Support
+
+# CLEAN function
+
+Applies To
+
+Excel for Microsoft 365 Excel for Microsoft 365 for Mac Excel for the web Excel 2024 Excel 2024 for Mac Excel 2021 Excel 2021 for Mac Excel 2019 Excel 2016 
+
+ This article describes the formula syntax and usage of the CLEAN function in Microsoft Excel.
+
+## Description
+
+Removes all nonprintable characters from text. Use CLEAN on text imported from other applications that contains characters that may not print with your operating system. For example, you can use CLEAN to remove some low-level computer code that is frequently at the beginning and end of data files and cannot be printed.
+
+Important
+
+The CLEAN function was designed to remove the first 32 nonprinting characters in the 7-bit ASCII code (values 0 through 31) from text. In the Unicode character set, there are additional nonprinting characters (values 127, 129, 141, 143, 144, and 157). By itself, the CLEAN function does not remove these additional nonprinting characters. For an example of how to remove these additional nonprinting characters from text, see Top ten ways to clean your data.
+
+## Syntax
+
+CLEAN(text)
+
+The CLEAN function syntax has the following arguments:
+
+- Text Required. Any worksheet information from which you want to remove nonprintable characters.
+
+## Example
+
+Copy the example data in the following table, and paste it in cell A1 of a new Excel worksheet. For formulas to show results, select them, press F2, and then press Enter. If you need to, you can adjust the column widths to see all the data.
+
+| Data | | |
+| --- | --- | --- |
+| =CHAR(9)&"Monthly report"&CHAR(10) | | |
+| Formula | Description | Result |
+| =CLEAN(A2) | Removes the nonprintable characters CHAR(9) and CHAR(10) from the text string in cell A2. | Monthly report |
+
+ Thank you! Any more feedback for Microsoft? Can you help us improve? (Send feedback to Microsoft so we can help.)

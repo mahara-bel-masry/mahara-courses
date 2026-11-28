@@ -1,0 +1,14 @@
+code | LEFT 2 | MID 4,3 | RIGHT 5 | ISNUMBER(RIGHT) | VALUE | ISNUMBER
+EG-CAI-00123 | EG | CAI | 00123 | FALSE | 123 | TRUE
+EG-ALX-00045 | EG | ALX | 00045 | FALSE | 45 | TRUE
+EG-GIZ-00871 | EG | GIZ | 00871 | FALSE | 871 | TRUE
+LEFT(A1,50) -> 'EG-CAI-00123'
+LEFT(A1) -> 'E'
+RIGHT(A1) -> '3'
+MID(A1,50,3) -> ''
+MID(A1,10,50) -> '123'
+MID(A1,0,3) -> 'Err:502'
+MID(A1,4,-1) -> 'Err:502'
+LEFT(A1,0) -> ''
+SUM of the RIGHT texts -> 0
+SUM of the VALUE numbers -> 1039

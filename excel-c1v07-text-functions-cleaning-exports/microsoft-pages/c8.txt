@@ -1,0 +1,164 @@
+[1] Top ten ways to clean your data | Microsoft Support — support.microsoft.com
+https://support.microsoft.com/en-us/excel/top-ten-ways-to-clean-your-data
+
+Top ten ways to clean your data | Microsoft Support
+
+# Top ten ways to clean your data
+
+ Can you show me how to remove duplicate rows? Show me how Can I explain distribute the contents. Give me top ten ways to clean my data. 
+
+Misspelled words, stubborn trailing spaces, unwanted prefixes, improper cases, and nonprinting characters make a bad first impression. And that is not even a complete list of ways your data can get dirty. Roll up your sleeves. It is time for some major spring-cleaning of your worksheets with Microsoft Excel.
+
+## The basics of cleaning your data
+
+You don't always have control over the format and type of data that you import from an external data source, such as a database, text file, or a Web page. Before you can analyze the data, you often need to clean it up. Fortunately, Excel has many features to help you get data in the precise format that you want. Sometimes, the task is straightforward and there is a specific feature that does the job for you. For example, you can easily use Spell Checker to clean up misspelled words in columns that contain comments or descriptions. Or, if you want to remove duplicate rows, you can quickly do this by using the Remove Duplicates dialog box.
+
+At other times, you may need to manipulate one or more columns by using a formula to convert the imported values into new values. For example, if you want to remove trailing spaces, you can create a new column to clean the data by using a formula, filling down the new column, converting that new column's formulas to values, and then removing the original column.
+
+The basic steps for cleaning data are as follows:
+
+1. Import the data from an external data source.
+2. Create a backup copy of the original data in a separate workbook.
+3. Ensure that the data is in a tabular format of rows and columns with: similar data in each column, all columns and rows visible, and no blank rows within the range. For best results, use an Excel table.
+4. Do tasks that don't require column manipulation first, such as spell-checking or using the Find and Replace dialog box.
+5. Next, do tasks that do require column manipulation. The general steps for manipulating a column are:
+
+1. Insert a new column (B) next to the original column (A) that needs cleaning.
+2. Add a formula that will transform the data at the top of the new column (B).
+3. Fill down the formula in the new column (B). In an Excel table, a calculated column is automatically created with values filled down.
+4. Select the new column (B), copy it, and then paste as values into the new column (B).
+5. Remove the original column (A), which converts the new column from B to A.
+
+To periodically clean the same data source, consider recording a macro or writing code to automate the entire process. There are also a number of external add-ins written by third-party vendors, listed in the Third-party providers section, that you can consider using if you don't have the time or resources to automate the process on your own.
+
+| More information | Description |
+| --- | --- |
+| Fill data automatically in worksheet cells | Shows how to use the Fill command. |
+| Create and format tables Resize a table by adding or removing rows and columns Use calculated columns in an Excel table | Show how to create an Excel table and add or delete columns or calculated columns. |
+| Create a macro | Shows several ways to automate repetitive tasks by using a macro. |
+
+## Spell checking
+
+You can use a spell checker to not only find misspelled words, but to find values that are not used consistently, such as product or company names, by adding those values to a custom dictionary.
+
+| More information | Description |
+| --- | --- |
+| Check spelling and grammar | Shows how to correct misspelled words on a worksheet. |
+| Use custom dictionaries to add words to the spelling checker | Explains how to use custom dictionaries. |
+
+## Removing duplicate rows
+
+Duplicate rows are a common problem when you import data. It is a good idea to filter for unique values first to confirm that the results are what you want before you remove duplicate values.
+
+| More information | Description |
+| --- | --- |
+| Filter for unique values or remove duplicate values | Shows two closely-related procedures: how to filter for unique rows and how to remove duplicate rows. |
+
+## Finding and replacing text
+
+You may want to remove a common leading string, such as a label followed by a colon and space, or a suffix, such as a parenthetic phrase at the end of the string that is obsolete or unnecessary. You can do this by finding instances of that text and then replacing it with no text or other text.
+
+| More information | Description |
+| --- | --- |
+| Check if a cell contains text (case-insensitive) Check if a cell contains text (case-sensitive) | Show how to use the Find command and several functions to find text. |
+| Remove characters from text | Shows how to use the Replace command and several functions to remove text. |
+| Find or replace text and numbers on a worksheet | Show how to use the Find and Replace dialog boxes. |
+| FIND, FINDB SEARCH, SEARCHB REPLACE, REPLACEB SUBSTITUTE LEFT, LEFTB RIGHT, RIGHTB LEN, LENB MID, MIDB | These are the functions that you can use to do various string manipulation tasks, such as finding and replacing a substring within a string, extracting portions of a string, or determining the length of a string. |
+
+## Changing the case of text
+
+Sometimes text comes in a mixed bag, especially when the case of text is concerned. Using one or more of the three Case functions, you can convert text to lowercase letters, such as e-mail addresses, uppercase letters, such as product codes, or proper case, such as names or book titles.
+
+| More information | Description |
+| --- | --- |
+| Change the case of text | Shows how to use the three Case functions. |
+| LOWER | Converts all uppercase letters in a text string to lowercase letters. |
+| PROPER | Capitalizes the first letter in a text string and any other letters in text that follow any character other than a letter. Converts all other letters to lowercase letters. |
+| UPPER | Converts text to uppercase letters. |
+
+## Removing spaces and nonprinting characters from text
+
+Sometimes text values contain leading, trailing, or multiple embedded space characters (Unicode character set values 32 and 160), or nonprinting characters (Unicode character set values 0 to 31, 127, 129, 141, 143, 144, and 157). These characters can sometimes cause unexpected results when you sort, filter, or search. For example, in the external data source, users may make typographical errors by inadvertently adding extra space characters, or imported text data from external sources may contain nonprinting characters that are embedded in the text. Because these characters are not easily noticed, the unexpected results may be difficult to understand. To remove these unwanted characters, you can use a combination of the TRIM, CLEAN, and SUBSTITUTE functions.
+
+| More information | Description |
+| --- | --- |
+| CODE | Returns a numeric code for the first character in a text string. |
+| CLEAN | Removes the first 32 nonprinting characters in the 7-bit ASCII code (values 0 through 31) from text. |
+| TRIM | Removes the 7-bit ASCII space character (value 32) from text. |
+| SUBSTITUTE | You can use the SUBSTITUTE function to replace the higher value Unicode characters (values 127, 129, 141, 143, 144, 157, and 160) with the 7-bit ASCII characters for which the TRIM and CLEAN functions were designed. |
+
+## Fixing numbers and number signs
+
+There are two main issues with numbers that may require you to clean the data: the number was inadvertently imported as text, and the negative sign needs to be changed to the standard for your organization.
+
+| More information | Description |
+| --- | --- |
+| Convert numbers stored as text to numbers | Shows how to convert numbers that are formatted and stored in cells as text, which can cause problems with calculations or produce confusing sort orders, to number format. |
+| DOLLAR | Converts a number to text format and applies a currency symbol. |
+| TEXT | Converts a value to text in a specific number format. |
+| FIXED | Rounds a number to the specified number of decimals, formats the number in decimal format by using a period and commas, and returns the result as text. |
+| VALUE | Converts a text string that represents a number to a number. |
+
+## Fixing dates and times
+
+Because there are so many different date formats, and because these formats may be confused with numbered part codes or other strings that contain slash marks or hyphens, dates and times often need to be converted and reformatted.
+
+| More information | Description |
+| --- | --- |
+| Change the date system, format, or two-digit year interpretation | Describes how the date system works in Office Excel. |
+| Convert times | Shows how to convert between different time units. |
+| Convert dates stored as text to dates | Shows how to convert dates that are formatted and stored in cells as text, which can cause problems with calculations or produce confusing sort orders, to date format. |
+| DATE | Returns the sequential serial number that represents a particular date. If the cell format was General before the function was entered, the result is formatted as a date. |
+| DATEVALUE | Converts a date represented by text to a serial number. |
+| TIME | Returns the decimal number for a particular time. If the cell format was General before the function was entered, the result is formatted as a date. |
+| TIMEVALUE | Returns the decimal number of the time represented by a text string. The decimal number is a value ranging from 0 (zero) to 0.99999999, representing the times from 0:00:00 (12:00:00 AM) to 23:59:59 (11:59:59 P.M.). |
+
+## Merging and splitting columns
+
+A common task after importing data from an external data source is to either merge two or more columns into one, or split one column into two or more columns. For example, you may want to split a column that contains a full name into a first and last name. Or, you may want to split a column that contains an address field into separate street, city, region, and postal code columns. The reverse may also be true. You may want to merge a First and Last Name column into a Full Name column, or combine separate address columns into one column. Additional common values that may require merging into one column or splitting into multiple columns include product codes, file paths, and Internet Protocol (IP) addresses.
+
+| More information | Description |
+| --- | --- |
+| Combine first and last names Combine text and numbers Combine text with a date or time Combine two or more columns by using a function | Show typical examples of combining values from two or more columns. |
+| Split text into different columns with the Convert Text to Columns Wizard | Shows how to use this wizard to split columns based on various common delimiters. |
+| Split text into different columns with functions | Shows how to use the LEFT, MID, RIGHT, SEARCH, and LEN functions to split a name column into two or more columns. |
+| Combine or split the contents of cells | Shows how to use the CONCATENATE function, & (ampersand) operator, and Convert Text to Columns Wizard. |
+| Merge cells or split merged cells | Shows how to use the Merge Cells, Merge Across, and Merge and Center commands. |
+| CONCATENATE | Joins two or more text strings into one text string. |
+
+## Transforming and rearranging columns and rows
+
+Most of the analysis and formatting features in Office Excel assume that the data exists in a single, flat two-dimensional table. Sometimes you may want to make the rows become columns, and the columns become rows. At other times, data is not even structured in a tabular format, and you need a way to transform the data from a nontabular to a tabular format.
+
+| More information | Description |
+| --- | --- |
+| TRANSPOSE | Returns a vertical range of cells as a horizontal range, or vice versa. |
+
+## Reconciling table data by joining or matching
+
+Occasionally, database administrators use Office Excel to find and correct matching errors when two or more tables are joined. This might involve reconciling two tables from different worksheets, for example, to see all records in both tables or to compare tables and find rows that don't match.
+
+| More information | Description |
+| --- | --- |
+| Look up values in a list of data | Shows common ways to look up data by using the lookup functions. |
+| LOOKUP | Returns a value either from a one-row or one-column range or from an array. The LOOKUP function has two syntax forms: the vector form and the array form. |
+| HLOOKUP | Searches for a value in the top row of a table or an array of values, and then returns a value in the same column from a row you specify in the table or array. |
+| VLOOKUP | Searches for a value in the first column of a table array and returns a value in the same row from another column in the table array. |
+| INDEX | Returns a value or the reference to a value from within a table or range. There are two forms of the INDEX function: the array form and the reference form. |
+| MATCH | Returns the relative position of an item in an array that matches a specified value in a specified order. Use MATCH instead of one of the LOOKUP functions when you need the position of an item in a range instead of the item itself. |
+| OFFSET | Returns a reference to a range that is a specified number of rows and columns from a cell or range of cells. The reference that is returned can be a single cell or a range of cells. You can specify the number of rows and the number of columns to be returned. |
+
+## Third-party providers
+
+The following is a partial list of third-party providers that have products that are used to clean data in a variety of ways.
+
+Note
+
+Microsoft does not provide support for third-party products.
+
+| Provider | Product |
+| --- | --- |
+| Add-in Express Ltd. | Ultimate Suite for Excel, Merge Tables Wizard, Duplicate Remover, Consolidate Worksheets Wizard, Combine Rows Wizard, Cell Cleaner, Random Generator, Merge Cells, Quick Tools for Excel, Random Sorter, Advanced Find & Replace, Fuzzy Duplicate Finder, Split Names, Split Table Wizard, Workbook Manager |
+| Add-Ins.com | Duplicate Finder |
+| AddinTools | AddinTools Assist |
+| WinPure | ListCleaner Lite ListCleaner Pro |

@@ -1,0 +1,7 @@
+TEXTJOIN(", ",TRUE,A1:A4) -> 'Mona, Cairo, Egypt'
+TEXTJOIN(", ",FALSE,A1:A4) -> 'Mona, , Cairo, Egypt'
+TEXTJOIN("",TRUE,A1:A4) -> 'MonaCairoEgypt'
+TEXTJOIN(" - ",TRUE,"a","b","c") -> 'a - b - c'
+TEXTJOIN(",",TRUE,A1,A2,A3) -> 'Mona,Cairo'
+LEN(TEXTJOIN(", ",TRUE,A1:A4)) -> '18'
+LEN(TEXTJOIN(", ",FALSE,A1:A4)) -> '20'

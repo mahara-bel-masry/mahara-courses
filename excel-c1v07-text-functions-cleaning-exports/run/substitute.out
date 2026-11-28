@@ -1,0 +1,11 @@
+SUBSTITUTE(A1,"-","") -> '01012345678' | remove every dash
+SUBSTITUTE(A1,"-"," ",2) -> '010-1234 5678' | only the second dash
+SUBSTITUTE(A2,"1","2",1) -> 'Quarter 2, 2011' | first instance of 1
+SUBSTITUTE(A2,"1","2",3) -> 'Quarter 1, 2012' | third instance of 1
+SUBSTITUTE(A2,"1","2",9) -> 'Quarter 1, 2011' | instance that does not exist
+SUBSTITUTE(A3,"cairo","X") -> 'X CAIRO Cairo' | lower case only
+SUBSTITUTE(A3,"Cairo","X") -> 'cairo CAIRO X' | capital C only
+SUBSTITUTE(A4,",","") -> '1250' | text left after removing the comma
+ISNUMBER(SUBSTITUTE(A4,",","")) -> 'FALSE' | is that result a number
+VALUE(SUBSTITUTE(A4,",",""))*2 -> '2500' | number after VALUE, times 2
+SUBSTITUTE(A5,"-",", ") -> 'A, B, C, D' | dash to comma and space

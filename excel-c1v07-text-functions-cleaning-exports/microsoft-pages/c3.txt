@@ -1,0 +1,47 @@
+[1] RIGHT function | Microsoft Support — support.microsoft.com
+https://support.microsoft.com/en-us/excel/functions/right-function
+
+RIGHT function | Microsoft Support
+
+# RIGHT function
+
+Applies To
+
+Excel for Microsoft 365 Excel for Microsoft 365 for Mac Excel for the web Excel 2024 Excel 2024 for Mac Excel 2021 Excel 2021 for Mac Excel 2019 Excel 2016 Microsoft Office My Office for iPhone 
+
+This article describes the formula syntax and usage of the RIGHT function in Microsoft Excel.
+
+## Description
+
+RIGHT returns the last character or characters in a text string, based on the number of characters you specify.
+
+## Syntax
+
+RIGHT(text,[num_chars])
+
+The RIGHT function have the following arguments:
+
+- Text Required. The text string containing the characters you want to extract.
+- Num_chars Optional. Specifies the number of characters you want RIGHT to extract.
+
+- Num_chars must be greater than or equal to zero.
+- If num_chars is greater than the length of text, RIGHT returns all of text.
+- If num_chars is omitted, it is assumed to be 1.
+
+## Example
+
+Copy the example data in the following table, and paste it in cell A1 of a new Excel worksheet. For formulas to show results, select them, press F2, and then press Enter. If you need to, you can adjust the column widths to see all the data.
+
+| Data | Description | |
+| --- | --- | --- |
+| Sale Price | | |
+| Stock Number | | |
+| Formula | Description (Result) | Result |
+| =RIGHT(A2,5) | Last 5 characters of the first string (Price) | Price |
+| =RIGHT(A3) | Last character of the second string (r) | r |
+
+Important
+
+The RIGHTB function is deprecated. RIGHT now supports Unicode surrogates via the Compatibility Version, Version 2.
+
+ Thank you! Any more feedback for Microsoft? Can you help us improve? (Send feedback to Microsoft so we can help.)

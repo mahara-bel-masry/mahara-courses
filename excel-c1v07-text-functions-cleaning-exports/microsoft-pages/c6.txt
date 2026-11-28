@@ -1,0 +1,43 @@
+[1] SUBSTITUTE function | Microsoft Support — support.microsoft.com
+https://support.microsoft.com/en-us/excel/functions/substitute-function
+
+SUBSTITUTE function | Microsoft Support
+
+# SUBSTITUTE function
+
+Applies To
+
+Excel for Microsoft 365 Excel for Microsoft 365 for Mac Excel for the web Excel 2024 Excel 2024 for Mac Excel 2021 Excel 2021 for Mac Excel 2019 Excel 2016 Microsoft Office My Office for iPhone 
+
+This article describes the formula syntax and usage of the SUBSTITUTE function in Microsoft Excel.
+
+## Description
+
+Substitutes new_text for old_text in a text string. Use SUBSTITUTE when you want to replace specific text in a text string; use REPLACE when you want to replace any text that occurs in a specific location in a text string.
+
+## Syntax
+
+SUBSTITUTE(text, old_text, new_text, [instance_num])
+
+The SUBSTITUTE function syntax has the following arguments:
+
+- Text Required. The text or the reference to a cell containing text for which you want to substitute characters.
+- Old_text Required. The text you want to replace.
+- New_text Required. The text you want to replace old_text with.
+- Instance_num Optional. Specifies which occurrence of old_text you want to replace with new_text. If you specify instance_num, only that instance of old_text is replaced. Otherwise, every occurrence of old_text in text is changed to new_text.
+
+## Example
+
+Copy the example data in the following table, and paste it in cell A1 of a new Excel worksheet. For formulas to show results, select them, press F2, and then press Enter. If you need to, you can adjust the column widths to see all the data.
+
+| Data | | |
+| --- | --- | --- |
+| Sales Data | < | |
+| Quarter 1, 2008 | < | |
+| Quarter 1, 2011 | < | |
+| Formula | Description (Result) | Result |
+| =SUBSTITUTE(A2, "Sales", "Cost") | Substitutes Cost for Sales (Cost Data) | Cost Data |
+| =SUBSTITUTE(A3, "1", "2", 1) | Substitutes first instance of "1" with "2" (Quarter 2, 2008) | Quarter 2, 2008 |
+| =SUBSTITUTE(A4, "1", "2", 3) | Substitutes third instance of "1" with "2" (Quarter 1, 2012) | Quarter 1, 2012 |
+
+ Thank you! Any more feedback for Microsoft? Can you help us improve? (Send feedback to Microsoft so we can help.)

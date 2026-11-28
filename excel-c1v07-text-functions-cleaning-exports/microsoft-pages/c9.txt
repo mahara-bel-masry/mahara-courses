@@ -1,0 +1,56 @@
+[1] Text functions (reference) | Microsoft Support — support.microsoft.com
+https://support.microsoft.com/en-us/excel/text-functions-reference
+
+Text functions (reference) | Microsoft Support
+
+# Text functions (reference)
+
+Applies To
+
+Excel for Microsoft 365 Excel for Microsoft 365 for Mac Excel for the web Excel 2024 Excel 2024 for Mac Excel 2021 Excel 2021 for Mac Excel 2019 Excel 2016 Microsoft Office My Office for iPhone 
+
+ To get detailed information about a function, click its name in the first column.
+
+| Function | Description |
+| --- | --- |
+| ARRAYTOTEXT function ![Office 365 button](https://support.microsoft.com/en-us/excel/media/office365-button.png) | Returns an array of text values from any specified range |
+| ASC function | Changes full-width (double-byte) English letters or katakana within a character string to half-width (single-byte) characters |
+| BAHTTEXT function | Converts a number to text, using the ß (baht) currency format |
+| CHAR function | Returns the character specified by the code number |
+| CLEAN function | Removes all nonprintable characters from text |
+| CODE function | Returns a numeric code for the first character in a text string |
+| CONCAT function ![Excel 2016](https://support.microsoft.com/en-us/excel/media/xl-excel2016-tag.png) | Combines the text from multiple ranges and/or strings, but it doesn't provide the delimiter or IgnoreEmpty arguments. |
+| CONCATENATE function | Joins several text items into one text item |
+| DBCS function ![Excel 2013](https://support.microsoft.com/en-us/excel/media/xl-excel2013-tag.png) | Changes half-width (single-byte) English letters or katakana within a character string to full-width (double-byte) characters |
+| DOLLAR function | Converts a number to text, using the $ (dollar) currency format |
+| EXACT function | Checks to see if two text values are identical |
+| FIND, FINDB functions | Finds one text value within another (case-sensitive) |
+| FIXED function | Formats a number as text with a fixed number of decimals |
+| LEFT, LEFTB functions | Returns the leftmost characters from a text value |
+| LEN, LENB functions | Returns the number of characters in a text string |
+| LOWER function | Converts text to lowercase |
+| MID, MIDB functions | Returns a specific number of characters from a text string starting at the position you specify |
+| NUMBERVALUE function ![Excel 2013](https://support.microsoft.com/en-us/excel/media/xl-excel2013-tag.png) | Converts text to number in a locale-independent manner |
+| PHONETIC function | Extracts the phonetic (furigana) characters from a text string |
+| PROPER function | Capitalizes the first letter in each word of a text value |
+| REPLACE, REPLACEB functions | Replaces characters within text |
+| REPT function | Repeats text a given number of times |
+| RIGHT, RIGHTB functions | Returns the rightmost characters from a text value |
+| SEARCH, SEARCHB functions | Finds one text value within another (not case-sensitive) |
+| SUBSTITUTE function | Substitutes new text for old text in a text string |
+| T function | Converts its arguments to text |
+| TEXT function | Formats a number and converts it to text |
+| TEXTAFTER function ![Office 365 button](https://support.microsoft.com/en-us/excel/media/office365-button.png) | Returns text that occurs after given character or string |
+| TEXTBEFORE function ![Office 365 button](https://support.microsoft.com/en-us/excel/media/office365-button.png) | Returns text that occurs before a given character or string |
+| TEXTJOIN function ![Office 365 button](https://support.microsoft.com/en-us/excel/media/office365-button.png) | Combines the text from multiple ranges and/or strings |
+| TEXTSPLIT function ![Office 365 button](https://support.microsoft.com/en-us/excel/media/office365-button.png) | Splits text strings by using column and row delimiters |
+| TRIM function | Removes spaces from text |
+| UNICHAR function ![Excel 2013](https://support.microsoft.com/en-us/excel/media/xl-excel2013-tag.png) | Returns the Unicode character that is references by the given numeric value |
+| UNICODE function ![Excel 2013](https://support.microsoft.com/en-us/excel/media/xl-excel2013-tag.png) | Returns the number (code point) that corresponds to the first character of the text |
+| UPPER function | Converts text to uppercase |
+| VALUE function | Converts a text argument to a number |
+| VALUETOTEXT function ![Office 365 button](https://support.microsoft.com/en-us/excel/media/office365-button.png) | Returns text from any specified value |
+
+Important
+
+The calculated results of formulas and some Excel worksheet functions may differ slightly between a Windows PC using x86 or x86-64 architecture and a Windows RT PC using ARM architecture. Learn more about the differences.

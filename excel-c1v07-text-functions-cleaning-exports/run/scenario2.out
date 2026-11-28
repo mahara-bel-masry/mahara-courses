@@ -1,0 +1,11 @@
+row 2 | 'INV/2026/0042' | '2026' | '42' | 'INV-2026-0042' | '1250' | '1250'
+row 3 | 'INV/2026/0043' | '2026' | '43' | 'INV-2026-0043' | '980' | '980'
+row 4 | 'INV/2025/0917' | '2025' | '917' | 'INV-2025-0917' | '12400' | '12400'
+row 5 | 'INV/2026/0044' | '2026' | '44' | 'INV-2026-0044' | '75' | '75'
+SUM raw amounts -> 0
+SUM clean amounts -> 14705
+COUNTIF year 2026 -> 3
+total length raw ids -> 55
+total length clean ids -> 52
+MATCH raw id -> #N/A
+MATCH clean id -> 4

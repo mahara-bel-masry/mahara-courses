@@ -1,0 +1,8 @@
+nbsp at the end | LEN 13 | UNICODE of last char 160
+tab at the end | LEN 13 | UNICODE of last char 9
+space at the end | LEN 13 | UNICODE of last char 32
+clean code | LEN 12 | UNICODE of last char 51
+id INV/2026/0042 | LEN 13 | MID 5,4 -> '2026' | year by FIND -> '2026'
+id INV/26/0042 | LEN 11 | MID 5,4 -> '26/0' | year by FIND -> '26'
+id INVOICE/2026/0042 | LEN 17 | MID 5,4 -> 'ICE/' | year by FIND -> '2026'
+id INV/2026/42 | LEN 11 | MID 5,4 -> '2026' | year by FIND -> '2026'

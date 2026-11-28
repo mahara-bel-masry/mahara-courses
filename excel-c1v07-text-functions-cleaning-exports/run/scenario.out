@@ -1,0 +1,18 @@
+row 2 | EG-CAI-00123 | Mona Hassan | 01012345678 | EG | CAI | 123 | Mona Hassan | CAI | 01012345678
+row 3 | EG-ALX-00045 | Omar Ali | 01122223333 | EG | ALX | 45 | Omar Ali | ALX | 01122223333
+row 4 | EG-GIZ-00871 | Sara Nabil |  | EG | GIZ | 871 | Sara Nabil | GIZ
+row 5 | EG-CAI-00124 | Hany Samir | 01244445555 | EG | CAI | 124 | Hany Samir | CAI | 01244445555
+row 6 | EG-ALX-00046 | Laila Adel | 01566667777 | EG | ALX | 46 | Laila Adel | ALX | 01566667777
+row 7 | EG-CAI-00125 | Karim Fouad | 01088889999 | EG | CAI | 125 | Karim Fouad | CAI | 01088889999
+name in row 3 with CLEAN only (no SUBSTITUTE) -> OmarAli
+raw code in row 2: LEFT 2 -> ' E' | MID 4,3 -> '-CA'
+cleaned code in row 2: LEFT 2 -> 'EG'
+per-row LEN raw code -> [14, 13, 12, 13, 13, 12] | LEN clean code -> [12, 12, 12, 12, 12, 12]
+MATCH raw code -> #N/A
+MATCH cleaned code -> 1
+COUNTIF raw EG-CAI- -> 1
+COUNTIF cleaned EG-CAI- -> 3
+total length raw codes -> 77
+total length cleaned codes -> 72
+total length raw names -> 66
+total length cleaned names -> 60

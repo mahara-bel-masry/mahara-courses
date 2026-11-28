@@ -1,0 +1,9 @@
+https://support.microsoft.com/en-us/excel/functions/left-function
+https://support.microsoft.com/en-us/excel/functions/mid-function
+https://support.microsoft.com/en-us/excel/functions/right-function
+https://support.microsoft.com/en-us/excel/functions/trim-function
+https://support.microsoft.com/en-us/excel/functions/clean-function
+https://support.microsoft.com/en-us/excel/functions/substitute-function
+https://support.microsoft.com/en-us/excel/functions/textjoin-function
+https://support.microsoft.com/en-us/excel/top-ten-ways-to-clean-your-data
+https://support.microsoft.com/en-us/excel/text-functions-reference

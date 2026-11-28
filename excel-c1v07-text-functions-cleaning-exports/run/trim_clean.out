@@ -1,0 +1,10 @@
+case | LEN | TRIM len | CLEAN len | TRIM(CLEAN) len | CHAR160 fix len | UNICHAR160 fix len
+two spaces inside | 13 | 12 | 13 | 12 | 12 | 12
+lead and trail | 16 | 12 | 16 | 12 | 12 | 12
+tab at the end | 13 | 13 | 12 | 12 | 13 | 13
+line break inside | 12 | 12 | 11 | 11 | 12 | 12
+nonbreaking space | 12 | 12 | 12 | 12 | 12 | 12
+nbsp at the end | 13 | 13 | 13 | 13 | 13 | 12
+UNICODE of CHAR(160) in this LibreOffice -> 65533
+UNICODE of UNICHAR(160) -> 160
+text after CLEAN, line break case -> 'CairoBranch'
