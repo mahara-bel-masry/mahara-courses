@@ -1,0 +1,5 @@
+A1 =A1+A2 -> shown: Err:522 | saved as: #VALUE!
+C3 =SUM(C1:C3) -> shown: Err:522 | saved as: #VALUE!
+E1 =F1+1 -> shown: Err:522 | saved as: #VALUE!
+F1 =E1+1 -> shown: Err:522 | saved as: #VALUE!
+H2 =H1*2 -> shown: 8 | saved as: 8

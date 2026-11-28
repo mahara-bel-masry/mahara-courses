@@ -1,0 +1,6 @@
+before: totals D2..D8 [300, 300, 200, 360, 0, 300, 180]
+before: D10 1460 | H2 shown: #N/A
+before: shares sum 1.1233
+after: totals D2..D8 [300, 300, 200, 360, 280, 300, 180]
+after: D10 1920 | H2 not found
+after: shares sum 1.0

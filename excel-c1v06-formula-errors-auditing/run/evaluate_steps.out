@@ -1,0 +1,5 @@
+whole formula G1 -> 0
+step 1 AVERAGE(D2:D5) -> 40
+step 2 average > 50 -> False
+SUM(E2:E5), not needed when step 2 is False -> 100
+step 3 IF(step2, sum, 0) -> 0

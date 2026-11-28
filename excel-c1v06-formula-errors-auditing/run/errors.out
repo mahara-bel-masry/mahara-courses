@@ -1,0 +1,16 @@
+DIV0   =A1/A2                 -> shown: #DIV/0! | saved as: #DIV/0!
+NA     =MATCH(99,C1:C2,0)     -> shown: #N/A | saved as: #N/A
+NAME   =SUMM(C1:C2)           -> shown: #NAME? | saved as: #NAME?
+NULL   =SUM(C1:C1 C2:C2)      -> shown: #NULL! | saved as: #NULL!
+NUM    =10^400                -> shown: #NUM! | saved as: #NUM!
+NUM2   =SQRT(-1)              -> shown: Err:502 | saved as: #VALUE!
+REF    =INDEX(C1:C2,5)        -> shown: #REF! | saved as: #REF!
+VALUE  =A3*2                  -> shown: #VALUE! | saved as: #VALUE!
+=F1+1 (cell that holds DIV0) -> #DIV/0!
+=SUM(F1,5) -> #DIV/0!
+=IFERROR(F1,0) -> 0
+=IF(A2,A1/A2,0) -> 0
+=IFERROR(MATCH miss,'no match') -> no match
+=SUM(F1:F8) over the eight cells -> #DIV/0!
+average 10,20,blank,30 -> 20
+average 10,20,0,30 -> 15

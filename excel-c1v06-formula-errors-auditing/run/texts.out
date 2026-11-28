@@ -1,0 +1,6 @@
+SUM(A1:A4) with two text numbers -> 40
+A1+A2 (10 plus text 20) -> 30
+COUNT -> 2
+COUNTA -> 4
+ISNUMBER(A2) -> False
+VALUE(A2)+A1 -> 30

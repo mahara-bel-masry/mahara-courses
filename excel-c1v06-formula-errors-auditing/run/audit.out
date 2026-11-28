@@ -1,0 +1,20 @@
+values before: D2..D9 = [120, 255, 480, 600, 900, 0, 1300, 200] | total D10 = 3655
+E4 before: 0.1313 | E2 before: 0.0328
+-- error values
+-- numbers stored as text
+B6 '1'
+-- inconsistent with the column pattern
+column D main pattern =X100*Y100 | differs: ['D5'] (not a formula)
+column E main pattern =Y100/$D$10 | differs: ['E4'] =Y100/Y106
+-- formulas that point at empty cells
+D7 =B7*C7 points at empty C7
+-- SUM ranges that stop short of a number next to them
+D10 =SUM(D2:D8) ends at D8 but D9 holds =B9*C9
+-- trace (precedents and dependents, my script)
+precedents of D10: ['D2', 'D3', 'D4', 'D5', 'D6', 'D7', 'D8']
+direct precedents of E2: [('Sales', 'D2'), ('Sales', 'D10')]
+dependents of D10: ['E2', 'E3', 'E4', 'E5', 'E6', 'E7', 'E8', 'E9']
+dependents of B2: [('Sales', 'D2')]
+values after: D2..D9 = [120, 255, 480, 600, 900, 2000, 1300, 200] | total D10 = 5855
+shares E2..E9 sum = 1.0
+shares before E2..E9 sum = 1.0547
