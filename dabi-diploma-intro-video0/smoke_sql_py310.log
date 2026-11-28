@@ -1,0 +1,28 @@
+python 3.10.12 sqlite 3.37.2 duckdb 1.5.6
+-- window ROW_NUMBER
+[R] sqlite: [(2, 1), (1, 2)]
+[R] duckdb: [(2, 1), (1, 2)]
+-- LAG
+[R] sqlite: [(1, None), (2, 1)]
+[R] duckdb: [(1, None), (2, 1)]
+-- CTE
+[R] sqlite: [(2,)]
+[R] duckdb: [(2,)]
+-- recursive CTE
+[R] sqlite: [(15,)]
+[R] duckdb: [(15,)]
+-- LEFT JOIN
+[R] sqlite: [(1, None), (2, 'p')]
+[R] duckdb: [(1, None), (2, 'p')]
+-- RIGHT JOIN
+[ERR] sqlite: OperationalError: RIGHT and FULL OUTER JOINs are not currently supported
+[R] duckdb: [(2, 'p'), (None, 'q')]
+-- FULL JOIN
+[ERR] sqlite: OperationalError: RIGHT and FULL OUTER JOINs are not currently supported
+[R] duckdb: [(1, None), (2, 2), (None, 3)]
+-- EXCEPT
+[R] sqlite: [(1,)]
+[R] duckdb: [(1,)]
+-- date
+[R] sqlite: [('2026-11-01',)]
+[R] duckdb: [(datetime.datetime(2026, 11, 1, 0, 0),)]

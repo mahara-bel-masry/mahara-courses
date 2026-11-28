@@ -1,0 +1,9 @@
+Match log for dabi-intro-v5: voiced chunk files vs the PASSed script (/downloads/dabi/intro/dabi-diploma-intro-v4.txt, reviewer PASS text v4); whitespace normalised, text otherwise compared character for character.
+
+dabi-intro-v4-p01: words 197, exact substring of the script: True, starts at char 0
+dabi-intro-v4-p02: words 328, exact substring of the script: True, starts at char 1111
+dabi-intro-v4-p03: words 324, exact substring of the script: True, starts at char 3100
+dabi-intro-v4-p04: words 76, exact substring of the script: True, starts at char 4991
+chunks joined in order == script: True; words 925
+RESULT: ALL MATCH
+Main voiced the chunk files (wavs 79.64, 153.64, 152.76, 37.04 s); the audio was not re-transcribed here.

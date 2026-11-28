@@ -1,0 +1,57 @@
+SQL ad page text fetched live 2026-11-28 02:04 EET, case-insensitive regex per ad; counts are ADS that match (lower bounds). Ads fetched: 38
+Ads with SQL: 34
+  SQL: 34
+  SQL Server (SQL Server, T-SQL, SSMS, SSIS): 8
+  MySQL: 2
+  PostgreSQL: 0
+  Oracle: 5
+  BigQuery: 3
+  Snowflake: 2
+  Redshift: 1
+  window functions: 3
+  joins: 13
+  query optimisation or indexing: 12
+  stored procedures: 1
+  data warehouse: 2
+  KPI: 18
+
+#	chars	hits
+1	2072	SQL, KPI
+2	2384	SQL, query optimisation or indexing, data warehouse, KPI
+3	4544	SQL, BigQuery, Snowflake, Redshift, query optimisation or indexing, KPI
+4	3876	SQL, SQL Server (SQL Server, T-SQL, SSMS, SSIS), MySQL, joins, KPI
+5	1298	SQL
+6	1820	SQL
+7	1404	SQL, KPI
+8	2110	SQL, SQL Server (SQL Server, T-SQL, SSMS, SSIS), query optimisation or indexing, KPI
+9	1955	SQL, query optimisation or indexing
+10	3285	SQL, KPI
+11	3673	SQL, KPI
+12	5611	SQL, query optimisation or indexing, KPI
+13	2045	SQL, KPI
+14	4290	SQL, Oracle, query optimisation or indexing
+15	7439	SQL, SQL Server (SQL Server, T-SQL, SSMS, SSIS), BigQuery, window functions, joins
+16	1264	SQL, joins
+17	2866	SQL, window functions, joins, query optimisation or indexing, stored procedures, KPI
+18	1263	
+19	1195	SQL
+20	2411	SQL, Oracle, joins
+21	3402	SQL, Oracle, joins, KPI
+22	6418	SQL, joins
+23	3950	joins
+24	3986	joins, KPI
+25	3871	SQL, joins, query optimisation or indexing
+26	4602	SQL, SQL Server (SQL Server, T-SQL, SSMS, SSIS)
+27	6920	SQL, SQL Server (SQL Server, T-SQL, SSMS, SSIS)
+28	2778	SQL, joins, KPI
+29	4469	SQL, BigQuery, Snowflake, window functions, query optimisation or indexing, data warehouse, KPI
+30	3680	SQL, SQL Server (SQL Server, T-SQL, SSMS, SSIS), MySQL, joins, query optimisation or indexing
+31	5207	SQL, query optimisation or indexing
+32	1970	SQL, SQL Server (SQL Server, T-SQL, SSMS, SSIS), query optimisation or indexing
+33	3080	SQL, joins
+34	1409	SQL, SQL Server (SQL Server, T-SQL, SSMS, SSIS), KPI
+35	3942	SQL
+36	2490	SQL, KPI
+37	1887	Oracle
+38	3356	SQL, Oracle, KPI
+

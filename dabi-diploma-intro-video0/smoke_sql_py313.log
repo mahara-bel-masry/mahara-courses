@@ -1,0 +1,19 @@
+python 3.13.18 sqlite 3.53.1 duckdb not installed in this python
+-- window ROW_NUMBER
+[R] sqlite: [(2, 1), (1, 2)]
+-- LAG
+[R] sqlite: [(1, None), (2, 1)]
+-- CTE
+[R] sqlite: [(2,)]
+-- recursive CTE
+[R] sqlite: [(15,)]
+-- LEFT JOIN
+[R] sqlite: [(1, None), (2, 'p')]
+-- RIGHT JOIN
+[R] sqlite: [(2, 'p'), (None, 'q')]
+-- FULL JOIN
+[R] sqlite: [(None, 3), (1, None), (2, 2)]
+-- EXCEPT
+[R] sqlite: [(1,)]
+-- date
+[R] sqlite: [('2026-11-01',)]

@@ -1,0 +1,44 @@
+Raw ad text hit log (job ad page text saved on 2026-11-27 from web_fetch; case-insensitive regex on the whole saved page text). Counts are lower bounds.
+Regexes: Excel=/excel/; SQL=/\bsql\b/; PBI=/power\s*bi|powerbi/; Tab=/tableau/; Py=/\bpython\b/; PQ=/power\s*query/; DAX=/\bdax\b/; Piv=/pivot/; Stat=/statistic/; VBA=/\bvba\b|macro/; ETL=/\betl\b/; LookerQlik=/looker|qlik/
+
+#	saved_text_chars	hits
+1	2075	Excel, SQL, PBI, Tab, Piv
+2	2387	Excel, SQL, PBI, Tab, Py, PQ, DAX, Stat, ETL
+3	4547	Excel, SQL, PBI, Py, PQ, DAX, Piv, VBA
+4	3879	Excel, SQL, PBI, Tab, PQ, Piv, Stat, ETL, LookerQlik
+5	1301	Excel, SQL, PBI, Stat
+6	1823	Excel, SQL, PBI, PQ, DAX, Piv, Stat
+7	1407	Excel, SQL, PBI, Tab, Py, Stat
+8	2113	Excel, SQL, PBI, Tab, Py, Stat, ETL, LookerQlik
+9	1958	Excel, SQL, PBI, Py, PQ, DAX, ETL
+10	3288	Excel, SQL, PBI, Py, PQ, DAX, Piv, Stat
+11	3676	Excel, SQL, PBI, Py, PQ, DAX, Stat
+12	5614	Excel, SQL, PBI, Stat
+13	2048	Excel, SQL, PBI, DAX, Stat
+14	4293	Excel, SQL, PBI, PQ, DAX, Piv
+15	7442	Excel, SQL, Tab, Py, Stat, LookerQlik
+16	1267	SQL, PBI
+17	2869	SQL, PBI, Tab, Py, Stat, ETL, LookerQlik
+18	1266	PBI
+19	1198	Excel, SQL, PBI, Tab, Py, Stat
+20	2414	Excel, SQL, PBI, Tab, Py, PQ, Piv, Stat, LookerQlik
+21	3405	Excel, SQL, PBI, Tab, Py, Stat
+22	6421	Excel, SQL, PBI, Tab, Py, Stat
+23	3953	Excel, PBI
+24	3989	Excel, PBI, Piv
+25	3874	Excel, SQL, PBI, PQ, DAX
+26	4605	Excel, SQL, Tab, VBA
+27	6923	Excel, SQL, PBI, Tab, LookerQlik
+28	2781	Excel, SQL, PBI, Tab, Py, Piv, Stat, ETL
+29	4472	SQL, PBI, Tab, Py, ETL, LookerQlik
+30	3683	Excel, SQL, PBI, Tab, Py, LookerQlik
+31	5210	SQL, PBI, Tab
+32	1973	Excel, SQL, PBI, Stat, ETL
+33	3083	Excel, SQL, PBI, PQ, Stat
+34	1412	Excel, SQL, PBI, Tab
+35	3945	Excel, SQL, PBI, Py, Piv, Stat
+36	2493	Excel, SQL, PBI, Py, DAX, Piv
+37	1890	Excel, PBI, PQ, Stat
+38	3359	Excel, SQL, PBI, PQ, DAX, Piv
+
+totals (of 38): Excel 33, SQL 34, PBI 36, Tab 18, Py 18, PQ 13, DAX 11, Piv 12, Stat 21, VBA 2, ETL 8, LookerQlik 8
