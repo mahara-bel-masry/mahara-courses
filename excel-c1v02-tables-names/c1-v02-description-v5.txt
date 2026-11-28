@@ -1,0 +1,37 @@
+Data Analysis & BI، Excel (الكورس 1) | الدرس 2: الجداول Tables والمراجع المنظمة والأسماء
+
+في الدرس ده هنتعلم الـ Table في Excel: إيه هو، وإزاي تجهز الملف قبل ما تعمله، وإزاي تسميه. وبعدها المراجع المنظمة Structured References بدل عناوين الخلايا، والعمود المحسوب، وصف المجموع، والأسماء Named Ranges، وإمتى تستخدم الجدول وإمتى الاسم. وبعدها غلطات كل واحدة بدليلها، وسيناريو من شركة متخيلة، وlab بوقفات حقيقية على الشاشة.
+المدة 59 دقيقة و12 ثانية (مقاسة من الفيديو النهائي). الأرقام كلها طالعة من لوجات حقيقية في ملف الملفات المرفق.
+
+ملفات الدرس (الكود ونتايج التشغيل) على GitHub: https://github.com/mahara-bel-masry/mahara-courses/tree/main/excel-c1v02-tables-names
+الملفات في الـ zip: السكريبتات في assets، واللوجات الحقيقية في run، وملفات الداتا في data، وملفات اللاب وحلها في lab، ونص الدرس في script. شغّل السكريبتات من فولدر الدرس الرئيسي (README جوه الـ zip فيه الأوامر).
+النسخ اللي اتجرب عليها: Python 3.13.18، pandas 3.1.1، openpyxl 3.1.5، LibreOffice 26.8.3.1 (في لوج run/t8_versions.out).
+
+تنبيه صريح: كل النتايج اتشغلت على LibreOffice وPython، مش على Microsoft Excel. أي حاجة مكتوبة عن واجهة Excel اتاخدت من صفحات Microsoft Support المذكورة تحت، ومتجربتش على Excel، والفيديو بيقول كده. كل البيانات متفبركة والسيناريو متخيل. مفيش وعود بدخل أو وظيفة.
+
+مراجع:
+Using structured references with Excel tables: https://support.microsoft.com/en-us/excel/using-structured-references-with-excel-tables
+Define and use names in formulas: https://support.microsoft.com/en-us/excel/get-started/define-and-use-names-in-formulas
+Total the data in an Excel table: https://support.microsoft.com/en-us/excel/get-started/total-the-data-in-an-excel-table
+Create and format tables: https://support.microsoft.com/en-us/excel/get-started/create-and-format-tables
+
+Chapters:
+00:00 غلاف الدرس
+00:04 الخطاف
+01:46 الخريطة
+02:43 إيه هو الـ Table، الجزء الأول
+05:43 الـ Table، الجزء التاني: الاسم
+07:09 شكل الجدول، عريض ولا طويل
+09:28 المراجع المنظمة، Structured References
+12:18 عمود محسوب
+13:49 مواصفات الأجزاء اللي في الصفحة الرسمية، نجربها فعلا
+16:36 صف المجموع، Total Row
+18:55 الأسماء، Named Ranges
+21:03 جدول ولا اسم، إمتى أستخدم إيه
+22:25 لما الجدول يكبر، تجربة حقيقية
+24:32 الغلطات الشايعة
+32:39 سيناريو من شركة متخيلة
+36:11 سيناريو تاني، قايمة الأسعار بتكبر
+39:10 اللاب
+52:52 الملخص وأسئلة سريعة
+58:09 الدرس الجاي
