@@ -1,0 +1,40 @@
+Data Analysis & BI، Excel (الكورس 1) | الدرس 1: إزاي Excel بيخزن الرقم والنص والتاريخ
+
+في الدرس ده هنفهم Excel بيخزن إيه في الخلية: رقم، نص، ولا تاريخ. هنشوف ليه الرقم ممكن يتخزن كنص، وليه SUM وCOUNT وCOUNTA بيدوا أرقام مختلفة، وإزاي التاريخ رقم متنكر، وليه رقم التليفون لازم يفضل نص. وبعدها خمس غلطات شايعة وكل واحدة بفحصها، وروتين من ست خطوات، وسيناريو من شركة متخيلة، وlab بوقفات حقيقية على الشاشة.
+المدة 62 دقيقة و10 ثانية (مقاسة من الفيديو النهائي). الجزء العملي: الأرقام كلها طالعة من لوجات حقيقية في ملف الملفات المرفق.
+
+ملفات الدرس (الكود ونتايج التشغيل) على GitHub: https://github.com/mahara-bel-masry/mahara-courses/tree/main/excel-c1v01-data-types
+الملفات في الـ zip: كود العرض الأصلي (من غير تقطيع الأسطر) في assets، واللوجات الحقيقية في run، وملفات الداتا في data، وملفات اللاب (lab/make_lab2.py وlab/lab2.xlsx)، ونص الدرس. شغّل السكريبتات من فولدر الدرس الرئيسي (README جوه الـ zip فيه الأوامر).
+النسخ اللي اتجرب عليها: Python 3.13.18، pandas 3.1.1، openpyxl 3.1.5، LibreOffice 26.8.3.1 (في لوج run/versions.out).
+
+تنبيه صريح: كل النتايج اتشغلت على LibreOffice وPython، مش على Microsoft Excel. أي حاجة مكتوبة عن واجهة Excel اتاخدت من صفحات Microsoft Support المذكورة تحت، ومتجربتش على Excel، والفيديو بيقول كده. الجداول المرجعية (Table) اتشغل مثال Table بسيط في run/i1_table_run.out، لكن على LibreOffice مش Excel. كل البيانات متفبركة والسيناريو متخيل. مفيش وعود بدخل أو وظيفة.
+
+مراجع:
+Convert numbers stored as text to numbers in Excel (Convert to Number و Paste Special ثم Values): https://support.microsoft.com/en-us/excel/convert-numbers-stored-as-text-to-numbers-in-excel
+Date systems in Excel (نظام 1900 والرقم التسلسلي للتاريخ): https://support.microsoft.com/en-us/excel/date-systems-in-excel
+Excel specifications and limits: https://support.microsoft.com/en-us/excel/excel-specifications-and-limits
+Create and format tables (Home ثم Format as Table و Insert ثم Table): https://support.microsoft.com/en-us/excel/get-started/create-and-format-tables
+
+Chapters:
+00:00 غلاف الدرس
+00:04 الخطاف
+02:14 الخريطة
+04:48 Excel بيخزن إيه في الخلية، الجزء الأول، الأنواع التلاتة
+07:03 SUM مقابل COUNT مقابل COUNTA
+08:49 ليه الرقم اتخزن كنص أصلا
+12:22 التاريخ رقم
+14:57 الأرقام اللي مش أرقام، رقم التليفون
+16:18 حدود الرقم، ولمّا الكود يبقى طويل
+18:01 Table، أول خطوة لملف جاهز للشغل
+20:08 تشخيص النوع بمعادلات، مش بالعين
+23:28 لو لقيت مشكلة، إيه اللي المفروض تعمله
+25:03 نجرب الفحوصات على ملفين، وعلى ملف مكسور
+27:24 روتين من ست خطوات
+28:43 الغلطات الخمسة، كل غلطة بمثال حقيقي
+31:44 حالة إضافية، النص اللي جواه وحدة
+33:09 غلطات في التصليح نفسه
+35:05 خريطة سريعة من الغلطة للفحص
+36:58 سيناريو من شركة متخيلة
+43:24 اللاب
+56:00 الملخص وأسئلة سريعة
+61:06 الدرس الجاي
