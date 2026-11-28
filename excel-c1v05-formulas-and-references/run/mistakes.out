@@ -1,0 +1,10 @@
+SUM(B2:B6) copied from B8 to B9: =SUM(B3:B7)
+SUM($B$2:$B$6) copied from B8 to B9: =SUM($B$2:$B$6)
+B2/B8 copied from C2 to C3 (wrong): =B3/B9
+B2/$B$8 copied from C2 to C3: =B3/$B$8
+$A2*B$1 copied from B2 to C3: =$A3*C$1
+A$2*$B1 copied from B2 to C3 (parts swapped): =B$2*$B2
+total B8 = 600 | drifted total B9 = 480 (formula =SUM(B3:B7))
+share without dollar C2..C6: [0.2, 0.167, '#DIV/0!', '#DIV/0!', '#DIV/0!']
+share with dollar D2..D6: [0.2, 0.133, 0.333, 0.083, 0.25]
+formula in C3: =B3/B9 | D3: =B3/$B$8

@@ -1,0 +1,6 @@
+C2: =SUM($B$2:B2) | C4: =SUM($B$2:B4) | C6: =SUM($B$2:B6)
+D2: =SUM(B2:B2) | D4: =SUM(B4:B4) | D6: =SUM(B6:B6)
+Report B2: =Sales!B2 | B6: =Sales!B6
+running total (anchored start): [300, 750, 950, 1450, 1800]
+no anchor (each row only itself): [300, 450, 200, 500, 350]
+Report column: [300, 450, 200, 500, 350]

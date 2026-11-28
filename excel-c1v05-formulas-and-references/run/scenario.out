@@ -1,0 +1,8 @@
+formulas D4: =B4*$B$1 D7: =B7*$B$1 E4: =D4*C4 E7: =D7*C7
+egp each: [200, 550, 900, 1250]
+egp total: [4000, 3300, 3600, 3750]
+sum E8: 14650 | Summary B1,B2,B3: 14650 50 293
+after rate 55: E8 = 16115 | Summary B1 = 16115 | B3 = 293
+relative rate, formulas D4..D7: ['=B4*B1', '=B5*B2', '=B6*B3', '=B7*B4']
+relative rate egp each: [200, 0, '#VALUE!', 100]
+relative rate E8: #VALUE!

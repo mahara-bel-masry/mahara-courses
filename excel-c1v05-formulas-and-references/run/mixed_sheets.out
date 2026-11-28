@@ -1,0 +1,13 @@
+B2 formula =$A2*B$1 | E4 formula =$A4*E$1
+times table values:
+[10, 20, 30, 40]
+[20, 40, 60, 80]
+[30, 60, 90, 120]
+SUM(North:East!B5) = 425
+'January Revenue'!A1*2 = 1000
+'123'!A1+1 = 8
+North+South = 350
+SUM(A2:A4) = 6
+SUM(2:2) whole row 2 = 1101
+SUM(A:A) whole column A = 6
+SUM(2:3) rows 2 to 3 = 1311
