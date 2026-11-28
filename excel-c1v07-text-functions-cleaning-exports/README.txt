@@ -5,6 +5,6 @@ Scripts and logs: trim_clean (TRIM and CLEAN on six cases), extract (LEFT, MID, 
 Lab: python lab/make_lab.py ; solution: python lab/make_solution.py ; logs in run/lab.out and run/solution.out
 All results come from Python (openpyxl) and LibreOffice (the values), not Microsoft Excel. All data is made up. TEXTJOIN, UNICHAR and UNICODE are written with the _xlfn. prefix in openpyxl; without it LibreOffice returned NAME.
 In this LibreOffice, UNICODE of CHAR(160) is 65533 and UNICODE of UNICHAR(160) is 160, so the nonbreaking-space fix uses UNICHAR(160). Not tested in Excel.
-The Microsoft Top ten page steps (backup, new column, formula, fill down, paste values, remove the original) and TEXTJOIN availability (Office 2019 or Microsoft 365) were NOT run. They come from the Microsoft pages in microsoft-pages/ (list in ms-urls.txt).
+The Microsoft Top ten page steps (backup, new column, formula, fill down, paste values, remove the original) and TEXTJOIN availability (Office 2019 or Microsoft 365) were NOT run. They come from the Microsoft Support pages linked in the video description.
 On screen the code panels wrap lines longer than 80 characters for display only. The files here are the originals (assets_orig scripts are in assets/).
 The first sentence of the video is in script/00-opening-line.txt.
