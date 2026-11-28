@@ -1,0 +1,28 @@
+Data Analysis & BI، Excel (الكورس 1) | الدرس 4: التنسيق الشرطي Conditional Formatting
+
+في الدرس ده هنشرح إزاي نخلي Excel يلوّن الخلايا ويغيّر شكلها لوحده حسب القيمة، بالـ conditional formatting.
+المدة: 56:49
+الكود والملفات وسجلات التشغيل: <GITHUB_FOLDER_URL - لسه مستني من الناشر> (المستودع: https://github.com/mahara-bel-masry/mahara-courses، اسم الفولدر المخطط: excel-c1v04-conditional-formatting)
+الأرقام في الدرس من تشغيل حقيقي بـ Python 3.13.18 وopenpyxl 3.1.5 وLibreOffice 26.8.3.1، مش Excel. السيناريوهات والبيانات متخيلة. كلام الدرس عن أزرار Excel وحدوده مصدره صفحات Microsoft ومتجربش.
+
+المصادر (صفحات Microsoft اللي اتقرت):
+https://support.microsoft.com/en-us/excel/use-conditional-formatting-to-highlight-information-in-excel
+https://support.microsoft.com/en-us/excel/use-data-bars-color-scales-and-icon-sets-to-highlight-data
+https://support.microsoft.com/en-us/excel/use-a-formula-to-apply-conditional-formatting-in-excel-for-mac
+https://support.microsoft.com/en-au/office/conditional-formatting-compatibility-issues-for-excel-ef68c97a-1b5e-47eb-9b3f-a548f941df4f
+https://support.microsoft.com/en-us/excel/filter-by-font-color-cell-color-or-icon-sets
+
+00:00 غلاف الدرس
+00:04 الخطاف
+02:33 الخريطة
+04:07 القواعد الجاهزة
+10:53 الأعلى والأقل والمتوسط والمكرر
+14:39 القواعد اللي بتكتبها بمعادلة
+18:55 التدرج اللوني والأشرطة والأيقونات
+24:15 لما أكتر من قاعدة تتطبق
+27:50 الخطوات في Excel حسب صفحات Microsoft
+32:42 الغلطات الشايعة
+41:14 سيناريو عملي
+45:26 اللاب
+49:30 الملخص والأسئلة
+56:02 الدرس الجاي

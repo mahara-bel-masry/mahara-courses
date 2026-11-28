@@ -1,0 +1,13 @@
+values: [4200, 15800, 9900, 22000, 10000, None, 7300, ' ']
+between 5000 and 12000 hits rows: [3, 5, 7]
+blanks rule (LEN TRIM = 0) hits rows: [6, 8]
+ISBLANK rule hits rows: [6]
+row 6 is empty, row 8 holds one space
+dates: ['4', '7', '10', '13', '16', '19', '22', '25']
+between 10 Mar and 20 Mar hits rows: [3, 4, 5, 6]
+equal 16 Mar hits rows: [5]
+saved A1:A8 cellIs between ['5000', '12000']
+saved B1:B8 containsBlanks None ['LEN(TRIM(B1))=0']
+saved C1:C8 cellIs between ['DATE(2026,3,10)', 'DATE(2026,3,20)']
+saved D1:D8 cellIs equal ['DATE(2026,3,16)']
+saved E1:E8 expression None ['ISBLANK(E1)']

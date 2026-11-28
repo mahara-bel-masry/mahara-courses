@@ -1,0 +1,5 @@
+amounts [4200, 15800, 9900, 22000, 10000, None, 7300]
+rule >10000 hits rows: [2, 4]
+rule =Late hits rows: [2, 4, 7]
+dates before 15 Mar hit rows: [1, 2, 3]
+blank cell row 6 filled: False

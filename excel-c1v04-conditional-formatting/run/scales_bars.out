@@ -1,0 +1,20 @@
+values: [5, 12, 30, 8, 45, 20, 12, 100]
+2-colour scale:
+  5 F8696B
+  12 EE6F6C
+  30 D17F6F
+  8 F46B6B
+  45 BA8C71
+  20 E1766D
+  12 EE6F6C
+  100 63BE7B
+min cell has start colour: True
+max cell has end colour: True
+3-colour scale (min, middle, max):
+  5 F8696B
+  20 F8E984
+  100 63BE7B
+rules saved in file:
+  ['colorScale', 'dataBar', 'iconSet', 'max', 'min', 'percent', 'percentile']
+  ['3TrafficLights1']
+html shows data bars: False

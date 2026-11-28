@@ -1,0 +1,12 @@
+INV01 Paid due 8 A:- B bold:False
+INV02 Open due 10 A:FFC7CE B bold:False
+INV03 Open due 17 A:- B bold:False
+INV04 Open due 25 A:- B bold:True
+INV02 Paid due 13 A:FFEB9C B bold:False
+INV05 Open due 7 A:FFC7CE B bold:False
+INV06 Open due 30 A:- B bold:False
+rows marked overdue: 2
+--- rules read back from the file ---
+A2:D8 expression 1 ['AND($C2<>"Paid",$D2<$F$1)']
+B2:B8 cellIs 2 ['10000']
+A2:A8 expression 3 ['COUNTIF($A$2:$A$8,A2)>1']

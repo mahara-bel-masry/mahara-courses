@@ -1,0 +1,4 @@
+blank A2, rule <5 hits A1,A2,A3: [True, True, False]
+error B2, rule <5 hits B1,B2,B3: [True, True, False]
+text 50 in C2, rule >40: [False, False, True]
+C2 is text: True

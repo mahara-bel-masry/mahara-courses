@@ -1,0 +1,7 @@
+values: [5, 15, 25]
+red >10 added first: ['none', 'FFC7CE', 'FFC7CE']
+green >20 added first: ['none', 'FFC7CE', 'C6EFCE']
+bold and fill: ['none', 'none', 'none']
+row 3 bold: True fill: 
+p1 priorities: ['1', '2']
+p2 priorities: ['1', '2']
