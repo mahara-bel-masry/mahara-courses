@@ -1,0 +1,15 @@
+format=mm shown=03
+format=m shown=3
+format=hh:mm shown=16:36
+format=h:mm:ss shown=16:36:03
+format=mm:ss shown=36:03
+format=dd/mm shown=07/03
+format=mmm shown=Mar
+narrow column A (width 3) shows: 07/03/2026 | wide column B (width 14) shows: 07/03/2026
+cells 5, 7 and the text 9: SUM = 12 | COUNT = 2 | text 9 plus 1 = 10 | ISTEXT = True
+pct 25 with 0% shows: 2500%
+pct 0.25 with 0% shows: 25%
+text date A3 shows: 2026-03-07
+ISNUMBER text date: FALSE
+ISNUMBER real date: TRUE
+real date with 0 format: 46088

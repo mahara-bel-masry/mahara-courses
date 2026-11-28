@@ -1,0 +1,33 @@
+Data Analysis & BI، Excel (الكورس 1) | الدرس 3: فورمات الأرقام والتواريخ
+
+في الدرس ده هنشرح إزاي نتحكم في شكل الأرقام والتواريخ في Excel من غير ما نغيّر القيمة نفسها.
+المدة: 56:56
+الكود والملفات وسجلات التشغيل: <GITHUB_FOLDER_URL - لسه مستني من الناشر> (المستودع: https://github.com/mahara-bel-masry/mahara-courses)
+الأرقام في الدرس من تشغيل حقيقي بـ Python 3.13.18 وopenpyxl 3.1.5 وLibreOffice 26.8.3.1، مش Excel. السيناريوهات والبيانات متخيلة.
+
+المصادر (صفحات Microsoft اللي اتقرت):
+https://support.microsoft.com/en-us/excel/get-started/available-number-formats-in-excel
+https://support.microsoft.com/en-us/excel/review-guidelines-for-customizing-a-number-format
+https://support.microsoft.com/en-us/excel/get-started/create-a-custom-number-format
+https://support.microsoft.com/en-us/excel/format-numbers-as-dates-or-times
+https://support.microsoft.com/en-us/excel/functions/text-function
+https://support.microsoft.com/en-us/excel/display-numbers-as-phone-numbers
+https://learn.microsoft.com/en-us/troubleshoot/microsoft-365-apps/excel/formula-errors
+https://support.microsoft.com/en-us/office/languages/using-right-to-left-languages-in-office
+https://support.microsoft.com/en-us/office/languages/add-an-editing-or-authoring-language-or-set-language-preferences-in-office
+
+00:00 غلاف الدرس
+00:04 الخطاف
+02:17 الخريطة
+03:46 القيمة والشكل
+07:12 الفورمات الجاهزة للأرقام والتواريخ
+11:43 باقي الفئات في Format Cells
+15:14 الـ custom formats
+21:13 جدول Microsoft قصاد التشغيل
+24:32 أمثلة أكتر على قراءة الكود
+26:52 الإعدادات الإقليمية
+32:24 الغلطات الشايعة
+41:01 سيناريو من شركة متخيلة
+45:21 اللاب
+50:55 الملخص وأسئلة المراجعة
+56:38 الدرس الجاي

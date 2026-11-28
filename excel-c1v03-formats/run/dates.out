@@ -1,0 +1,22 @@
+value=2026-03-07 16:36:03 format=dd/mm/yyyy shown=07/03/2026
+value=2026-03-07 16:36:03 format=mm/dd/yyyy shown=03/07/2026
+value=2026-03-07 16:36:03 format=d-m-yy shown=7-3-26
+value=2026-03-07 16:36:03 format=mmm shown=Mar
+value=2026-03-07 16:36:03 format=mmmm shown=March
+value=2026-03-07 16:36:03 format=ddd shown=Sat
+value=2026-03-07 16:36:03 format=dddd shown=Saturday
+value=2026-03-07 16:36:03 format=yyyy-mm-dd shown=2026-03-07
+value=2026-03-07 16:36:03 format=h:mm AM/PM shown=4:36 PM
+value=2026-03-07 16:36:03 format=hh:mm shown=16:36
+value=2026-03-07 16:36:03 format=h:mm:ss shown=16:36:03
+value=2026-03-07 16:36:03 format=dd/mm/yyyy hh:mm shown=07/03/2026 16:36
+value=1.5 format=h:mm shown=12:00
+value=1.5 format=[h]:mm shown=36:00
+value=2.1 format=[h]:mm shown=50:24
+value=2.1 format=h:mm shown=2:24
+value=0.043 format=[mm]:ss shown=61:55
+value=0.04323842592592593 format=[ss].00 shown=3735.80
+value=46088 format=General shown=46088
+value=46088 format=0 shown=46088
+value read back by openpyxl,first cell: 2026-03-07 16:36:03 datetime
+serial number of 2026-03-07,days since 1899-12-30: 46088

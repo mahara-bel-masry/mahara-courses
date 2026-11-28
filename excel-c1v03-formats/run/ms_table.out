@@ -1,0 +1,22 @@
+value=1234.59 format=####.# ms=1234.6 shown='1234.6' same
+value=8.9 format=#.000 ms=8.900 shown='8.900' same
+value=0.631 format=0.# ms=0.6 shown='0.6' same
+value=12 format=#.0# ms=12.0 shown='12.0' same
+value=1234.568 format=#.0# ms=1234.57 shown='1234.57' same
+value=44.398 format=???.??? ms=44.398 shown='\u200744.398' same
+value=2.8 format=???.??? ms=2.8 (aligned) shown='\u2007\u20072.8\u2007\u2007' same
+value=5.25 format=# ???/??? ms=5 1/4 shown='5 \u2007\u20071/4\u2007\u2007' same
+value=5.3 format=# ???/??? ms=5 3/10 shown='5 \u2007\u20073/10\u2007' same
+value=12000 format=#,### ms=12,000 shown='12,000' same
+value=12000 format=#, ms=12 shown='12' same
+value=12200000 format=0.0,,"M" ms=12.2M shown='12.2M' same
+value=12200000 format=0.00E+00 ms=1.22E+07 shown='1.22E+07' same
+value=12200000 format=#0.0E+0 ms=12.2E+6 shown='12.2E+6' same
+value=12345678901 format=0.00E+00 ms=1.23E+10 shown='1.23E+10' same
+value=32 format=#\" ms=32" shown='32"' same
+value=125.74 format=$0.00" Surplus";$-0.00" Shortage" ms=$125.74 Surplus shown='$125.74 Surplus' same
+value=-125.74 format=$0.00" Surplus";$-0.00" Shortage" ms=$-125.74 Shortage shown='$-125.74 Shortage' same
+value=8.9 format=0.0? ms=8.9 shown='8.9\u2007' same
+value=88.99 format=0.0? ms=88.99 shown='88.99' same
+value=0.08 format=0% ms=8% shown='8%' same
+same (alignment spaces ignored): 21 of 21

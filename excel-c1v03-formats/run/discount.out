@@ -1,0 +1,8 @@
+row 1 discount: 101.84625 | rounded: 101.85
+row 2 discount: 9800 | rounded: 9800
+row 3 discount: 156250 | rounded: 156250
+row 4 discount: 0 | rounded: 0
+row 5 discount: -15 | rounded: -15
+sum of discounts: 166136.84625 | sum of rounded: 166136.85 | difference: -0.00375000000349246
+sum of discounts shown with#,##0.00 would read: 166,136.85 | sum of rounded: 166,136.85
+sum cells equal as stored values: False

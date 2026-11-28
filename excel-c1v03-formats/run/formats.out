@@ -1,0 +1,27 @@
+value=1234567.891 format=General shown=1234567.891
+value=1234567.891 format=#,##0.00 shown=1,234,567.89
+value=1234567.891 format=0 shown=1234568
+value=0.08 format=0% shown=8%
+value=2.8 format=0% shown=280%
+value=0.0825 format=0.0% shown=8.3%
+value=8.9 format=#.00 shown=8.90
+value=8.9 format=#.## shown=8.9
+value=0.47 format=#.## shown=.47
+value=0.47 format=0.## shown=0.47
+value=12000 format=#,### shown=12,000
+value=12000 format=#, shown=12
+value=12200000 format=0.0,,"M" shown=12.2M
+value=12200000 format=0.00E+00 shown=1.22E+07
+value=1234.5 format=#,##0.00" EGP" shown=1,234.50 EGP
+value=-1234.5 format=#,##0.00;[Red]-#,##0.00 shown=-1,234.50
+value=0 format=#,##0.00;-#,##0.00;"-" shown=-
+value=-5 format=0;-0;"zero";"text:"@ shown=-5
+value=0 format=0;-0;"zero";"text:"@ shown=zero
+value='abc' format=0;-0;"zero";"text:"@ shown=text:abc
+value=50 format=[Red][<=100]0;[Blue][>100]0 shown=50
+value=150 format=[Red][<=100]0;[Blue][>100]0 shown=150
+value=42 format=00000 shown=00042
+value=7 format=000 shown=007
+value=123456789 format=General shown=123456789
+value=123456789012 format=General shown=123456789012
+value=1.2345e-05 format=General shown=0.000012345

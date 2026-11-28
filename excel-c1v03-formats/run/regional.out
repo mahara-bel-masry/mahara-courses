@@ -1,0 +1,7 @@
+rightToLeft flag written by openpyxl, read back: True
+displayed A1..C1: ['1,234.50', 'text, with comma', '3.25']
+A2 with [$-2000401]0 shown as: ١٢٣٤٥٦٧
+A3 plain 0 shown as: 1234567
+semicolon file read with comma delimiter: [['a;b'], ['1', '5;2', '5']]
+semicolon file read with semicolon delimiter: [['a', 'b'], ['1,5', '2,5']]
+comma file read with comma delimiter: [['a', 'b'], ['1.5', '2.5']]

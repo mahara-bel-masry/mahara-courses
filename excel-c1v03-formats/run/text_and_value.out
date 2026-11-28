@@ -1,0 +1,6 @@
+A1 stored value: 2.456 | A1 displayed with format 0.0 as: 2.5
+sum of three displayed 2.5 cells, unrounded: 7.368 | sum of ROUND: 7.5
+A1*1000 = 2456
+TEXT results: 1,234.50 | 25.6% | 007 | ISNUMBER(TEXT(...)): False
+typed text 00123 is kept as: '00123' | ISNUMBER: False
+number 123 with format 00000, +1 gives: 124 (value is still a number)

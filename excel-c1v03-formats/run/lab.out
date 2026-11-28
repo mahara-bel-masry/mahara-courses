@@ -1,0 +1,8 @@
+lab_formats.xlsx rows: 5
+what the learner sees before formatting:
+order_no | amount | discount_rate | ship_date | work_hours | phone_digits
+7 | 1234.5 | 0.0825 | 46088 | 1.5 | 1012345678
+42 | 98000 | 0.1 | 46096 | 26.25 | 1098765432
+115 | 1250000 | 0.125 | 46114 | 50.4 | 1055500123
+3 | 0 | 0 | 46142 | 0 | 1000000001
+9 | -300 | 0.05 | 46151 | 8 | 1120004567
