@@ -38,7 +38,10 @@ w = calc("data/mistakes.xlsx").active
 print("total B8 =", w["B8"].value, "| drifted total B9 =", w["B9"].value,
       "(formula", ws["B9"].value + ")")
 print("share without dollar C2..C6:",
-      [(round(w.cell(r, 3).value, 3) if isinstance(w.cell(r, 3).value, (int, float)) else str(w.cell(r, 3).value)) for r in range(2, 7)])
+      [(round(w.cell(r, 3).value, 3)
+        if isinstance(w.cell(r, 3).value, (int, float))
+        else str(w.cell(r, 3).value))
+       for r in range(2, 7)])
 print("share with dollar D2..D6:",
       [round(w.cell(r, 4).value, 3) for r in range(2, 7)])
 print("formula in C3:", ws["C3"].value, "| D3:", ws["D3"].value)
