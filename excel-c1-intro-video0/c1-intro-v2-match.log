@@ -1,0 +1,7 @@
+Match log for c1-intro: voiced chunk files vs final script (/downloads/dabi/intro/excel-c1-course-intro.txt); whitespace/newlines normalised to single spaces, text otherwise compared character for character.
+
+c1-intro-p01: words 619, exact substring of final script: True, starts at char 0
+c1-intro-p02: words 36, exact substring of final script: True, starts at char 3775
+chunks joined in order == final script: True; words 655
+RESULT: ALL MATCH
+Main voiced the chunks in pieces split at paragraph breaks; the audio was not re-transcribed here.
